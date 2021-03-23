@@ -1,6 +1,6 @@
 #ifndef SELECTION_SORT_H
 #define SELECTION_SORT_H
-#include "libraries_and_namespaces.h"
+#include "Sorts/libraries_and_namespaces.h"
 
 namespace sorts
 {
@@ -14,7 +14,7 @@ namespace sorts
             for (std::size_t j = i+1; j < size; j++)
                     if (arr[j] < arr[min_index])
                             min_index = j;
-            swap(&arr[min_index], &arr[i]);
+            swap(arr[min_index], arr[i]);
         }
 
     }

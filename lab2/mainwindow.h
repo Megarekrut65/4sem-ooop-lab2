@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "Sorts/all_sorts.h"
+#include <QDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,5 +19,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    void start();
 };
 #endif // MAINWINDOW_H
