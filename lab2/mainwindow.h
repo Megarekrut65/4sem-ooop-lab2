@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "Sorts/all_sorts.h"
 #include <QDebug>
+#include "diagram_builder.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
