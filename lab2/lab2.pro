@@ -13,8 +13,10 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    libraries_and_namespaces.h \
     mainwindow.h \
-    merge_sort.h
+    merge_sort.h \
+    selection_sort.h
 
 FORMS += \
     mainwindow.ui
