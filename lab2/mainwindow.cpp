@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     view = nullptr;
+    this->setFixedSize(800,600);
     start();      
 }
 
@@ -32,4 +33,7 @@ void MainWindow::on_visualizationButton_clicked()
     ui->verticalWidget->setVisible(false);
     ui->graphicsView->setEnabled(true);
     ui->graphicsView->setScene(view->get_scene());
+    ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView->fitInView( ui->centralwidget->rect(), Qt::KeepAspectRatio );
 }
