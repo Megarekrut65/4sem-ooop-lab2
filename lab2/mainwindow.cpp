@@ -32,5 +32,4 @@ void MainWindow::on_visualizationButton_clicked()
     ui->verticalWidget->setVisible(false);
     ui->graphicsView->setEnabled(true);
     ui->graphicsView->setScene(view->get_scene());
-
 }
