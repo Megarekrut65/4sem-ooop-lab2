@@ -14,7 +14,6 @@ namespace sd
         QString title;
     public:
         MyGraphicsView(const QString& title, std::vector<T>& items, size_t width = 800,size_t height = 600);
-        QGraphicsScene *get_scene();
         QGraphicsView* view;
         void show();
         void close();
@@ -81,12 +80,6 @@ namespace sd
     void MyGraphicsView<T>::close()
     {
         view->close();
-    }
-
-    template<typename T>
-    QGraphicsScene *MyGraphicsView<T>::get_scene()
-    {
-        return builder->get_scene();
     }
 }
 
