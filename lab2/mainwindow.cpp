@@ -6,8 +6,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    view = nullptr;
-    start();      
+    std::vector<int> arr = {7, 9, 12, 4, 8, 20, 55, 32, 48, 24, 19, 51, 39, 44, 10, 19, 22, 42,3,10,12,50,9,49,29,30,17};
+    sort.merge_sort(arr);
+    dw = new DrawWindow(sort);
+    start();
 }
 
 MainWindow::~MainWindow()
@@ -16,12 +18,5 @@ MainWindow::~MainWindow()
 }
 void MainWindow::start()
 {
-    std::vector<int> arr = {7, 9, 12, 4, 8, 20, 55, 32, 48, 24, 19, 51, 39, 44, 10, 19, 22};
-    for(std::size_t i = 0; i < 60; i++) arr.push_back(60 - i);
-    sorts::merge_sort(arr);
-    view = new sd::MyGraphicsView<int>("Merge sort",arr);
-    view->show();
-
-
-    qDebug(sorts::array_to_string(arr).c_str());
+    dw->show();
 }

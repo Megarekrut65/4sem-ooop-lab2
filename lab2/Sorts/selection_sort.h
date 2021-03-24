@@ -5,6 +5,12 @@
 namespace sorts
 {
     template<typename T>
+    void selection_sort(std::vector<T>& arr);
+}
+
+namespace sorts
+{
+    template<typename T>
     void selection_sort(std::vector<T>& arr)
     {
         std::size_t min_index = 0, size = arr.size();
