@@ -30,6 +30,7 @@ namespace sd
         void append_column(T value);
         void add_description(const QString& text);
         QGraphicsScene* get_scene();
+        void clear();
         ~DiagramBuilder();
     };
 }
@@ -39,6 +40,13 @@ namespace sd
     DiagramBuilder<T>::DiagramBuilder(T max_item, qreal width,qreal height, size_t size):
          max_item{max_item}, width{width},height{height}, size{size > 50?size:50},last_x{0},
         scene{new QGraphicsScene()},column_color{QColor("blue")},text_size{20} {}
+    template<typename T>
+    void DiagramBuilder<T>::clear()
+    {
+        scene->clear();
+        last_x = 0;
+        description.clear();
+    }
     template<typename T>
     DiagramBuilder<T>::~DiagramBuilder()
     {
@@ -85,7 +93,8 @@ namespace sd
     void DiagramBuilder<T>::set_description()
     {
         if(description.size() == 0) return;
-        scene->addItem(create_text(description, width/2 - (text_size/5) * (description.size() - 4), height - 80));
+        qreal text_x = width/2 - text_size*description.size();
+        scene->addItem(create_text(description, text_x, height - 80));
     }
     template<typename T>
     QGraphicsScene* DiagramBuilder<T>::get_scene()
