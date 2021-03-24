@@ -22,8 +22,9 @@ void DrawWindow::set_timer()
 }
 void DrawWindow::set_view()
 {
-    qreal width = 1000, height = 600;
-    QString note = "delay: " + QString::number(m_delay) + "ms    steps: " + QString::number(sort.queue.size());
+    qreal width = 1200, height = 600;
+    QString note = "delay: " + QString::number(m_delay) +
+            "ms";
     view = new sd::MyGraphicsView<int>(sort.name,note, sort.queue[0], width, height);
     ui->graphicsView->setScene(view->get_scene());
     setBaseSize(width,height);
@@ -36,9 +37,11 @@ void DrawWindow::set_view()
 void DrawWindow::draw()
 {
     bool the_end = false;
+    QString text =     "steps: " + QString::number(index + 1) +
+            "/" + QString::number(sort.queue.size());
     if(index == sort.queue.size() - 1) the_end = true;
     if(index < sort.queue.size())
-        view->create_new_scene(sort.queue[index++],the_end);
+        view->create_new_scene(sort.queue[index++],text,the_end);
     else timer->stop();
     ui->graphicsView->setScene(view->get_scene());
 }
