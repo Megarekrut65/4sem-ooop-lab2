@@ -24,6 +24,7 @@ namespace sd
         QGraphicsRectItem* create_column(T value);
         QGraphicsTextItem* create_text(const QString& text, qreal pos_x, qreal pos_y,bool bold = false);
         void set_description();
+        void add_empty_column();
     public:
 
         DiagramBuilder(T max_item, qreal width = 800, qreal height = 600, size_t size = 1);
@@ -31,6 +32,7 @@ namespace sd
         void add_description(const QString& text);
         QGraphicsScene* get_scene();
         void clear();
+        void set_color(QColor column_color);
         ~DiagramBuilder();
     };
 }
@@ -46,6 +48,12 @@ namespace sd
         scene->clear();
         last_x = 0;
         description.clear();
+        column_color = QColor("blue");
+    }
+    template<typename T>
+    void DiagramBuilder<T>::set_color(QColor column_color)
+    {
+        this->column_color = column_color;
     }
     template<typename T>
     DiagramBuilder<T>::~DiagramBuilder()
@@ -84,22 +92,34 @@ namespace sd
         qreal diagram_width = width - 20;
         auto rect = new QGraphicsRectItem();
         qreal item_height = qreal((value * diagram_height)/max_item);
-        rect->setRect(last_x,diagram_height - 10 - item_height,diagram_width/size,item_height);
+        qreal column_width = diagram_width/size;
+        if(column_width < 1) column_width = 1;
+        rect->setRect(last_x,diagram_height - 10 - item_height,column_width,item_height);
         rect->setBrush(column_color);
-        last_x+=diagram_width/size;
+        last_x+=column_width;
         return rect;
+    }
+    template<typename T>
+    void DiagramBuilder<T>::add_empty_column()
+    {
+        qreal diagram_width = width - 20;
+        auto rect = new QGraphicsRectItem();
+        rect->setRect(last_x,height - 110, diagram_width/size, 0);
+        rect->setBrush(QColor("white"));
+        last_x+=diagram_width/size;
     }
     template<typename T>
     void DiagramBuilder<T>::set_description()
     {
         if(description.size() == 0) return;
-        qreal text_x = width/2 - text_size*description.size();
+        qreal text_x = width/2 - description.size() - 50;
         scene->addItem(create_text(description, text_x, height - 80));
     }
     template<typename T>
     QGraphicsScene* DiagramBuilder<T>::get_scene()
     {
         set_description();
+        if(size > 100) for(std::size_t i = 0; i < 5; i++) add_empty_column();
         return scene;
     }
 }

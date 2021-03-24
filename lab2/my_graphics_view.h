@@ -18,12 +18,24 @@ namespace sd
         QGraphicsView* view;
         void show();
         void close();
-        void create_new_scene(std::vector<T>& items);
+        void create_new_scene(std::vector<T>& items, bool the_end = false);
+        QGraphicsView* get_view();
+        QGraphicsScene* get_scene();
         ~MyGraphicsView();
     };
 }
 namespace sd
 {
+    template<typename T>
+    QGraphicsScene* MyGraphicsView<T>::get_scene()
+    {
+        return builder->get_scene();
+    }
+    template<typename T>
+    QGraphicsView* MyGraphicsView<T>::get_view()
+    {
+        return view;
+    }
     template<typename T>
     MyGraphicsView<T>::MyGraphicsView(const QString& title, std::vector<T>& items,size_t width,size_t height):
         title(title), view(new QGraphicsView()),builder(nullptr), width(width), height(height)
@@ -49,9 +61,10 @@ namespace sd
         view = nullptr;
     }
     template<typename T>
-    void MyGraphicsView<T>::create_new_scene(std::vector<T>& items)
+    void MyGraphicsView<T>::create_new_scene(std::vector<T>& items, bool the_end)
     {
         builder->clear();
+        if(the_end) builder->set_color(QColor("green"));
         for(std::size_t i = 0; i < items.size(); i++)
             builder->append_column(items[i]);
         builder->add_description(title);
