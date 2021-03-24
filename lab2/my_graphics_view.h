@@ -12,8 +12,9 @@ namespace sd
         const size_t width;
         const size_t height;
         QString title;
+        QString note;
     public:
-        MyGraphicsView(const QString& title, std::vector<T>& items, size_t width = 800,size_t height = 600);
+        MyGraphicsView(const QString& title,const QString& note, std::vector<T>& items, size_t width = 800,size_t height = 600);
         QGraphicsView* view;
         void show();
         void close();
@@ -36,8 +37,8 @@ namespace sd
         return view;
     }
     template<typename T>
-    MyGraphicsView<T>::MyGraphicsView(const QString& title, std::vector<T>& items,size_t width,size_t height):
-        title(title), view(new QGraphicsView()),builder(nullptr), width(width), height(height)
+    MyGraphicsView<T>::MyGraphicsView(const QString& title,const QString& note, std::vector<T>& items,size_t width,size_t height):
+        title(title), note(note),view(new QGraphicsView()),builder(nullptr), width(width), height(height)
     {
         builder = new sd::DiagramBuilder<T>(sorts::get_max(items), width, height, items.size());
         create_new_scene(items);
@@ -69,6 +70,7 @@ namespace sd
         builder->add_description(title);
         QString des = "size: " + QString::number(items.size());
         builder->add_description(des);
+        if(note.size() > 0) builder->add_description(note);
         view->setScene(builder->get_scene());
     }
     template<typename T>

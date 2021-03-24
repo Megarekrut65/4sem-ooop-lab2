@@ -7,6 +7,7 @@
 /*!
 * SortClass
 */
+using namespace sorts;
 namespace sc
 {
     template<typename T>
@@ -23,10 +24,27 @@ namespace sc
         std::vector<std::vector<T>> queue;
         SortClass();
         void merge_sort(std::vector<T>& arr);
+        void selection_sort(std::vector<T>& arr);
     };
 }
 namespace sc
 {
+    template<typename T>
+    void SortClass<T>::selection_sort(std::vector<T>& arr)
+    {
+        name = "Selection sort";
+        display(arr);
+        std::size_t min_index = 0, size = arr.size();
+        for (std::size_t i = 0; i < size-1; i++)
+        {
+            min_index = i;
+            for (std::size_t j = i+1; j < size; j++)
+                    if (arr[j] < arr[min_index])
+                            min_index = j;
+            swap(arr[min_index], arr[i]);
+            display(arr);
+        }
+    }
     template<typename T>
     SortClass<T>::SortClass(): name("Sort"){}
     template<typename T>
