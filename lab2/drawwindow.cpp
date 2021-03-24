@@ -23,7 +23,8 @@ void DrawWindow::set_timer()
 void DrawWindow::set_view()
 {
     qreal width = 1000, height = 600;
-    view = new sd::MyGraphicsView<int>(sort.name, sort.queue[0], width, height);
+    QString note = "delay: " + QString::number(m_delay) + "ms    steps: " + QString::number(sort.queue.size());
+    view = new sd::MyGraphicsView<int>(sort.name,note, sort.queue[0], width, height);
     ui->graphicsView->setScene(view->get_scene());
     setBaseSize(width,height);
     setMinimumSize(width,height);

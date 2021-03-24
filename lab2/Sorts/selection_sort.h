@@ -22,7 +22,6 @@ namespace sorts
                             min_index = j;
             swap(arr[min_index], arr[i]);
         }
-
     }
 }
 #endif // SELECTION_SORT_H
