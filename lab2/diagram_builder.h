@@ -25,6 +25,7 @@ namespace sd
         QGraphicsTextItem* create_text(const QString& text, qreal pos_x, qreal pos_y,bool bold = false);
         void set_description();
     public:
+
         DiagramBuilder(T max_item, qreal width = 800, qreal height = 600, size_t size = 1);
         void append_column(T value);
         void add_description(const QString& text);
