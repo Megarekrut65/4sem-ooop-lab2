@@ -13,7 +13,7 @@ class DrawWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit DrawWindow( sc::SortClass<int>& sort, QWidget *parent = nullptr);
+    explicit DrawWindow( sc::SortClass<int>& sort, size_t m_delay = 50, QWidget *parent = nullptr);
     ~DrawWindow();
 
 private:
@@ -21,7 +21,10 @@ private:
     QTimer* timer;
     sc::SortClass<int>& sort;
     std::size_t index;
+    size_t m_delay;
     sd::MyGraphicsView<int>* view;
+    void set_timer();
+    void set_view();
     void draw();
 
 };

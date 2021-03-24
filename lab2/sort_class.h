@@ -95,6 +95,7 @@ namespace sc
     void SortClass<T>::merge_sort(std::vector<T>& arr)
     {
         name = "Merge sort";
+        display(arr);
         merge_sorting(arr, 0, arr.size());
     }
 }
