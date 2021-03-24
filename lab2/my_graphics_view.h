@@ -18,7 +18,7 @@ namespace sd
         QGraphicsView* view;
         void show();
         void close();
-        void create_new_scene(std::vector<T>& items, bool the_end = false);
+        void create_new_scene(std::vector<T>& items,const QString& add_to_end = "", bool the_end = false);
         QGraphicsView* get_view();
         QGraphicsScene* get_scene();
         ~MyGraphicsView();
@@ -61,7 +61,7 @@ namespace sd
         view = nullptr;
     }
     template<typename T>
-    void MyGraphicsView<T>::create_new_scene(std::vector<T>& items, bool the_end)
+    void MyGraphicsView<T>::create_new_scene(std::vector<T>& items, const QString& add_to_end, bool the_end)
     {
         builder->clear();
         if(the_end) builder->set_color(QColor("green"));
@@ -71,6 +71,7 @@ namespace sd
         QString des = "size: " + QString::number(items.size());
         builder->add_description(des);
         if(note.size() > 0) builder->add_description(note);
+        if(add_to_end.size() > 0) builder->add_description(add_to_end);
         view->setScene(builder->get_scene());
     }
     template<typename T>
