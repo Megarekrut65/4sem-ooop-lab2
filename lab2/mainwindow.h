@@ -3,8 +3,7 @@
 
 #include <QMainWindow>
 #include <QDebug>
-#include "sort_class.h"
-#include <QTimer>
+#include "drawwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,7 +19,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    sd::MyGraphicsView<int>* view;
+    DrawWindow* dw;
+    sc::SortClass<int> sort;
     void start();
 };
 #endif // MAINWINDOW_H

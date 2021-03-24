@@ -2,8 +2,8 @@
 #define SORT_CLASS_H
 #include <vector>
 #include "my_graphics_view.h"
-#include <QThread>
-#include <QDebug>
+#include <QTimer>
+#include <QMainWindow>
 /*!
 * SortClass
 */
@@ -13,14 +13,14 @@ namespace sc
     class SortClass
     {
     private:
-
-        sd::MyGraphicsView<T>* view;
-        QString name;
         void display(std::vector<T>& arr);
         void copy_to_array(std::vector<T>& arr, std::vector<T>& copy_arr, std::size_t begin, std::size_t size);
         void merge(std::vector<T>& arr, std::size_t begin, std::size_t middle, std::size_t end);
         void merge_sorting(std::vector<T>& arr, std::size_t begin, std::size_t end);
+        void add_to_queue(std::vector<T>& arr);
     public:
+        QString name;
+        std::vector<std::vector<T>> queue;
         SortClass();
         void merge_sort(std::vector<T>& arr);
     };
@@ -28,12 +28,16 @@ namespace sc
 namespace sc
 {
     template<typename T>
-    SortClass<T>::SortClass():view(nullptr),name("Sort"){}
+    SortClass<T>::SortClass(): name("Sort"){}
+    template<typename T>
+    void SortClass<T>::add_to_queue(std::vector<T>& arr)
+    {
+        queue.push_back(arr);
+    }
     template<typename T>
     void SortClass<T>::display(std::vector<T>& arr)
     {
-        view->create_new_scene(arr);
-        QThread::msleep(500);
+        add_to_queue(arr);
     }
     template<typename T>
     void SortClass<T>::copy_to_array(std::vector<T>& arr, std::vector<T>& copy_arr, std::size_t begin, std::size_t size)
@@ -91,10 +95,7 @@ namespace sc
     void SortClass<T>::merge_sort(std::vector<T>& arr)
     {
         name = "Merge sort";
-        view = new sd::MyGraphicsView<T>(name, arr);
-        view->show();
         merge_sorting(arr, 0, arr.size());
-        //delete view;
     }
 }
 #endif // SORT_CLASS_H

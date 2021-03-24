@@ -6,12 +6,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    std::vector<int> arr = {7, 9, 12, 4, 8, 20, 55, 32, 48, 24, 19, 51, 39, 44, 10, 19, 22};
-    view = new sd::MyGraphicsView<int>("Sorting", arr);
-    view->show();
-    auto oneSecondTimer = new QTimer(this);
-    connect(oneSecondTimer, &QTimer::timeout, this, &MainWindow::start);
-    oneSecondTimer->start(100);
+    std::vector<int> arr = {7, 9, 12, 4, 8, 20, 55, 32, 48, 24, 19, 51, 39, 44, 10, 19, 22, 42,3,10,12,50,9,49,29,30,17};
+    sort.merge_sort(arr);
+    dw = new DrawWindow(sort);
+    start();
 }
 
 MainWindow::~MainWindow()
@@ -20,8 +18,5 @@ MainWindow::~MainWindow()
 }
 void MainWindow::start()
 {
-   std::vector<int> arr = {7, 9, 12, 4, 8, 20, 55, 32, 48, 24, 19, 51, 39, 44, 10, 19, 22};
-   arr[0] = rand()%55;
-   view->create_new_scene(arr);
-
+    dw->show();
 }
