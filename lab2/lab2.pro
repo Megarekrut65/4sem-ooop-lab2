@@ -21,6 +21,7 @@ HEADERS += \
     Sorts/sort_diagram.h \
     diagram_builder.h \
     mainwindow.h \
+    my_graphics_view.h \
     sortdisplay.h
 
 FORMS += \
