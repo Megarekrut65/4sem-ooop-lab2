@@ -26,6 +26,7 @@ namespace sd
         void set_description();
         void add_empty_column();
     public:
+
         DiagramBuilder(T max_item, qreal width = 800, qreal height = 600, size_t size = 1);
         void append_column(T value);
         void add_description(const QString& text);

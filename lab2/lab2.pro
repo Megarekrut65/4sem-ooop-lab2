@@ -9,29 +9,21 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    drawwindow.cpp \
     main.cpp \
-    mainwindow.cpp \
-    sortdisplay.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    Sort class/sort_class.h \
     Sorts/all_sorts.h \
     Sorts/libraries_and_namespaces.h \
     Sorts/merge_sort.h \
     Sorts/selection_sort.h \
     Sorts/sort_diagram.h \
     diagram_builder.h \
-    drawwindow.h \
     mainwindow.h \
-    my_graphics_view.h \
-    sort_class.h \
-    sortdisplay.h
+    my_graphics_view.h
 
 FORMS += \
-    drawwindow.ui \
-    mainwindow.ui \
-    sortdisplay.ui
+    mainwindow.ui
 
 TRANSLATIONS += \
     lab2_en_GB.ts

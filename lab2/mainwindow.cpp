@@ -5,8 +5,10 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow), dw(nullptr)
 {
-    ui->setupUi(this); 
-    start();
+    ui->setupUi(this);
+    view = nullptr;
+    this->setFixedSize(800,600);
+    start();      
 }
 
 MainWindow::~MainWindow()
@@ -22,4 +24,15 @@ void MainWindow::start()
     dw = new DrawWindow(sort, 25);
     dw->show();
     this->hide();
+}
+
+void MainWindow::on_visualizationButton_clicked()
+{
+    ui->verticalWidget->setEnabled(false);
+    ui->verticalWidget->setVisible(false);
+    ui->graphicsView->setEnabled(true);
+    ui->graphicsView->setScene(view->get_scene());
+    ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView->fitInView( ui->centralwidget->rect(), Qt::KeepAspectRatio );
 }
