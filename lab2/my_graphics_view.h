@@ -8,13 +8,14 @@ namespace sd
     class MyGraphicsView
     {
     private:
-        QGraphicsView* view;
+        DiagramBuilder<T>* builder;
         const size_t width;
         const size_t height;
         QString title;
-        DiagramBuilder<T>* builder;
     public:
         MyGraphicsView(const QString& title, std::vector<T>& items, size_t width = 800,size_t height = 600);
+        QGraphicsScene *get_scene();
+        QGraphicsView* view;
         void show();
         void close();
         void create_new_scene(std::vector<T>& items);
@@ -29,6 +30,8 @@ namespace sd
     {
         create_new_scene(items);
     }
+
+
     template<typename T>
     MyGraphicsView<T>::~MyGraphicsView()
     {
@@ -62,6 +65,12 @@ namespace sd
     void MyGraphicsView<T>::close()
     {
         view->close();
+    }
+
+    template<typename T>
+    QGraphicsScene *MyGraphicsView<T>::get_scene()
+    {
+        return builder->get_scene();
     }
 }
 

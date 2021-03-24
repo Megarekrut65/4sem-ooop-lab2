@@ -10,8 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp \
-    sortdisplay.cpp
+    mainwindow.cpp
 
 HEADERS += \
     Sorts/all_sorts.h \
@@ -21,12 +20,10 @@ HEADERS += \
     Sorts/sort_diagram.h \
     diagram_builder.h \
     mainwindow.h \
-    my_graphics_view.h \
-    sortdisplay.h
+    my_graphics_view.h
 
 FORMS += \
-    mainwindow.ui \
-    sortdisplay.ui
+    mainwindow.ui
 
 TRANSLATIONS += \
     lab2_en_GB.ts

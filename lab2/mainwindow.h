@@ -18,6 +18,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_visualizationButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     sd::MyGraphicsView<int>* view;

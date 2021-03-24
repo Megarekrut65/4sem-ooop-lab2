@@ -20,8 +20,17 @@ void MainWindow::start()
     for(std::size_t i = 0; i < 60; i++) arr.push_back(60 - i);
     sorts::merge_sort(arr);
     view = new sd::MyGraphicsView<int>("Merge sort",arr);
-    view->show();
+    //view->show();
 
 
     qDebug(sorts::array_to_string(arr).c_str());
+}
+
+void MainWindow::on_visualizationButton_clicked()
+{
+    ui->verticalWidget->setEnabled(false);
+    ui->verticalWidget->setVisible(false);
+    ui->graphicsView->setEnabled(true);
+    ui->graphicsView->setScene(view->get_scene());
+
 }
