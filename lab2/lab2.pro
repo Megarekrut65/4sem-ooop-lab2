@@ -14,6 +14,7 @@ SOURCES += \
     sortdisplay.cpp
 
 HEADERS += \
+    Sort class/sort_class.h \
     Sorts/all_sorts.h \
     Sorts/libraries_and_namespaces.h \
     Sorts/merge_sort.h \
@@ -22,6 +23,7 @@ HEADERS += \
     diagram_builder.h \
     mainwindow.h \
     my_graphics_view.h \
+    sort_class.h \
     sortdisplay.h
 
 FORMS += \
