@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QTimer>
+#include <QTextEdit>
 #include "sort_class.h"
 namespace Ui {
 class DrawWindow;
@@ -15,6 +16,15 @@ class DrawWindow : public QDialog
 public:
     explicit DrawWindow( sc::SortClass<int>& sort, size_t m_delay = 50, QWidget *parent = nullptr);
     ~DrawWindow();
+
+private slots:
+    void on_values_edit_textChanged();
+
+    void on_add_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_remove_pushButton_clicked();
 
 private:
     Ui::DrawWindow *ui;

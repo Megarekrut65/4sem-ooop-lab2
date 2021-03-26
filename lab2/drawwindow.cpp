@@ -36,6 +36,7 @@ void DrawWindow::set_view()
     //ui->graphicsView->setMinimumSize(width,height);
     //ui->graphicsView->setMaximumSize(width,height);
 }
+
 void DrawWindow::draw()
 {
     bool the_end = false;
@@ -52,4 +53,16 @@ DrawWindow::~DrawWindow()
     if(view) delete view;
     if(timer) delete timer;
     delete ui;
+}
+
+void DrawWindow::on_add_pushButton_clicked()
+{
+    ui->values_listWidget->addItem(ui->newnum_spinBox->text());
+    ui->count_spinBox->setValue(ui->values_listWidget->count());
+}
+
+void DrawWindow::on_remove_pushButton_clicked()
+{
+    qDeleteAll(ui->values_listWidget->selectedItems());
+    ui->count_spinBox->setValue(ui->values_listWidget->count());
 }

@@ -49,8 +49,11 @@
      <height>600</height>
     </size>
    </property>
+   <property name="renderHints">
+    <set>QPainter::Antialiasing</set>
+   </property>
   </widget>
-  <widget class="QWidget" name="verticalWidget" native="true">
+  <widget class="QFrame" name="verticalFrame">
    <property name="geometry">
     <rect>
      <x>1210</x>
@@ -76,7 +79,14 @@
        </widget>
       </item>
       <item>
-       <widget class="QSpinBox" name="delay_spinBox"/>
+       <widget class="QSpinBox" name="delay_spinBox">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -127,9 +137,6 @@
      </spacer>
     </item>
     <item>
-     <widget class="QTextEdit" name="textEdit"/>
-    </item>
-    <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
        <widget class="QPushButton" name="random_pushButton">
@@ -142,6 +149,37 @@
        <widget class="QPushButton" name="inorder_pushButton">
         <property name="text">
          <string>In order</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QListWidget" name="values_listWidget"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QSpinBox" name="newnum_spinBox">
+        <property name="minimumSize">
+         <size>
+          <width>65</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="add_pushButton">
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="remove_pushButton">
+        <property name="text">
+         <string>Remove</string>
         </property>
        </widget>
       </item>
