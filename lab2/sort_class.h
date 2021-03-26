@@ -26,10 +26,17 @@ namespace sc
         void merge_sort(std::vector<T>& arr);
         void selection_sort(std::vector<T>& arr);
         void bubble_sort(std::vector<T>& arr);
+        void clear();
     };
 }
 namespace sc
 {
+    template<typename T>
+    void SortClass<T>::clear()
+    {
+        name = "";
+        queue.clear();
+    }
     template<typename T>
     void SortClass<T>::bubble_sort(std::vector<T>& arr)
     {

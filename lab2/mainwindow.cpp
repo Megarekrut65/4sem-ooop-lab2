@@ -19,7 +19,7 @@ void MainWindow::startVisualization()
     for(std::size_t i = 0; i < 300; i++)
         arr.push_back(rand()%100);
     sort.merge_sort(arr);
-    dw = new DrawWindow(sort, 1);
+    dw = new DrawWindow();
     dw->show();
     this->hide();
 }
