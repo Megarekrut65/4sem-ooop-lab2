@@ -70,7 +70,11 @@ void DrawWindow::draw()
     if(index == sort.queue.size() - 1) the_end = true;
     if(index < sort.queue.size())
         view->create_new_scene(sort.queue[index++],text,the_end);
-    else stop_draw();
+    else
+    {
+        is_stop = true;
+        timer->stop();
+    }
     ui->graphicsView->setScene(view->get_scene());
 }
 void DrawWindow::start_draw()
