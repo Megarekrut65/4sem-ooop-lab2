@@ -163,14 +163,14 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="stop_pushButton">
         <property name="text">
          <string>Stop</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="pause_Button">
         <property name="text">
          <string>Pause</string>
         </property>
