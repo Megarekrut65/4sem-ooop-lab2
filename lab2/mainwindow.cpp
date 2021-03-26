@@ -16,9 +16,9 @@ MainWindow::~MainWindow()
 void MainWindow::start()
 {
     std::vector<int> arr = {1,7, 9, 12, 4, 8, 20, 55, 32, 48, 24, 19, 51, 39, 44, 10, 19, 22, 42,3,10,12,50,9,49,29,30,17};
-    for(std::size_t i = 0; i < 400; i++)
+    for(std::size_t i = 0; i < 300; i++)
         arr.push_back(rand()%100);
-    sort.selection_sort(arr);
+    sort.merge_sort(arr);
     dw = new DrawWindow(sort, 1);
     dw->show();
     this->hide();

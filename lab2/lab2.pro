@@ -15,6 +15,7 @@ SOURCES += \
 
 HEADERS += \
     Sorts/all_sorts.h \
+    Sorts/bubble_sort.h \
     Sorts/libraries_and_namespaces.h \
     Sorts/merge_sort.h \
     Sorts/selection_sort.h \

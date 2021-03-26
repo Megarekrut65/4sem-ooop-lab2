@@ -25,10 +25,24 @@ namespace sc
         SortClass();
         void merge_sort(std::vector<T>& arr);
         void selection_sort(std::vector<T>& arr);
+        void bubble_sort(std::vector<T>& arr);
     };
 }
 namespace sc
 {
+    template<typename T>
+    void SortClass<T>::bubble_sort(std::vector<T>& arr)
+    {
+        name = "Bubble sort";
+        display(arr);
+        for(std::size_t i = 0; i < arr.size();i++)
+            for(std::size_t j = 0; j < arr.size() - i - 1;j++)
+                if(arr[j] > arr[j + 1])
+                {
+                    swap(arr[j],arr[j+1]);
+                    display(arr);
+                }
+    }
     template<typename T>
     void SortClass<T>::selection_sort(std::vector<T>& arr)
     {

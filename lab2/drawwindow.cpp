@@ -3,7 +3,7 @@
 
 DrawWindow::DrawWindow( sc::SortClass<int>& sort, size_t m_delay,QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::DrawWindow), timer(nullptr),sort(sort), index(0),m_delay(m_delay),view(nullptr)
+    ui(new Ui::DrawWindow), timer(nullptr),sort(sort), index(0),m_delay(m_delay > 0?m_delay:1),view(nullptr)
 {
     ui->setupUi(this);
     setWindowTitle(sort.name);
@@ -37,8 +37,8 @@ void DrawWindow::set_view()
 void DrawWindow::draw()
 {
     bool the_end = false;
-    QString text =     "steps: " + QString::number(index + 1) +
-            "/" + QString::number(sort.queue.size());
+    size_t percent = qreal(index + 1)/qreal(sort.queue.size()) * 100;
+    QString text =     "completed: " + QString::number(percent) + "%";
     if(index == sort.queue.size() - 1) the_end = true;
     if(index < sort.queue.size())
         view->create_new_scene(sort.queue[index++],text,the_end);
