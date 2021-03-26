@@ -100,7 +100,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QSpinBox" name="count_spinBox"/>
+       <widget class="QSpinBox" name="count_spinBox">
+        <property name="maximum">
+         <number>32000</number>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>

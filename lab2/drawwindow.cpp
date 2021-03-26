@@ -70,12 +70,16 @@ void DrawWindow::on_remove_pushButton_clicked()
 void DrawWindow::on_random_pushButton_clicked()
 {
     ui->values_listWidget->clear();
-    QString rand;
     for(int i = 0; i < ui->count_spinBox->text().toInt(); i++)
     {
-        rand.number(QRandomGenerator::global()->generate());
+         ui->values_listWidget->addItem(QString::number(QRandomGenerator::global()->generate()%32000));
+    }
+}
 
-        ui->values_listWidget->addItem(QString::number(QRandomGenerator::global()->generate()%32000));
-
+void DrawWindow::on_inorder_pushButton_clicked()
+{
+    for(int i = 0; i < ui->count_spinBox->text().toInt(); i++)
+    {
+        ui->values_listWidget->addItem(QString::number(i));
     }
 }

@@ -25,6 +25,8 @@ private slots:
 
     void on_random_pushButton_clicked();
 
+    void on_inorder_pushButton_clicked();
+
 private:
     Ui::DrawWindow *ui;
     QTimer* timer;
