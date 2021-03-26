@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QTimer>
 #include <QTextEdit>
+#include <QRandomGenerator>
 #include "sort_class.h"
 namespace Ui {
 class DrawWindow;
@@ -18,13 +19,11 @@ public:
     ~DrawWindow();
 
 private slots:
-    void on_values_edit_textChanged();
-
     void on_add_pushButton_clicked();
 
-    void on_pushButton_2_clicked();
-
     void on_remove_pushButton_clicked();
+
+    void on_random_pushButton_clicked();
 
 private:
     Ui::DrawWindow *ui;

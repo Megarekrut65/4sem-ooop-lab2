@@ -167,6 +167,9 @@
           <height>0</height>
          </size>
         </property>
+        <property name="maximum">
+         <number>32000</number>
+        </property>
        </widget>
       </item>
       <item>

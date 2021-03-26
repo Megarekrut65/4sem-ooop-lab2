@@ -66,3 +66,16 @@ void DrawWindow::on_remove_pushButton_clicked()
     qDeleteAll(ui->values_listWidget->selectedItems());
     ui->count_spinBox->setValue(ui->values_listWidget->count());
 }
+
+void DrawWindow::on_random_pushButton_clicked()
+{
+    ui->values_listWidget->clear();
+    QString rand;
+    for(int i = 0; i < ui->count_spinBox->text().toInt(); i++)
+    {
+        rand.number(QRandomGenerator::global()->generate());
+
+        ui->values_listWidget->addItem(QString::number(QRandomGenerator::global()->generate()%32000));
+
+    }
+}
