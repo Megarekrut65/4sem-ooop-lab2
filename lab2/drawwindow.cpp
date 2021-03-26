@@ -129,6 +129,12 @@ std::vector<int> DrawWindow::get_array()
         arr.push_back(ui->values_listWidget->item(i)->text().toInt());
     return arr;
 }
+/*void DrawWindow::on_random_pushButton_clicked()
+{
+    stop_draw();
+    qDeleteAll(ui->values_listWidget->selectedItems());
+    ui->count_spinBox->setValue(ui->values_listWidget->count());
+}*/ 
 void DrawWindow::on_random_pushButton_clicked()
 {
     stop_draw();
