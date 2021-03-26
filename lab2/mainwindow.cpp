@@ -13,13 +13,13 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-void MainWindow::start()
+void MainWindow::startVisualization()
 {
     std::vector<int> arr = {1,7, 9, 12, 4, 8, 20, 55, 32, 48, 24, 19, 51, 39, 44, 10, 19, 22, 42,3,10,12,50,9,49,29,30,17};
     for(std::size_t i = 0; i < 300; i++)
         arr.push_back(rand()%100);
     sort.merge_sort(arr);
-    dw = new DrawWindow(sort, 1);
+    dw = new DrawWindow();
     dw->show();
     this->hide();
 }
@@ -28,7 +28,7 @@ void MainWindow::on_visualizationButton_clicked()
 {
     ui->verticalWidget->setEnabled(false);
     ui->verticalWidget->setVisible(false);
-    start();
+    startVisualization();
     /*ui->graphicsView->setEnabled(true);
     ui->graphicsView->setScene(view->get_scene());
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);

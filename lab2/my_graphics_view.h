@@ -13,6 +13,7 @@ namespace sd
         const size_t height;
         QString title;
         QString note;
+        QColor color;
     public:
         MyGraphicsView(const QString& title,const QString& note, std::vector<T>& items, size_t width = 800,size_t height = 600);
         QGraphicsView* view;
@@ -21,11 +22,32 @@ namespace sd
         void create_new_scene(std::vector<T>& items,const QString& add_to_end = "", bool the_end = false);
         QGraphicsView* get_view();
         QGraphicsScene* get_scene();
+        void pause_color();
+        void start_color();
+        void clear();
         ~MyGraphicsView();
     };
 }
 namespace sd
 {
+    template<typename T>
+    void MyGraphicsView<T>::clear()
+    {
+        builder->clear();
+        title = "";
+        note = "";
+        color = QColor("blue");
+    }
+    template<typename T>
+    void MyGraphicsView<T>::pause_color()
+    {
+        color = QColor("red");
+    }
+    template<typename T>
+    void MyGraphicsView<T>::start_color()
+    {
+        color = QColor("blue");
+    }
     template<typename T>
     QGraphicsScene* MyGraphicsView<T>::get_scene()
     {
@@ -38,7 +60,7 @@ namespace sd
     }
     template<typename T>
     MyGraphicsView<T>::MyGraphicsView(const QString& title,const QString& note, std::vector<T>& items,size_t width,size_t height):
-        title(title), note(note),view(new QGraphicsView()),builder(nullptr), width(width), height(height)
+        title(title), note(note),view(new QGraphicsView()),builder(nullptr), width(width), height(height),color(QColor("blue"))
     {
         builder = new sd::DiagramBuilder<T>(sorts::get_max(items), width, height, items.size());
         create_new_scene(items);
@@ -50,8 +72,6 @@ namespace sd
         view->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
 
     }
-
-
     template<typename T>
     MyGraphicsView<T>::~MyGraphicsView()
     {
@@ -64,6 +84,7 @@ namespace sd
     void MyGraphicsView<T>::create_new_scene(std::vector<T>& items, const QString& add_to_end, bool the_end)
     {
         builder->clear();
+        builder->set_color(color);
         if(the_end) builder->set_color(QColor("green"));
         for(std::size_t i = 0; i < items.size(); i++)
             builder->append_column(items[i]);
