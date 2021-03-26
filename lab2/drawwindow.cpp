@@ -27,6 +27,7 @@ void DrawWindow::set_view()
             "ms";
     view = new sd::MyGraphicsView<int>(sort.name,note, sort.queue[0], width, height);
     ui->graphicsView->setScene(view->get_scene());
+    ui->graphicsView->setRenderHint(QPainter::Antialiasing);
     setBaseSize(width,height);
     setMinimumSize(width,height);
     setMaximumSize(width,height);
@@ -38,7 +39,7 @@ void DrawWindow::draw()
 {
     bool the_end = false;
     size_t percent = qreal(index + 1)/qreal(sort.queue.size()) * 100;
-    QString text =     "completed: " + QString::number(percent) + "%";
+    QString text = "completed: " + QString::number(percent) + "%";
     if(index == sort.queue.size() - 1) the_end = true;
     if(index < sort.queue.size())
         view->create_new_scene(sort.queue[index++],text,the_end);
