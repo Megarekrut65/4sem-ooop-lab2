@@ -27,6 +27,7 @@ HEADERS += \
     sort_class.h
 
 FORMS += \
+    drawwindow.ui \
     mainwindow.ui
 
 TRANSLATIONS += \

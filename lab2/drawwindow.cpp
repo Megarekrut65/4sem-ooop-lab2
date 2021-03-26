@@ -28,12 +28,13 @@ void DrawWindow::set_view()
     view = new sd::MyGraphicsView<int>(sort.name,note, sort.queue[0], width, height);
     ui->graphicsView->setScene(view->get_scene());
     ui->graphicsView->setRenderHint(QPainter::Antialiasing);
-    setBaseSize(width,height);
-    setMinimumSize(width,height);
-    setMaximumSize(width,height);
-    ui->graphicsView->setBaseSize(width,height);
-    ui->graphicsView->setMinimumSize(width,height);
-    ui->graphicsView->setMaximumSize(width,height);
+    ui->graphicsView->setCacheMode(QGraphicsView::CacheBackground);
+    //setBaseSize(width,height);
+    //setMinimumSize(width,height);
+    //setMaximumSize(width,height);
+    //ui->graphicsView->setBaseSize(width,height);
+    //ui->graphicsView->setMinimumSize(width,height);
+    //ui->graphicsView->setMaximumSize(width,height);
 }
 void DrawWindow::draw()
 {

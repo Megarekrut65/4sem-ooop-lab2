@@ -24,6 +24,7 @@ private:
     Ui::MainWindow *ui;
     DrawWindow* dw;
     sc::SortClass<int> sort;
-    void start();
+    void startVisualization();
+    void startDuration();
 };
 #endif // MAINWINDOW_H
