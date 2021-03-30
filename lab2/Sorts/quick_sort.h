@@ -4,6 +4,7 @@
 
 namespace sorts
 {
+    //Lomuto partition scheme, rightmost pivot
     template<typename T>
     std::size_t partition(std::vector<T>& arr, long low, long high);
     template<typename T>
