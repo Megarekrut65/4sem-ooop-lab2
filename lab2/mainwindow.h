@@ -23,7 +23,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     DrawWindow* dw;
-    sc::SortClass<int> sort;
+
     void startVisualization();
     void startDuration();
 };

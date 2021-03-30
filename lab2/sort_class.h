@@ -14,16 +14,21 @@ namespace sc
     class SortClass
     {
     private:
+        void add_to_queue(std::vector<T>& arr);
         void display(std::vector<T>& arr);
         void copy_to_array(std::vector<T>& arr, std::vector<T>& copy_arr, std::size_t begin, std::size_t size);
+
         void merge(std::vector<T>& arr, std::size_t begin, std::size_t middle, std::size_t end);
         void merge_sorting(std::vector<T>& arr, std::size_t begin, std::size_t end);
-        void add_to_queue(std::vector<T>& arr);
+
+        std::size_t partition(std::vector<T>& arr, long low, long high);
+        void quick_sorting(std::vector<T>& arr, long low, long high);
     public:
         QString name;
         std::vector<std::vector<T>> queue;
         SortClass();
         void merge_sort(std::vector<T>& arr);
+        void quick_sort(std::vector<T>& arr);
         void selection_sort(std::vector<T>& arr);
         void bubble_sort(std::vector<T>& arr);
         void clear();
@@ -31,6 +36,42 @@ namespace sc
 }
 namespace sc
 {
+    template<typename T>
+    std::size_t SortClass<T>::partition(std::vector<T>& arr, long low, long high)
+    {
+        T pivot = arr[high];
+        long i = low - 1;
+        for (long j = low; j < high; j++)
+        {
+            if (arr[j] <= pivot)
+            {
+                i++;
+                swap(arr[i], arr[j]);
+                display(arr);
+            }
+        }
+        swap(arr[i + 1], arr[high]);
+        display(arr);
+        return std::size_t(i + 1);
+    }
+    template<typename T>
+    void SortClass<T>::quick_sorting(std::vector<T>& arr, long low, long high)
+    {
+        if (low < high)
+        {
+            std::size_t index = partition(arr, low, high);
+            quick_sorting(arr, low, index - 1);
+            quick_sorting(arr, index + 1, high);
+        }
+    }
+    template<typename T>
+    void SortClass<T>::quick_sort(std::vector<T>& arr)
+    {
+        name = "Quick sort";
+        display(arr);
+        if(arr.size() < 2) return;
+        quick_sorting(arr, 0, arr.size() - 1);
+    }
     template<typename T>
     void SortClass<T>::clear()
     {

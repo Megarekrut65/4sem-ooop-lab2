@@ -3,4 +3,5 @@
 #include "Sorts/selection_sort.h"
 #include "Sorts/merge_sort.h"
 #include "Sorts/bubble_sort.h"
+#include "Sorts/quick_sort.h"
 #endif // ALL_SORTS_H

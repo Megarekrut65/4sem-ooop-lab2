@@ -13,7 +13,7 @@ DrawWindow::DrawWindow(QWidget *parent) :
 }
 void DrawWindow::set_sorts()
 {
-    QStringList list = {"Bubble sort","Selection sort","Merge sort"};
+    QStringList list = {"Bubble sort","Selection sort","Merge sort","Quick sort"};
     for(qsizetype i = 0; i < list.size();i++)
         ui->sorts_listWidget->addItem(list[i]);
 }
@@ -51,7 +51,7 @@ void DrawWindow::sort_array()
     break;
     case 2: sort.merge_sort(arr);
     break;
-    case 3:
+    case 3: sort.quick_sort(arr);
     break;
     case 4:
     break;
