@@ -3,12 +3,19 @@
 
 DrawWindow::DrawWindow(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::DrawWindow), timer(nullptr), index(0),
-    m_delay(100),view(nullptr),is_pause(false), is_stop(true),current_sort(0)
+    ui(new Ui::DrawWindow), timer(nullptr), index(0),current_array_index(-1),
+    m_delay(100),view(nullptr), is_pause(false), is_stop(true),current_sort(0)
 {
     ui->setupUi(this);
+    set_sorts();
     setWindowTitle("Sorting");
     set_timer();
+}
+void DrawWindow::set_sorts()
+{
+    QStringList list = {"Bubble sort","Selection sort","Merge sort"};
+    for(std::size_t i = 0; i < list.size();i++)
+        ui->sorts_listWidget->addItem(list[i]);
 }
 void DrawWindow::set_timer()
 {
@@ -38,11 +45,11 @@ void DrawWindow::sort_array()
 
     switch (current_sort)
     {
-    case 0: sort.merge_sort(arr);
+    case 0: sort.bubble_sort(arr);
     break;
     case 1: sort.selection_sort(arr);
     break;
-    case 2: sort.bubble_sort(arr);
+    case 2: sort.merge_sort(arr);
     break;
     case 3:
     break;
@@ -123,8 +130,10 @@ void DrawWindow::on_add_pushButton_clicked()
 void DrawWindow::on_remove_pushButton_clicked()
 {
     stop_draw();
-    qDeleteAll(ui->values_listWidget->selectedItems());
+    if(current_array_index == -1) return;
+    delete ui->values_listWidget->takeItem(current_array_index);
     ui->count_spinBox->setValue(ui->values_listWidget->count());
+    current_array_index =-1;
 }
 std::vector<int> DrawWindow::get_array()
 {
@@ -133,12 +142,7 @@ std::vector<int> DrawWindow::get_array()
         arr.push_back(ui->values_listWidget->item(i)->text().toInt());
     return arr;
 }
-/*void DrawWindow::on_random_pushButton_clicked()
-{
-    stop_draw();
-    qDeleteAll(ui->values_listWidget->selectedItems());
-    ui->count_spinBox->setValue(ui->values_listWidget->count());
-}*/ 
+
 void DrawWindow::on_random_pushButton_clicked()
 {
     stop_draw();
@@ -183,4 +187,9 @@ void DrawWindow::on_sorts_listWidget_currentRowChanged(int currentRow)
 {
     current_sort = currentRow;
     stop_draw();
+}
+
+void DrawWindow::on_values_listWidget_currentRowChanged(int currentRow)
+{
+    current_array_index = currentRow;
 }

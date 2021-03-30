@@ -35,11 +35,14 @@ private slots:
 
     void on_sorts_listWidget_currentRowChanged(int currentRow);
 
+    void on_values_listWidget_currentRowChanged(int currentRow);
+
 private:
     Ui::DrawWindow *ui;
     QTimer* timer;
     sc::SortClass<int> sort;
     std::size_t index;
+    int current_array_index;
     size_t m_delay;
     sd::MyGraphicsView<int>* view;
     bool is_pause;
@@ -52,6 +55,7 @@ private:
     void stop_draw();
     void pause_draw();
     void sort_array();
+    void set_sorts();
     std::vector<int> get_array();
 
 };
