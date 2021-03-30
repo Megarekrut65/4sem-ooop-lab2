@@ -41,7 +41,7 @@ namespace sd
     template<typename T>
     void MyGraphicsView<T>::pause_color()
     {
-        color = QColor("red");
+        color = QColor("yellow");
     }
     template<typename T>
     void MyGraphicsView<T>::start_color()
