@@ -131,6 +131,7 @@ void DrawWindow::on_remove_pushButton_clicked()
 {
     stop_draw();
     qDeleteAll(ui->values_listWidget->selectedItems());
+    ui->count_spinBox->setValue(ui->values_listWidget->count());
 }
 std::vector<int> DrawWindow::get_array()
 {
