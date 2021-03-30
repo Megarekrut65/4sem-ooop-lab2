@@ -3,7 +3,7 @@
 
 DrawWindow::DrawWindow(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::DrawWindow), timer(nullptr), index(0),current_array_index(-1),
+    ui(new Ui::DrawWindow), timer(nullptr), index(0),
     m_delay(100),view(nullptr), is_pause(false), is_stop(true),current_sort(0)
 {
     ui->setupUi(this);
@@ -14,7 +14,7 @@ DrawWindow::DrawWindow(QWidget *parent) :
 void DrawWindow::set_sorts()
 {
     QStringList list = {"Bubble sort","Selection sort","Merge sort"};
-    for(std::size_t i = 0; i < list.size();i++)
+    for(qsizetype i = 0; i < list.size();i++)
         ui->sorts_listWidget->addItem(list[i]);
 }
 void DrawWindow::set_timer()
@@ -130,10 +130,8 @@ void DrawWindow::on_add_pushButton_clicked()
 void DrawWindow::on_remove_pushButton_clicked()
 {
     stop_draw();
-    if(current_array_index == -1) return;
-    delete ui->values_listWidget->takeItem(current_array_index);
+    qDeleteAll(ui->values_listWidget->selectedItems());
     ui->count_spinBox->setValue(ui->values_listWidget->count());
-    current_array_index =-1;
 }
 std::vector<int> DrawWindow::get_array()
 {
@@ -187,9 +185,4 @@ void DrawWindow::on_sorts_listWidget_currentRowChanged(int currentRow)
 {
     current_sort = currentRow;
     stop_draw();
-}
-
-void DrawWindow::on_values_listWidget_currentRowChanged(int currentRow)
-{
-    current_array_index = currentRow;
 }
