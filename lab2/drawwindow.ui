@@ -112,7 +112,11 @@
      </layout>
     </item>
     <item>
-     <widget class="QListWidget" name="values_listWidget"/>
+     <widget class="QListWidget" name="values_listWidget">
+      <property name="editTriggers">
+       <set>QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::SelectedClicked</set>
+      </property>
+     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -160,21 +164,9 @@
     </item>
     <item>
      <widget class="QListWidget" name="sorts_listWidget">
-      <item>
-       <property name="text">
-        <string>Bubble sort</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Selection sort</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Merge sort</string>
-       </property>
-      </item>
+      <property name="editTriggers">
+       <set>QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::SelectedClicked</set>
+      </property>
      </widget>
     </item>
     <item>
