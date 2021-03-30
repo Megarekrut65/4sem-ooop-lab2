@@ -116,6 +116,9 @@
       <property name="editTriggers">
        <set>QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::SelectedClicked</set>
       </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::MultiSelection</enum>
+      </property>
      </widget>
     </item>
     <item>
