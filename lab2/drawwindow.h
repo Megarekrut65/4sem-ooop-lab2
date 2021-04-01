@@ -39,7 +39,6 @@ private:
     Ui::DrawWindow *ui;
     QTimer* timer;
     sc::SortClass<int> sort;
-    std::size_t index;
     size_t m_delay;
     sd::MyGraphicsView<int>* view;
     bool is_pause;

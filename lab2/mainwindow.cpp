@@ -11,14 +11,14 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    if(dw) delete dw;
     delete ui;
 }
 void MainWindow::startVisualization()
 {
     std::vector<int> arr = {1,7, 9, 12, 4, 8, 20, 55, 32, 48, 24, 19, 51, 39, 44, 10, 19, 22, 42,3,10,12,50,9,49,29,30,17};
-    for(std::size_t i = 0; i < 300; i++)
-        arr.push_back(rand()%100);
-    sort.merge_sort(arr);
+    sorts::quick_sort(arr);
+    qDebug(sorts::array_to_string(arr).c_str());
     dw = new DrawWindow();
     dw->show();
     this->hide();

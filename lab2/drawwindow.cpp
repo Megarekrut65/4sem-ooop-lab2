@@ -3,7 +3,7 @@
 
 DrawWindow::DrawWindow(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::DrawWindow), timer(nullptr), index(0),
+    ui(new Ui::DrawWindow), timer(nullptr),
     m_delay(100),view(nullptr), is_pause(false), is_stop(true),current_sort(0)
 {
     ui->setupUi(this);
@@ -13,7 +13,7 @@ DrawWindow::DrawWindow(QWidget *parent) :
 }
 void DrawWindow::set_sorts()
 {
-    QStringList list = {"Bubble sort","Selection sort","Merge sort"};
+    QStringList list = {"Bubble sort","Selection sort","Merge sort","Quick sort"};
     for(qsizetype i = 0; i < list.size();i++)
         ui->sorts_listWidget->addItem(list[i]);
 }
@@ -24,14 +24,13 @@ void DrawWindow::set_timer()
 }
 void DrawWindow::set_view()
 {
-    index = 0;
     sort.clear();
     m_delay = ui->delay_spinBox->value();
     sort_array();
     qreal width = 1000, height = 600;
     QString note = "delay: " + QString::number(m_delay) +
             "ms  ";
-    view = new sd::MyGraphicsView<int>(sort.name,note, sort.queue[0], width, height);
+    view = new sd::MyGraphicsView<int>(sort.name,note, sort.queue.current_state(), width, height);
     ui->graphicsView->setScene(view->get_scene());
     ui->graphicsView->setRenderHint(QPainter::Antialiasing);
     ui->graphicsView->setCacheMode(QGraphicsView::CacheBackground);
@@ -51,7 +50,7 @@ void DrawWindow::sort_array()
     break;
     case 2: sort.merge_sort(arr);
     break;
-    case 3:
+    case 3: sort.quick_sort(arr);
     break;
     case 4:
     break;
@@ -70,13 +69,16 @@ void DrawWindow::sort_array()
 void DrawWindow::draw()
 {
     if(is_pause || is_stop) return;
-    view->start_color();
+    view->set_start_color();
     bool the_end = false;
-    size_t percent = qreal(index + 1)/qreal(sort.queue.size()) * 100;
+    size_t percent = qreal(sort.queue.get_current_index() + 2)/qreal(sort.queue.size()) * 100;
+    if(percent > 100) percent = 100;
     QString text = "completed: " + QString::number(percent) + "%";
-    if(index == sort.queue.size() - 1) the_end = true;
-    if(index < sort.queue.size())
-        view->create_new_scene(sort.queue[index++],text,the_end);
+    if(sort.queue.is_next_end()) the_end = true;
+    if(sort.queue.size() == 1)
+         view->create_new_scene(sort.queue.current_state(),text,true);
+    auto state = sort.queue.next_state();
+    if(state) view->create_new_scene(state,text,the_end);
     else
     {
         is_stop = true;
@@ -109,8 +111,8 @@ void DrawWindow::pause_draw()
     timer->stop();
     if(view)
     {
-        view->pause_color();
-        view->create_new_scene(sort.queue[index],"Pause");
+        view->set_pause_color();
+        view->create_new_scene(sort.queue.current_state(),"Pause");
     }
 }
 DrawWindow::~DrawWindow()

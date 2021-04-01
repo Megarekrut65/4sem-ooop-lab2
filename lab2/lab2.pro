@@ -18,12 +18,15 @@ HEADERS += \
     Sorts/bubble_sort.h \
     Sorts/libraries_and_namespaces.h \
     Sorts/merge_sort.h \
+    Sorts/quick_sort.h \
     Sorts/selection_sort.h \
     Sorts/sort_diagram.h \
     diagram_builder.h \
     drawwindow.h \
     mainwindow.h \
+    memento_sorting.h \
     my_graphics_view.h \
+    originator_sorting.h \
     sort_class.h
 
 FORMS += \

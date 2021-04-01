@@ -2,28 +2,36 @@
 #define SORT_CLASS_H
 #include <vector>
 #include "my_graphics_view.h"
+#include "originator_sorting.h"
 #include <QTimer>
 #include <QMainWindow>
 /*!
 * SortClass
 */
 using namespace sorts;
+using namespace ms;
 namespace sc
 {
     template<typename T>
     class SortClass
     {
     private:
-        void display(std::vector<T>& arr);
+        void display(const std::vector<T>& arr);
+        void display(const std::vector<T>& arr, std::size_t mark_begin, std::size_t mark_end);
+        void display(const std::vector<T>& arr, std::size_t mark);
         void copy_to_array(std::vector<T>& arr, std::vector<T>& copy_arr, std::size_t begin, std::size_t size);
+
         void merge(std::vector<T>& arr, std::size_t begin, std::size_t middle, std::size_t end);
         void merge_sorting(std::vector<T>& arr, std::size_t begin, std::size_t end);
-        void add_to_queue(std::vector<T>& arr);
+
+        std::size_t partition(std::vector<T>& arr, long low, long high);
+        void quick_sorting(std::vector<T>& arr, long low, long high);
     public:
         QString name;
-        std::vector<std::vector<T>> queue;
+        OriginatorSorting<T> queue;
         SortClass();
         void merge_sort(std::vector<T>& arr);
+        void quick_sort(std::vector<T>& arr);
         void selection_sort(std::vector<T>& arr);
         void bubble_sort(std::vector<T>& arr);
         void clear();
@@ -31,6 +39,43 @@ namespace sc
 }
 namespace sc
 {
+    template<typename T>
+    std::size_t SortClass<T>::partition(std::vector<T>& arr, long low, long high)
+    {
+        T pivot = arr[high];
+        long i = low - 1;
+        for (long j = low; j < high; j++)
+        {
+            if (arr[j] <= pivot)
+            {
+                i++;
+                swap(arr[i], arr[j]);
+                display(arr, high);
+            }
+        }
+        swap(arr[i + 1], arr[high]);
+        display(arr,high);
+        return std::size_t(i + 1);
+    }
+    template<typename T>
+    void SortClass<T>::quick_sorting(std::vector<T>& arr, long low, long high)
+    {
+        if (low < high)
+        {
+            std::size_t index = partition(arr, low, high);
+            quick_sorting(arr, low, index - 1);
+            quick_sorting(arr, index + 1, high);
+        }
+    }
+    template<typename T>
+    void SortClass<T>::quick_sort(std::vector<T>& arr)
+    {
+        name = "Quick sort";
+        display(arr);
+        if(arr.size() < 2) return;
+        quick_sorting(arr, 0, arr.size() - 1);
+        display(arr);
+    }
     template<typename T>
     void SortClass<T>::clear()
     {
@@ -47,8 +92,9 @@ namespace sc
                 if(arr[j] > arr[j + 1])
                 {
                     swap(arr[j],arr[j+1]);
-                    display(arr);
+                    display(arr, j + 1);
                 }
+        display(arr);
     }
     template<typename T>
     void SortClass<T>::selection_sort(std::vector<T>& arr)
@@ -63,20 +109,30 @@ namespace sc
                     if (arr[j] < arr[min_index])
                             min_index = j;
             swap(arr[min_index], arr[i]);
-            display(arr);
+            display(arr, min_index);
         }
+        display(arr);
     }
     template<typename T>
     SortClass<T>::SortClass(): name("Sort"){}
     template<typename T>
-    void SortClass<T>::add_to_queue(std::vector<T>& arr)
+    void SortClass<T>::display(const std::vector<T>& arr, std::size_t mark_begin, std::size_t mark_end)
     {
-        queue.push_back(arr);
+        display(arr);
+        auto state = queue.last_state();
+        state->set_mark(mark_begin, mark_end);
     }
     template<typename T>
-    void SortClass<T>::display(std::vector<T>& arr)
+    void SortClass<T>::display(const std::vector<T>& arr, std::size_t mark)
     {
-        add_to_queue(arr);
+        display(arr);
+        auto state = queue.last_state();
+        state->set_mark(mark);
+    }
+    template<typename T>
+    void SortClass<T>::display(const std::vector<T>& arr)
+    {
+        queue.append_state(MementoSorting(arr));
     }
     template<typename T>
     void SortClass<T>::copy_to_array(std::vector<T>& arr, std::vector<T>& copy_arr, std::size_t begin, std::size_t size)
@@ -108,17 +164,17 @@ namespace sc
                 j++;
             }
             k++;
-            display(arr);
+            display(arr, begin, end - 1);
         }
         for (; i < left_size; i++, k++)
         {
             arr[k] = left_arr[i];
-            display(arr);
+            display(arr, begin, end - 1);
         }
         for (; j < right_size; j++, k++)
         {
             arr[k] = right_arr[j];
-            display(arr);
+            display(arr, begin, end - 1);
         }
     }
     template<typename T>
@@ -136,6 +192,7 @@ namespace sc
         name = "Merge sort";
         display(arr);
         merge_sorting(arr, 0, arr.size());
+        display(arr);
     }
 }
 #endif // SORT_CLASS_H
