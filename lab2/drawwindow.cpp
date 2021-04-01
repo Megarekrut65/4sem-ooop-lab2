@@ -10,6 +10,7 @@ DrawWindow::DrawWindow(QWidget *parent) :
     set_sorts();
     setWindowTitle("Sorting");
     set_timer();
+    set_visible_of_buttons(false);
 }
 void DrawWindow::set_sorts()
 {
@@ -30,6 +31,7 @@ void DrawWindow::set_view()
     qreal width = 1000, height = 600;
     QString note = "delay: " + QString::number(m_delay) +
             "ms  ";
+    if(view) view->clear();
     view = new sd::MyGraphicsView<int>(sort.name,note, sort.queue.current_state(), width, height);
     ui->graphicsView->setScene(view->get_scene());
     ui->graphicsView->setRenderHint(QPainter::Antialiasing);
@@ -66,25 +68,32 @@ void DrawWindow::sort_array()
     break;
     }
 }
+QString DrawWindow::create_precent(std::size_t index)
+{
+    size_t percent = qreal(index)/qreal(sort.queue.size()) * 100;
+    if(percent > 100) percent = 100;
+    QString text = "completed: " + QString::number(percent) + "%";
+    return text;
+}
+void DrawWindow::create_diagram(MementoSorting<int>* state, const QString& text)
+{
+    bool the_end = false;
+    if(sort.queue.is_end()) the_end = true;
+    if(state) view->create_new_scene(state,text,the_end);
+    ui->graphicsView->setScene(view->get_scene());
+}
 void DrawWindow::draw()
 {
     if(is_pause || is_stop) return;
     view->set_start_color();
-    bool the_end = false;
-    size_t percent = qreal(sort.queue.get_current_index() + 2)/qreal(sort.queue.size()) * 100;
-    if(percent > 100) percent = 100;
-    QString text = "completed: " + QString::number(percent) + "%";
-    if(sort.queue.is_next_end()) the_end = true;
-    if(sort.queue.size() == 1)
-         view->create_new_scene(sort.queue.current_state(),text,true);
-    auto state = sort.queue.next_state();
-    if(state) view->create_new_scene(state,text,the_end);
+    QString text = create_precent(sort.queue.get_current_index() + 2);
+    auto state = sort.queue.next_state(); 
+    if(state) create_diagram(state, text);
     else
     {
         is_stop = true;
         timer->stop();
     }
-    ui->graphicsView->setScene(view->get_scene());
 }
 void DrawWindow::start_draw()
 {
@@ -96,6 +105,7 @@ void DrawWindow::start_draw()
     is_stop = false;
     if(is_pause) is_pause = false;
     else return;
+    timer->stop();
     timer->start(m_delay);
 }
 void DrawWindow::stop_draw()
@@ -103,6 +113,7 @@ void DrawWindow::stop_draw()
     is_stop = true;
     timer->stop();
     if(view) view->clear();
+    set_visible_of_buttons(false);
 }
 void DrawWindow::pause_draw()
 {
@@ -171,6 +182,7 @@ void DrawWindow::on_inorder_pushButton_clicked()
 void DrawWindow::on_start_pushButton_clicked()
 {
     start_draw();
+    set_visible_of_buttons(true);
 }
 
 void DrawWindow::on_pause_Button_clicked()
@@ -188,3 +200,54 @@ void DrawWindow::on_sorts_listWidget_currentRowChanged(int currentRow)
     current_sort = currentRow;
     stop_draw();
 }
+
+void DrawWindow::on_pushButton_prev_clicked()
+{
+     pause_for_buttons();
+     if(sort.queue.get_current_index() <= 0) return;
+     auto state = sort.queue.prev_state();
+     QString text = create_precent(sort.queue.get_current_index());
+     if(state) create_diagram(state, text);
+}
+void DrawWindow::pause_for_buttons()
+{
+    is_stop = false;
+    is_pause = true;
+    timer->stop();
+    view->set_start_color();
+}
+void DrawWindow::on_pushButton_next_clicked()
+{
+     pause_for_buttons();
+     if(sort.queue.get_current_index() >= sort.queue.size()) return;
+     auto state = sort.queue.next_state();
+     std::size_t index = sort.queue.get_current_index();
+     if(sort.queue.is_end()) index++;
+     QString text = create_precent(index);
+     if(state) create_diagram(state, text);
+}
+
+void DrawWindow::on_pushButton_begin_clicked()
+{
+     pause_for_buttons();
+     auto state = sort.queue.to_begin();
+     QString text = create_precent(sort.queue.get_current_index());
+     if(state) create_diagram(state, text);
+}
+
+void DrawWindow::on_pushButton_end_clicked()
+{
+     pause_for_buttons();
+     auto state = sort.queue.to_end();
+     QString text = create_precent(sort.queue.get_current_index() + 1);
+     if(state) create_diagram(state, text);
+}
+void DrawWindow::set_visible_of_buttons(bool visible)
+{
+    ui->pushButton_begin->setEnabled(visible);
+    ui->pushButton_end->setEnabled(visible);
+    ui->pushButton_prev->setEnabled(visible);
+    ui->pushButton_next->setEnabled(visible);
+}
+
+

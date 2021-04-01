@@ -16,15 +16,29 @@ namespace ms
         MementoSorting<T>* next_state();
         MementoSorting<T>* prev_state();
         MementoSorting<T>* last_state();
+        MementoSorting<T>* to_end();
+        MementoSorting<T>* to_begin();
         void append_state(const MementoSorting<T>& state);
         void clear();
-        bool is_next_end();
+        bool is_end();
         std::size_t size();
         std::size_t get_current_index();
     };
 }
 namespace ms
 {
+    template<typename T>
+    MementoSorting<T>* OriginatorSorting<T>::to_end()
+    {
+        current_index = states.size() - 1;
+        return current_state();
+    }
+    template<typename T>
+    MementoSorting<T>* OriginatorSorting<T>::to_begin()
+    {
+        current_index = 0;
+        return current_state();
+    }
     template<typename T>
     std::size_t OriginatorSorting<T>::get_current_index()
     {
@@ -79,9 +93,9 @@ namespace ms
         current_index = 0;
     }
     template<typename T>
-    bool OriginatorSorting<T>::is_next_end()
+    bool OriginatorSorting<T>::is_end()
     {
-        return (current_index + 2 == states.size());
+        return (current_index + 1 == states.size());
     }
 }
 #endif // ORIGINATOR_SORTING_H
