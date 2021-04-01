@@ -91,7 +91,7 @@ namespace sd
         qreal diagram_height = height - 100;
         qreal diagram_width = width - 20;
         auto rect = new QGraphicsRectItem();
-        qreal item_height = qreal((value * diagram_height)/max_item);
+        qreal item_height = max_item > 0?qreal((value * diagram_height)/max_item):diagram_height;
         qreal column_width = diagram_width/size;
         if(column_width < 1) column_width = 1;
         rect->setRect(last_x,diagram_height - 10 - item_height,column_width,item_height);

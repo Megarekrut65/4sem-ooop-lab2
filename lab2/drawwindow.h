@@ -35,6 +35,14 @@ private slots:
 
     void on_sorts_listWidget_currentRowChanged(int currentRow);
 
+    void on_pushButton_prev_clicked();
+
+    void on_pushButton_end_clicked();
+
+    void on_pushButton_next_clicked();
+
+    void on_pushButton_begin_clicked();
+
 private:
     Ui::DrawWindow *ui;
     QTimer* timer;
@@ -52,6 +60,10 @@ private:
     void pause_draw();
     void sort_array();
     void set_sorts();
+    void pause_for_buttons();
+    void set_visible_of_buttons(bool visible);
+    QString create_precent(std::size_t index);
+    void create_diagram(MementoSorting<int>* state, const QString& text);
     std::vector<int> get_array();
 
 };

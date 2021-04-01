@@ -6,7 +6,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow), dw(nullptr)
 {
     ui->setupUi(this);
-    this->setFixedSize(800,600);    
+    this->setFixedSize(800,600);
+    setWindowTitle("Sorting");
+    QIcon icon("Images/main-icon.ico");
+    this->setWindowIcon(icon);
 }
 
 MainWindow::~MainWindow()
