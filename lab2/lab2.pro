@@ -24,7 +24,9 @@ HEADERS += \
     diagram_builder.h \
     drawwindow.h \
     mainwindow.h \
+    memento_sorting.h \
     my_graphics_view.h \
+    originator_sorting.h \
     sort_class.h
 
 FORMS += \
