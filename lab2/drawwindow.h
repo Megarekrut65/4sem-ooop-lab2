@@ -62,6 +62,7 @@ private:
     void set_sorts();
     void pause_for_buttons();
     void set_visible_of_buttons(bool visible);
+    void select_sort_in_list(std::size_t index_of_sort);
     QString create_precent(std::size_t index);
     void create_diagram(MementoSorting<int>* state, const QString& text);
     std::vector<int> get_array();
