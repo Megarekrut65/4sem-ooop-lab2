@@ -43,6 +43,9 @@ private slots:
 
     void on_pushButton_begin_clicked();
 
+
+    void on_back_pushButton_clicked();
+
 private:
     Ui::DrawWindow *ui;
     QTimer* timer;
@@ -66,6 +69,8 @@ private:
     void create_diagram(MementoSorting<int>* state, const QString& text);
     std::vector<int> get_array();
 
+signals:
+    void mainWindow();
 };
 
 #endif // DRAWWINDOW_H

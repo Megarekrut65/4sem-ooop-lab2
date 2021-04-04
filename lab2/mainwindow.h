@@ -24,6 +24,7 @@ private:
     Ui::MainWindow *ui;
     DrawWindow* dw;
 
+
     void startVisualization();
     void startDuration();
 };

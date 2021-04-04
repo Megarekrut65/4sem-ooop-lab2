@@ -253,3 +253,9 @@ void DrawWindow::set_visible_of_buttons(bool visible)
 }
 
 
+
+void DrawWindow::on_back_pushButton_clicked()
+{
+    emit mainWindow();
+    this->close();
+}
