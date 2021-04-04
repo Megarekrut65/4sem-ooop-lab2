@@ -4,35 +4,105 @@
 #include <QGraphicsView>
 #include <QGraphicsItem>
 /*!
-* Sort diagram
+* \brief Sort diagram
+*
+* Namespace for the classes needed to create a chart from an array
 */
 namespace sd
 {
+    /*!
+    * \brief Template class to build a diagram
+    *
+    * Used a pattern - builder. See [Builder](https://en.wikipedia.org/wiki/Builder_pattern "Information about this pattern in Wikipedia")
+    *
+    * Adds to diagram some columns and sone textes. You can edit the color of columns.
+    * Need to set maximum number of columns and maximun value of items to make correct diagram.
+    *
+    * Adds diagram to QGraphicsScene and you can take it using get_scene().
+    */
     template<typename T>
     class DiagramBuilder
     {
     private:
-        QGraphicsScene* scene;
-        const qreal height;
-        const qreal width;
-        qreal last_x;
-        size_t size;
-        T max_item;
-        QColor column_color;
-        QString description;
-        const size_t text_size;
+        QGraphicsScene* scene;/*!< Scene for diagram */
+        const qreal height;/*!< Height of diagram */
+        const qreal width;/*!< Width of diagram */
+        qreal last_x;/*!< X coordinate of last column */
+        size_t size;/*!< Max number of columns */
+        T max_item;/*!< Maximum value of all values in diagram */
+        QColor column_color;/*!< Color of column */
+        QString description;/*!< Text to add in diagram */
+        const size_t text_size;/*!< Maximum size of description. If size will be big then can not add more text */
+        /*!
+        * \brief Creates column by value
+        *
+        * \param value - value of item
+        * \returns column with height created by value
+        */
         QGraphicsRectItem* create_column(T value);
+        /*!
+        * \brief Creates text item
+        *
+        * \param text - text of item
+        * \param pos_x - x coordinate of item in diagram
+        * \param pos_y - y coordinate of item in diagram
+        * \param bold - if true then text will be bold
+        * \returns text item with these parameters
+        */
         QGraphicsTextItem* create_text(const QString& text, qreal pos_x, qreal pos_y,bool bold = false);
+        /*!
+        * \brief Adds the description to diagram
+        */
         void set_description();
+        /*!
+        * \brief Adds empty column to diagram
+        *
+        * For symmetry
+        */
         void add_empty_column();
     public:
-
+        /*!
+        * \brief Constructor to set importent parameters
+        *
+        * Need to set all parameters correctly.
+        *
+        * \param max_item - maximum value of item in diagram
+        * \param width - width of diagram
+        * \param height - height of diagram
+        * \param size - maximum number of items in diagram
+        */
         DiagramBuilder(T max_item, qreal width = 800, qreal height = 600, size_t size = 1);
+        /*!
+        *   \brief Adds column to end of diagram
+        *
+        *   \param value - value of item. Need to create height of column
+        */
         void append_column(T value);
+        /*!
+        *   \brief Adds text to description
+        *
+        *   In the end the description will be added to diagram
+        */
         void add_description(const QString& text);
+        /*!
+        *   \brief Adds all changes to diagram and returns scene with diagram
+        *
+        *   \returns scene with diagram
+        */
         QGraphicsScene* get_scene();
+        /*!
+        *   \brief Clears scene and all parameters
+        */
         void clear();
+        /*!
+        *   \brief Edits color of columns
+        *
+        *   \param column_color - new color of columns
+        */
         void set_color(QColor column_color);
+        /*!
+        *   \brief Deletes all pointers in this class
+        */
         ~DiagramBuilder();
     };
 }
