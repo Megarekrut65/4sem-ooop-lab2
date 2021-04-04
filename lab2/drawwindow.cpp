@@ -176,11 +176,43 @@ void DrawWindow::on_inorder_pushButton_clicked()
     }
     for(int i = 0; i < ui->count_spinBox->text().toInt(); i++)
     {
-        auto move_item = ui->values_listWidget->takeItem(i);
+        for(int j = 0; j < ui->count_spinBox->text().toInt(); j++)
+        {
+            auto move_item = ui->values_listWidget->takeItem(j);
+            ui->values_listWidget->insertItem(QRandomGenerator::global()->generate()%ui->count_spinBox->text().toInt(), move_item);
+        }
+    }
+}
+
+void DrawWindow::on_almostsorted_pushButton_clicked()
+{
+    stop_draw();
+    ui->values_listWidget->clear();
+    for(int i = 0; i < ui->count_spinBox->text().toInt(); i++)
+    {
+        ui->values_listWidget->addItem(QString::number(i));
+    }
+    for(int j = 0; j < ui->count_spinBox->text().toInt(); j++)
+    {
+        auto move_item = ui->values_listWidget->takeItem(j);
         ui->values_listWidget->insertItem(QRandomGenerator::global()->generate()%ui->count_spinBox->text().toInt(), move_item);
     }
 }
 
+void DrawWindow::on_almostsorted_rev_pushButton_clicked()
+{
+    stop_draw();
+    ui->values_listWidget->clear();
+    for(int i = ui->count_spinBox->text().toInt(); i >= 0; i--)
+    {
+        ui->values_listWidget->addItem(QString::number(i));
+    }
+    for(int j = 0; j < ui->count_spinBox->text().toInt(); j++)
+    {
+        auto move_item = ui->values_listWidget->takeItem(j);
+        ui->values_listWidget->insertItem(QRandomGenerator::global()->generate()%ui->count_spinBox->text().toInt(), move_item);
+    }
+}
 void DrawWindow::on_start_pushButton_clicked()
 {
     start_draw();
@@ -244,6 +276,7 @@ void DrawWindow::on_pushButton_end_clicked()
      QString text = create_precent(sort.queue.get_current_index() + 1);
      if(state) create_diagram(state, text);
 }
+
 void DrawWindow::set_visible_of_buttons(bool visible)
 {
     ui->pushButton_begin->setEnabled(visible);
@@ -252,10 +285,10 @@ void DrawWindow::set_visible_of_buttons(bool visible)
     ui->pushButton_next->setEnabled(visible);
 }
 
-
-
 void DrawWindow::on_back_pushButton_clicked()
 {
     emit mainWindow();
     this->close();
 }
+
+

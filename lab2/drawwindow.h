@@ -46,6 +46,10 @@ private slots:
 
     void on_back_pushButton_clicked();
 
+    void on_almostsorted_pushButton_clicked();
+
+    void on_almostsorted_rev_pushButton_clicked();
+
 private:
     Ui::DrawWindow *ui;
     QTimer* timer;
