@@ -4,19 +4,22 @@
 #include <QWidget>
 
 namespace Ui {
-class algorithmic_efficiency_window;
+class algorithms_efficiency_window;
 }
 
-class algorithmic_efficiency_window : public QWidget
+class algorithms_efficiency_window : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit algorithmic_efficiency_window(QWidget *parent = nullptr);
-    ~algorithmic_efficiency_window();
+    explicit algorithms_efficiency_window(QWidget *parent = nullptr);
+    ~algorithms_efficiency_window();
 
 private:
-    Ui::algorithmic_efficiency_window *ui;
+    Ui::algorithms_efficiency_window *ui;
+
+signals:
+    void mainWindow();
 };
 
 #endif // ALGORITHMS_EFFICIENCY_WINDOW_H

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QDebug>
 #include "drawwindow.h"
+#include "algorithms_efficiency_window.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,10 +21,12 @@ public:
 private slots:
     void on_visualizationButton_clicked();
 
+    void on_durationButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     DrawWindow* dw;
-
+    algorithms_efficiency_window* algEff_window;
 
     void startVisualization();
     void startDuration();

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>algorithmic_efficiency_window</class>
- <widget class="QWidget" name="algorithmic_efficiency_window">
+ <class>algorithms_efficiency_window</class>
+ <widget class="QWidget" name="algorithms_efficiency_window">
   <property name="windowModality">
    <enum>Qt::WindowModal</enum>
   </property>

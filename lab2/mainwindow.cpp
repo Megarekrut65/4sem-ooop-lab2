@@ -12,11 +12,15 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowIcon(icon);
     dw = new DrawWindow();
     QObject::connect(dw, &DrawWindow::mainWindow, this, &MainWindow::show);
+    algEff_window = new algorithms_efficiency_window();
+    QObject::connect(algEff_window, &algorithms_efficiency_window::mainWindow, this, &MainWindow::show);
+
 }
 
 MainWindow::~MainWindow()
 {
     if(dw) delete dw;
+    if(algEff_window) delete algEff_window;
     delete ui;
 }
 void MainWindow::startVisualization()
@@ -32,7 +36,9 @@ void MainWindow::on_visualizationButton_clicked()
 {
     //ui->centralwidget->setEnabled(false);
     //ui->centralwidget->setVisible(false);
-    startVisualization();
+    //startVisualization();
+    this->close();
+    dw->show();
     //ui->centralwidget->setEnabled(true);
     //ui->centralwidget->setVisible(true);
     /*ui->graphicsView->setEnabled(true);
@@ -40,4 +46,10 @@ void MainWindow::on_visualizationButton_clicked()
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->fitInView( ui->centralwidget->rect(), Qt::KeepAspectRatio );*/
+}
+
+void MainWindow::on_durationButton_clicked()
+{
+    this->close();
+    algEff_window->show();
 }
