@@ -19,6 +19,7 @@ void DrawWindow::set_sorts()
     QStringList list = {"Bubble sort","Selection sort","Merge sort","Quick sort"};
     for(qsizetype i = 0; i < list.size();i++)
         ui->sorts_listWidget->addItem(list[i]);
+    select_sort_in_list(0);
 }
 void DrawWindow::set_timer()
 {
@@ -228,10 +229,22 @@ void DrawWindow::on_stop_pushButton_clicked()
 {
     stop_draw();
 }
-
+void DrawWindow::select_sort_in_list(std::size_t index_of_sort)
+{
+    for(int i = 0; i < ui->sorts_listWidget->count();i++)
+    {
+        auto item = ui->sorts_listWidget->item(i);
+        item->setBackground(QColor("white"));
+        item->setForeground(QColor("black"));
+    }
+    auto item = ui->sorts_listWidget->item(index_of_sort);
+    item->setBackground(QColor("gray"));
+    item->setForeground(QColor("white"));
+}
 void DrawWindow::on_sorts_listWidget_currentRowChanged(int currentRow)
 {
     current_sort = currentRow;
+    select_sort_in_list(currentRow);
     stop_draw();
 }
 
