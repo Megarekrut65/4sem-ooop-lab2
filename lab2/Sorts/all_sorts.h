@@ -4,6 +4,7 @@
 #include "Sorts/merge_sort.h"
 #include "Sorts/bubble_sort.h"
 #include "Sorts/quick_sort.h"
+#include "Sorts/gnome_sort.h"
 /*!
 *   There are all headers with sort algorithm
 */

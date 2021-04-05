@@ -94,6 +94,18 @@ namespace sc
         */
         void bubble_sort(std::vector<T>& arr);
         /*!
+        *   \brief Sorts array
+        *
+        *   See sorts::gnome_sort.
+        */
+        void gnome_sort(std::vector<T>& arr);
+        /*!
+        *   \brief Sorts array
+        *
+        *   See sorts::cocktail_shaker_sort.
+        */
+        void cocktail_shaker_sort(std::vector<T>& arr);
+        /*!
         *   \brief Clears states
         */
         void clear();
@@ -248,6 +260,55 @@ namespace sc
         display(arr);
         merge_sorting(arr, 0, arr.size());
         display(arr);
+    }
+    template<typename T>
+    void SortClass<T>::gnome_sort(std::vector<T>& arr)
+    {
+        name = "Gnome sort";
+        display(arr);
+        for (size_t i = 1; i < arr.size(); )
+        {
+            if (arr[i] >= arr[i-1])
+            {
+                ++i;
+            }
+            else
+            {
+                swap(arr[i], arr[i-1]);
+                display(arr, i, i - 1);
+               // arr.swap(i, i-1);
+                if (i > 1) --i;
+            }
+        }
+    }
+
+    template<typename T>
+    void SortClass<T>::cocktail_shaker_sort(std::vector<T> &arr)
+    {
+        size_t lo = 0, hi = arr.size() - 1, mov = lo;
+            while (lo < hi)
+            {
+                for (size_t i = hi; i > lo; --i)
+                {
+                    if (arr[i-1] > arr[i])
+                    {
+                        swap(arr[i-1], arr[i]);
+                        display(arr, i - 1, i);
+                        mov = i;
+                    }
+                }
+                lo = mov;
+                for (size_t i = lo; i < hi; ++i)
+                {
+                    if (arr[i] > arr[i+1])
+                    {
+                        swap(arr[i], arr[i + 1]);
+                        display(arr, i, i + 1);
+                        mov = i;
+                    }
+                }
+                hi = mov;
+            }
     }
 }
 #endif // SORT_CLASS_H

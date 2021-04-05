@@ -19,6 +19,8 @@ SOURCES += \
 HEADERS += \
     Sorts/all_sorts.h \
     Sorts/bubble_sort.h \
+    Sorts/cocktailshaker_sort.h \
+    Sorts/gnome_sort.h \
     Sorts/libraries_and_namespaces.h \
     Sorts/merge_sort.h \
     Sorts/quick_sort.h \
