@@ -2,17 +2,39 @@
 #define MEMENTO_SORTING_H
 #include "Sorts/libraries_and_namespaces.h"
 /*!
-*   Memento of sorting
+*   \brief Memento of sorting
+*
+*   Namespace to save states of sorting
 */
 namespace ms
 {
+    /*!
+    * \brief Template struct to union numbers and their marks
+    *
+    * Used a pattern - memento. See [Memento](https://en.wikipedia.org/wiki/Memento_pattern "Information about this pattern in Wikipedia")
+    */
     template<typename T>
     struct MementoSorting
     {
-        std::vector<T> array;
-        std::vector<bool> marks;
+        std::vector<T> array;/*!< Array of numbers */
+        std::vector<bool> marks;/*!< Marks of numbers in array */
+        /*!
+        *   \brief Sets array and create marks with false
+        */
         MementoSorting(const std::vector<T>& array);
+        /*!
+        *   \brief Changes marks to true from begin to end
+        *
+        *   If these indexes is incorrect then do nothing
+        *   \param begin - index of begin item
+        *   \param end - index of end item
+        */
         void set_mark(std::size_t begin, std::size_t end);
+        /*!
+        * \brief Changes marks[index] to true
+        *
+        * \param index - index of item
+        */
         void set_mark(std::size_t index);
     };
 }

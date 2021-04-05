@@ -74,28 +74,141 @@ $(function() {
 <div class="title">ms::MementoSorting&lt; T &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Template struct to union numbers and their marks.  
+ <a href="structms_1_1_memento_sorting.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="memento__sorting_8h_source.html">memento_sorting.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae0a8dfb963c7d5338d48df1ef5664a50"><td class="memItemLeft" align="right" valign="top"><a id="ae0a8dfb963c7d5338d48df1ef5664a50"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MementoSorting</b> (const std::vector&lt; T &gt; &amp;array)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structms_1_1_memento_sorting.html#ae0a8dfb963c7d5338d48df1ef5664a50">MementoSorting</a> (const std::vector&lt; T &gt; &amp;<a class="el" href="structms_1_1_memento_sorting.html#ae75964d9dec90b83eeabb533ee179bbc">array</a>)</td></tr>
+<tr class="memdesc:ae0a8dfb963c7d5338d48df1ef5664a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets array and create marks with false. <br /></td></tr>
 <tr class="separator:ae0a8dfb963c7d5338d48df1ef5664a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97edaa7f507d9ab2ee26bc5ab004a030"><td class="memItemLeft" align="right" valign="top"><a id="a97edaa7f507d9ab2ee26bc5ab004a030"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_mark</b> (std::size_t begin, std::size_t end)</td></tr>
+<tr class="memitem:a97edaa7f507d9ab2ee26bc5ab004a030"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structms_1_1_memento_sorting.html#a97edaa7f507d9ab2ee26bc5ab004a030">set_mark</a> (std::size_t begin, std::size_t end)</td></tr>
+<tr class="memdesc:a97edaa7f507d9ab2ee26bc5ab004a030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes marks to true from begin to end.  <a href="#a97edaa7f507d9ab2ee26bc5ab004a030">More...</a><br /></td></tr>
 <tr class="separator:a97edaa7f507d9ab2ee26bc5ab004a030"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e1e96ea515b3354f104097cf2ec6bad"><td class="memItemLeft" align="right" valign="top"><a id="a9e1e96ea515b3354f104097cf2ec6bad"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_mark</b> (std::size_t index)</td></tr>
+<tr class="memitem:a9e1e96ea515b3354f104097cf2ec6bad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structms_1_1_memento_sorting.html#a9e1e96ea515b3354f104097cf2ec6bad">set_mark</a> (std::size_t index)</td></tr>
+<tr class="memdesc:a9e1e96ea515b3354f104097cf2ec6bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes marks[index] to true.  <a href="#a9e1e96ea515b3354f104097cf2ec6bad">More...</a><br /></td></tr>
 <tr class="separator:a9e1e96ea515b3354f104097cf2ec6bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae75964d9dec90b83eeabb533ee179bbc"><td class="memItemLeft" align="right" valign="top"><a id="ae75964d9dec90b83eeabb533ee179bbc"></a>
-std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>array</b></td></tr>
+<tr class="memitem:ae75964d9dec90b83eeabb533ee179bbc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structms_1_1_memento_sorting.html#ae75964d9dec90b83eeabb533ee179bbc">array</a></td></tr>
 <tr class="separator:ae75964d9dec90b83eeabb533ee179bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae68248cf54aa8c5bc98f0dc56d8e1916"><td class="memItemLeft" align="right" valign="top"><a id="ae68248cf54aa8c5bc98f0dc56d8e1916"></a>
-std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>marks</b></td></tr>
+<tr class="memitem:ae68248cf54aa8c5bc98f0dc56d8e1916"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structms_1_1_memento_sorting.html#ae68248cf54aa8c5bc98f0dc56d8e1916">marks</a></td></tr>
 <tr class="separator:ae68248cf54aa8c5bc98f0dc56d8e1916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+struct ms::MementoSorting&lt; T &gt;</h3>
+
+<p>Template struct to union numbers and their marks. </p>
+<p>Used a pattern - memento. See <a href="https://en.wikipedia.org/wiki/Memento_pattern" title="Information about this pattern in Wikipedia">Memento</a> </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a97edaa7f507d9ab2ee26bc5ab004a030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97edaa7f507d9ab2ee26bc5ab004a030">&#9670;&nbsp;</a></span>set_mark() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structms_1_1_memento_sorting.html">ms::MementoSorting</a>&lt; T &gt;::set_mark </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Changes marks to true from begin to end. </p>
+<p>If these indexes is incorrect then do nothing </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>- index of begin item </td></tr>
+    <tr><td class="paramname">end</td><td>- index of end item </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9e1e96ea515b3354f104097cf2ec6bad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e1e96ea515b3354f104097cf2ec6bad">&#9670;&nbsp;</a></span>set_mark() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structms_1_1_memento_sorting.html">ms::MementoSorting</a>&lt; T &gt;::set_mark </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Changes marks[index] to true. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>- index of item </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae75964d9dec90b83eeabb533ee179bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae75964d9dec90b83eeabb533ee179bbc">&#9670;&nbsp;</a></span>array</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;T&gt; <a class="el" href="structms_1_1_memento_sorting.html">ms::MementoSorting</a>&lt; T &gt;::array</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Array of numbers </p>
+
+</div>
+</div>
+<a id="ae68248cf54aa8c5bc98f0dc56d8e1916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae68248cf54aa8c5bc98f0dc56d8e1916">&#9670;&nbsp;</a></span>marks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;bool&gt; <a class="el" href="structms_1_1_memento_sorting.html">ms::MementoSorting</a>&lt; T &gt;::marks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Marks of numbers in array </p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>C:/Users/User81/source/repos/Megarekrut65/4sem-ooop-lab2.git/lab2/<a class="el" href="memento__sorting_8h_source.html">memento_sorting.h</a></li>
 </ul>
