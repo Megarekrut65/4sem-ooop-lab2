@@ -5,10 +5,11 @@
 #include <QTimer>
 #include <QTextEdit>
 #include <QRandomGenerator>
-#include "sort_class.h"
 #include <QDateTime>
 #include <QFile>
+#include <QShortcut>
 #include "filepath.h"
+#include "sort_class.h"
 
 namespace Ui {
 class DrawWindow;
@@ -55,6 +56,16 @@ private slots:
 
     void on_almostsorted_rev_pushButton_clicked();
 
+    void slotShortcutF5();
+
+    void slotShortcutShiftF5();
+
+    void slotShortcutCtrlP();
+
+    void slotShortcutPrev();
+
+    void slotShortcutNext();
+
 private:
     Ui::DrawWindow *ui;/*!< Pointer to ui */
     QTimer* timer;/*!< Timer to call drawing */
@@ -66,6 +77,11 @@ private:
     qreal width;/*!< Width of diagram */
     qreal height;/*!< Height of diagram */
     std::size_t current_sort;/*!< Index of current sort algorithm */
+    QShortcut * keyF5;/*!< Object shortcut keys F5 (Start) */
+    QShortcut * keyShiftF5;/*!< Object shortcut keys Shift + F5 (Stop) */
+    QShortcut * keyCtrlP;/*!< Object shortcut keys Ctrl + P (Pause) */
+    QShortcut * keyPrev;/*!< Object shortcut keys Ctrl + P (Previous state) */
+    QShortcut * keyNext;/*!< Object shortcut keys Ctrl + P (Next state) */
     /*!
     *   \brief Sets all parameters for timer
     */

@@ -15,6 +15,36 @@ DrawWindow::DrawWindow(QWidget *parent) :
     set_timer();
     set_visible_of_buttons(false);
     check_log_file();
+
+    keyF5 = new QShortcut(this);
+    keyF5->setKey(QKeySequence::fromString("F5"));
+
+    keyShiftF5 = new QShortcut(this);
+    keyShiftF5->setKey(QKeySequence::fromString("Shift+F5"));
+
+    keyCtrlP = new QShortcut(this);
+    keyCtrlP->setKey(QKeySequence::fromString("Ctrl+P"));
+
+    keyPrev = new QShortcut(this);
+    keyPrev->setKey(QKeySequence::fromString("Left"));
+
+    keyNext = new QShortcut(this);
+    keyNext->setKey(QKeySequence::fromString("Right"));
+
+    connect(keyF5, SIGNAL(activated()), this, SLOT(slotShortcutF5()));
+    connect(keyShiftF5, SIGNAL(activated()), this, SLOT(slotShortcutShiftF5()));
+    connect(keyCtrlP, SIGNAL(activated()), this, SLOT(slotShortcutCtrlP()));
+    connect(keyPrev, SIGNAL(activated()), this, SLOT(slotShortcutPrev()));
+    connect(keyNext, SIGNAL(activated()), this, SLOT(slotShortcutNext()));
+}
+DrawWindow::~DrawWindow()
+{
+    if(view) delete view;
+    if(timer) delete timer;
+    delete keyF5;
+    delete keyShiftF5;
+    delete keyCtrlP;
+    delete ui;
 }
 void DrawWindow::set_sorts()
 {
@@ -134,12 +164,6 @@ void DrawWindow::pause_draw()
         view->create_new_scene(sort.queue.current_state(),"Pause");
     }
 }
-DrawWindow::~DrawWindow()
-{
-    if(view) delete view;
-    if(timer) delete timer;
-    delete ui;
-}
 
 void DrawWindow::on_add_pushButton_clicked()
 {
@@ -234,6 +258,42 @@ void DrawWindow::on_almostsorted_rev_pushButton_clicked()
         ui->values_listWidget->insertItem(QRandomGenerator::global()->generate()%(size - index) + index, move_item);
     }
     create_static_diagram(get_array());
+}
+
+void DrawWindow::slotShortcutF5()
+{
+    start_draw();
+    set_visible_of_buttons(true);
+}
+
+void DrawWindow::slotShortcutShiftF5()
+{
+    stop_draw();
+}
+
+void DrawWindow::slotShortcutCtrlP()
+{
+    pause_draw();
+}
+
+void DrawWindow::slotShortcutPrev()
+{
+    pause_for_buttons();
+    if(sort.queue.get_current_index() <= 0) return;
+    auto state = sort.queue.prev_state();
+    QString text = create_precent(sort.queue.get_current_index());
+    if(state) create_diagram(state, text);
+}
+
+void DrawWindow::slotShortcutNext()
+{
+    pause_for_buttons();
+    if(sort.queue.get_current_index() >= sort.queue.size()) return;
+    auto state = sort.queue.next_state();
+    std::size_t index = sort.queue.get_current_index();
+    if(sort.queue.is_end()) index++;
+    QString text = create_precent(index);
+    if(state) create_diagram(state, text);
 }
 void DrawWindow::on_start_pushButton_clicked()
 {
