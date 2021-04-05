@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['width',['width',['../classsd_1_1_diagram_builder.html#a3cd0124538262b32c92402ee0f61c591',1,'sd::DiagramBuilder']]]
+  ['note',['note',['../classsd_1_1_my_graphics_view.html#aba618d29b370948c8beb0795cd3c8a4a',1,'sd::MyGraphicsView']]]
 ];
