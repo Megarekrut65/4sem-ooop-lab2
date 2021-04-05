@@ -1,28 +1,6 @@
 var searchData=
 [
-  ['sc',['sc',['../namespacesc.html',1,'']]],
-  ['scene',['scene',['../classsd_1_1_diagram_builder.html#a291de9120354de3a16cbfe2d69faef54',1,'sd::DiagramBuilder']]],
-  ['sd',['sd',['../namespacesd.html',1,'']]],
-  ['select_5fsort_5fin_5flist',['select_sort_in_list',['../class_draw_window.html#a659d3060e0ea56ffdfff2b57ac0325ca',1,'DrawWindow']]],
-  ['selection_5fsort',['selection_sort',['../classsc_1_1_sort_class.html#a76c53d8c8ceb6a56c79c3317901a89b9',1,'sc::SortClass::selection_sort()'],['../namespacesorts.html#a1c54ba89fa83d0001ae558e1f9d51e57',1,'sorts::selection_sort()']]],
-  ['set_5fcolor',['set_color',['../classsd_1_1_diagram_builder.html#a9a18860392305d9ad74c5320a9884b71',1,'sd::DiagramBuilder']]],
-  ['set_5fdescription',['set_description',['../classsd_1_1_diagram_builder.html#ad350b7b354b521eb6b77625c9bc82105',1,'sd::DiagramBuilder']]],
-  ['set_5fmark',['set_mark',['../structms_1_1_memento_sorting.html#a97edaa7f507d9ab2ee26bc5ab004a030',1,'ms::MementoSorting::set_mark(std::size_t begin, std::size_t end)'],['../structms_1_1_memento_sorting.html#a9e1e96ea515b3354f104097cf2ec6bad',1,'ms::MementoSorting::set_mark(std::size_t index)']]],
-  ['set_5fpause_5fcolor',['set_pause_color',['../classsd_1_1_my_graphics_view.html#ac31b266cde08770d8259dd463286660d',1,'sd::MyGraphicsView']]],
-  ['set_5fsorts',['set_sorts',['../class_draw_window.html#a00d46322cbde73ab94bf82933cc14981',1,'DrawWindow']]],
-  ['set_5fstart_5fcolor',['set_start_color',['../classsd_1_1_my_graphics_view.html#a6d715ae7e5d4432ddb0cd768e527dcea',1,'sd::MyGraphicsView']]],
-  ['set_5ftimer',['set_timer',['../class_draw_window.html#a0f467e1efe7ba839bd6f477cf495d982',1,'DrawWindow']]],
-  ['set_5fview',['set_view',['../class_draw_window.html#a205da1fa2639de8b39bec9e37b978903',1,'DrawWindow']]],
-  ['set_5fvisible_5fof_5fbuttons',['set_visible_of_buttons',['../class_draw_window.html#ac2b3f966e92630637bd263ea10751db5',1,'DrawWindow']]],
-  ['show',['show',['../classsd_1_1_my_graphics_view.html#a393bec15ed2c6d16c0cd3ccb77504018',1,'sd::MyGraphicsView']]],
-  ['size',['size',['../classsd_1_1_diagram_builder.html#a4236d7a70f510d8d11e69179df6ee0ea',1,'sd::DiagramBuilder::size()'],['../classms_1_1_originator_sorting.html#aefbc3c016204ddaa62cb0f94a3dc0787',1,'ms::OriginatorSorting::size()']]],
-  ['sort',['sort',['../class_draw_window.html#af97e76a575b0985120445fd22f01fb45',1,'DrawWindow']]],
-  ['sort_5farray',['sort_array',['../class_draw_window.html#a75cdb9eafeae0cafb8296a3008d87bea',1,'DrawWindow']]],
-  ['sortclass',['SortClass',['../classsc_1_1_sort_class.html',1,'sc::SortClass&lt; T &gt;'],['../classsc_1_1_sort_class.html#aa6852057ccdb4a6d8e1f6011ee2c6e82',1,'sc::SortClass::SortClass()']]],
-  ['sortclass_3c_20int_20_3e',['SortClass&lt; int &gt;',['../classsc_1_1_sort_class.html',1,'sc']]],
-  ['sorts',['sorts',['../namespacesorts.html',1,'']]],
-  ['start_5fdraw',['start_draw',['../class_draw_window.html#a08bd6bdb618ecb66d7622f85b3b23ac7',1,'DrawWindow']]],
-  ['states',['states',['../classms_1_1_originator_sorting.html#aeeac496571a52e8c3ef9f4f5483f34a0',1,'ms::OriginatorSorting']]],
-  ['stop_5fdraw',['stop_draw',['../class_draw_window.html#a543d78b63278dc5abaf2d5beebff66fc',1,'DrawWindow']]],
-  ['swap',['swap',['../namespacesorts.html#ac146cd916234316b9cf70f3c9b22df8f',1,'sorts']]]
+  ['queue',['queue',['../classsc_1_1_sort_class.html#aa49cfb44e32da05ca9fe1c8acd86aa18',1,'sc::SortClass']]],
+  ['quick_5fsort',['quick_sort',['../classsc_1_1_sort_class.html#aeef68b3bbfa3fa7e5cb556084361b11e',1,'sc::SortClass::quick_sort()'],['../namespacesorts.html#a7dde5488791e053902c2c7dddf55d1eb',1,'sorts::quick_sort()']]],
+  ['quick_5fsorting',['quick_sorting',['../classsc_1_1_sort_class.html#a79ba2200c6a52a85dcc94387077898ab',1,'sc::SortClass::quick_sorting()'],['../namespacesorts.html#a5c1574da24e1422956f16a5b25eeea8c',1,'sorts::quick_sorting()']]]
 ];
