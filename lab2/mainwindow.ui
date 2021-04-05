@@ -83,8 +83,23 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuInfo">
+    <property name="title">
+     <string>Info</string>
+    </property>
+    <addaction name="actionAbout_sort_algorithms"/>
+   </widget>
+   <addaction name="menuInfo"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAbout_sort_algorithms">
+   <property name="text">
+    <string>About sort algorithms</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

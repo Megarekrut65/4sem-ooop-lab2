@@ -329,4 +329,3 @@ void DrawWindow::check_log_file()
         FilePath::clear_file(FilePath::sorting_diagram_log_file);
     }
 }
-
