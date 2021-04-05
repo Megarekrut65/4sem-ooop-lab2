@@ -10,11 +10,17 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Sorting");
     QIcon icon("Images/main-icon.ico");
     this->setWindowIcon(icon);
+    dw = new DrawWindow();
+    QObject::connect(dw, &DrawWindow::mainWindow, this, &MainWindow::show);
+    algEff_window = new algorithms_efficiency_window();
+    QObject::connect(algEff_window, &algorithms_efficiency_window::mainWindow, this, &MainWindow::show);
+
 }
 
 MainWindow::~MainWindow()
 {
     if(dw) delete dw;
+    if(algEff_window) delete algEff_window;
     delete ui;
 }
 void MainWindow::startVisualization()
@@ -22,19 +28,28 @@ void MainWindow::startVisualization()
     std::vector<int> arr = {1,7, 9, 12, 4, 8, 20, 55, 32, 48, 24, 19, 51, 39, 44, 10, 19, 22, 42,3,10,12,50,9,49,29,30,17};
     sorts::quick_sort(arr);
     qDebug(sorts::array_to_string(arr).c_str());
-    dw = new DrawWindow();
+    this->close();
     dw->show();
-    this->hide();
 }
 
 void MainWindow::on_visualizationButton_clicked()
 {
-    ui->verticalWidget->setEnabled(false);
-    ui->verticalWidget->setVisible(false);
-    startVisualization();
+    //ui->centralwidget->setEnabled(false);
+    //ui->centralwidget->setVisible(false);
+    //startVisualization();
+    this->close();
+    dw->show();
+    //ui->centralwidget->setEnabled(true);
+    //ui->centralwidget->setVisible(true);
     /*ui->graphicsView->setEnabled(true);
     ui->graphicsView->setScene(view->get_scene());
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->fitInView( ui->centralwidget->rect(), Qt::KeepAspectRatio );*/
+}
+
+void MainWindow::on_durationButton_clicked()
+{
+    this->close();
+    algEff_window->show();
 }

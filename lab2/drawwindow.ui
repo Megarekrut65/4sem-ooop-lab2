@@ -62,10 +62,10 @@
   <widget class="QFrame" name="verticalFrame">
    <property name="geometry">
     <rect>
-     <x>1010</x>
-     <y>10</y>
-     <width>211</width>
-     <height>581</height>
+     <x>1000</x>
+     <y>0</y>
+     <width>225</width>
+     <height>600</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -97,7 +97,7 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <widget class="QPushButton" name="random_pushButton">
         <property name="text">
@@ -108,7 +108,21 @@
       <item>
        <widget class="QPushButton" name="inorder_pushButton">
         <property name="text">
-         <string>In order</string>
+         <string>In order mixed</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="almostsorted_pushButton">
+        <property name="text">
+         <string>Almost sorted(in order)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="almostsorted_rev_pushButton">
+        <property name="text">
+         <string>Almost sorted(in reverse order)</string>
         </property>
        </widget>
       </item>
@@ -286,6 +300,19 @@ selection-background-color:rgb(154, 255, 138);</string>
      </layout>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="back_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>540</y>
+     <width>51</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
   </widget>
  </widget>
  <resources/>

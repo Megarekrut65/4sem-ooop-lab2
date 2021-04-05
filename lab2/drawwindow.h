@@ -43,6 +43,13 @@ private slots:
 
     void on_pushButton_begin_clicked();
 
+
+    void on_back_pushButton_clicked();
+
+    void on_almostsorted_pushButton_clicked();
+
+    void on_almostsorted_rev_pushButton_clicked();
+
 private:
     Ui::DrawWindow *ui;/*!< Pointer to ui */
     QTimer* timer;/*!< Timer to call drawing */
@@ -110,6 +117,8 @@ private:
     *   \brief Returns array from ui list
     */
     std::vector<int> get_array();
+signals:
+    void mainWindow();
 };
 
 #endif // DRAWWINDOW_H
