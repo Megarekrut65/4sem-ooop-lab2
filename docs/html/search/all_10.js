@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['view',['view',['../classsd_1_1_my_graphics_view.html#a350c8694be5f8daa7d211c497b09ff75',1,'sd::MyGraphicsView']]]
+  ['ui',['ui',['../class_draw_window.html#ad0f38bd9289d262d1f4e3b88d48dec91',1,'DrawWindow']]]
 ];

@@ -6,8 +6,11 @@ var searchData=
   ['column_5fcolor',['column_color',['../classsd_1_1_diagram_builder.html#a775a1f15328a30a64d1c5593ca56579f',1,'sd::DiagramBuilder']]],
   ['copy_5fto_5farray',['copy_to_array',['../namespacesorts.html#a1908596a25945a152880f8d3d02c3cc1',1,'sorts']]],
   ['create_5fcolumn',['create_column',['../classsd_1_1_diagram_builder.html#a9f1c0a60e67af428c3834c0d31c5815c',1,'sd::DiagramBuilder']]],
+  ['create_5fdiagram',['create_diagram',['../class_draw_window.html#abceb68b913b39fe079c541e4adce03e6',1,'DrawWindow']]],
   ['create_5fnew_5fscene',['create_new_scene',['../classsd_1_1_my_graphics_view.html#a483e38f88c2ff5bca47df44d4d4b499d',1,'sd::MyGraphicsView']]],
+  ['create_5fprecent',['create_precent',['../class_draw_window.html#a183499a7f7ba9c328554c66627422ec2',1,'DrawWindow']]],
   ['create_5ftext',['create_text',['../classsd_1_1_diagram_builder.html#aafc0ce0cc3e671d791a1ece98332c09f',1,'sd::DiagramBuilder']]],
   ['current_5findex',['current_index',['../classms_1_1_originator_sorting.html#a9ff6ab1858b35b084cea4adf45300067',1,'ms::OriginatorSorting']]],
+  ['current_5fsort',['current_sort',['../class_draw_window.html#aee8cffdf3633c96fac46aa3f707b90f4',1,'DrawWindow']]],
   ['current_5fstate',['current_state',['../classms_1_1_originator_sorting.html#adf1b8909f8b52d12da0f370f641671a7',1,'ms::OriginatorSorting']]]
 ];

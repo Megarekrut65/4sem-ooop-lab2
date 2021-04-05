@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['get_5farray',['get_array',['../class_draw_window.html#a54e8f774e9b39816ee219eb3befe567e',1,'DrawWindow']]],
   ['get_5fcurrent_5findex',['get_current_index',['../classms_1_1_originator_sorting.html#a958e333e98d016479ca69f9c5bca5e50',1,'ms::OriginatorSorting']]],
   ['get_5fmax',['get_max',['../namespacesorts.html#ace5b1b78a0c4a22fb88253c154b76c03',1,'sorts']]],
   ['get_5fmin',['get_min',['../namespacesorts.html#af8eb67664a840a59d3c45bd3d5a24e98',1,'sorts']]],
