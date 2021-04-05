@@ -48,7 +48,8 @@ DrawWindow::~DrawWindow()
 }
 void DrawWindow::set_sorts()
 {
-    QStringList list = {"Bubble sort","Selection sort","Merge sort","Quick sort", "Gnome sort", "Cocktail shaker sort"};
+    QStringList list = {"Bubble sort","Selection sort","Merge sort","Quick sort", "Gnome sort", "Cocktail shaker sort",
+                       "Odd-even sort", "Comb sort"};
     for(qsizetype i = 0; i < list.size();i++)
         ui->sorts_listWidget->addItem(list[i]);
     select_sort_in_list(0);
@@ -95,13 +96,9 @@ void DrawWindow::sort_array()
     break;
     case 5: sort.cocktail_shaker_sort(arr);
     break;
-    case 6:
+    case 6: sort.odd_even_sort(arr);
     break;
-    case 7:
-    break;
-    case 8:
-    break;
-    case 9:
+    case 7: sort.comb_sort(arr);
     break;
     }
     append_to_file();

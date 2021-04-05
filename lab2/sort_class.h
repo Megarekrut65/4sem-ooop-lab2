@@ -106,6 +106,18 @@ namespace sc
         */
         void cocktail_shaker_sort(std::vector<T>& arr);
         /*!
+        *   \brief Sorts array
+        *
+        *   See sorts::odd_even_sort.
+        */
+        void odd_even_sort(std::vector<T>& arr);
+        /*!
+        *   \brief Sorts array
+        *
+        *   See sorts::comb_sort.
+        */
+        void comb_sort(std::vector<T>& arr);
+        /*!
         *   \brief Clears states
         */
         void clear();
@@ -309,6 +321,64 @@ namespace sc
                 }
                 hi = mov;
             }
+    }
+
+    template<typename T>
+    void SortClass<T>::odd_even_sort(std::vector<T> &arr)
+    {
+        bool sorted = false;
+            while (!sorted)
+            {
+                sorted = true;
+
+                for (size_t i = 1; i < arr.size()-1; i += 2)
+                {
+                    if(arr[i] > arr[i+1])
+                    {
+                        swap(arr[i], arr[i+1]);
+                        display(arr, i, i + 1);
+                        sorted = false;
+                    }
+                }
+
+                for (size_t i = 0; i < arr.size()-1; i += 2)
+                {
+                    if(arr[i] > arr[i+1])
+                    {
+                        swap(arr[i], arr[i+1]);
+                        display(arr, i, i + 1);
+                        sorted = false;
+                    }
+                }
+            }
+    }
+
+    template<typename T>
+    void SortClass<T>::comb_sort(std::vector<T> &arr)
+    {
+        const double shrink = 1.3;
+
+        bool swapped = false;
+        size_t gap = arr.size();
+
+        while ((gap > 1) || swapped)
+        {
+            if (gap > 1) {
+                gap = (size_t)((float)gap / shrink);
+            }
+
+            swapped = false;
+
+            for (size_t i = 0; gap + i < arr.size(); ++i)
+            {
+                if (arr[i] > arr[i + gap])
+                {
+                    swap(arr[i], arr[i+gap]);
+                    display(arr, i, i+gap);
+                    swapped = true;
+                }
+            }
+        }
     }
 }
 #endif // SORT_CLASS_H

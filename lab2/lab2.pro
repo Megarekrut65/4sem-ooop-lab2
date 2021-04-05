@@ -20,12 +20,13 @@ HEADERS += \
     Sorts/all_sorts.h \
     Sorts/bubble_sort.h \
     Sorts/cocktailshaker_sort.h \
+    Sorts/comb_sort.h \
     Sorts/gnome_sort.h \
     Sorts/libraries_and_namespaces.h \
     Sorts/merge_sort.h \
+    Sorts/odd_even_sort.h \
     Sorts/quick_sort.h \
     Sorts/selection_sort.h \
-    Sorts/sort_diagram.h \
     aboutalgorithm.h \
     algorithms_efficiency_window.h \
     diagram_builder.h \
