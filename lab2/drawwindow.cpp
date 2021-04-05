@@ -4,13 +4,14 @@
 DrawWindow::DrawWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DrawWindow), timer(nullptr),
-    m_delay(100),view(nullptr), is_pause(false), is_stop(true),current_sort(0)
+    m_delay(100),view(nullptr), is_pause(false), is_stop(true),width(1000), height(600), current_sort(0)
 {
     ui->setupUi(this);
     set_sorts();
     setWindowTitle("Sorting diagram");
     QIcon icon("Images/diagram-icon.ico");
     this->setWindowIcon(icon);
+    set_graphics_view();
     set_timer();
     set_visible_of_buttons(false);
     check_log_file();
@@ -27,22 +28,24 @@ void DrawWindow::set_timer()
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &DrawWindow::draw);
 }
-void DrawWindow::set_view()
+void DrawWindow::set_graphics_view()
 {
-    sort.clear();
-    m_delay = ui->delay_spinBox->value();
-    sort_array();
-    qreal width = 1000, height = 600;
-    QString note = "delay: " + QString::number(m_delay) +
-            "ms  ";
-    if(view) view->clear();
-    view = new sd::MyGraphicsView<int>(sort.name,note, sort.queue.current_state(), width, height);
-    ui->graphicsView->setScene(view->get_scene());
     ui->graphicsView->setRenderHint(QPainter::Antialiasing);
     ui->graphicsView->setCacheMode(QGraphicsView::CacheBackground);
     ui->graphicsView->setBaseSize(width,height);
     ui->graphicsView->setMinimumSize(width,height);
     ui->graphicsView->setMaximumSize(width,height);
+}
+void DrawWindow::set_view()
+{
+    sort.clear();
+    m_delay = ui->delay_spinBox->value();
+    sort_array();
+    QString note = "delay: " + QString::number(m_delay) +
+            "ms  ";
+    if(view) view->clear();
+    view = new sd::MyGraphicsView<int>(sort.name,note, sort.queue.current_state(), width, height);
+    ui->graphicsView->setScene(view->get_scene());  
 }
 void DrawWindow::sort_array()
 {
@@ -167,6 +170,7 @@ void DrawWindow::on_random_pushButton_clicked()
     {
          ui->values_listWidget->addItem(QString::number(QRandomGenerator::global()->generate()%32000));
     }
+    create_static_diagram(get_array());
 }
 
 void DrawWindow::on_inorder_pushButton_clicked()
@@ -185,36 +189,51 @@ void DrawWindow::on_inorder_pushButton_clicked()
             ui->values_listWidget->insertItem(QRandomGenerator::global()->generate()%ui->count_spinBox->text().toInt(), move_item);
         }
     }
+    create_static_diagram(get_array());
 }
-
+void DrawWindow::create_static_diagram(const std::vector<int>& arr)
+{
+    if(arr.size() == 0) return;
+    auto state = new MementoSorting<int>(arr);
+    if(view) view->clear();
+    view = new sd::MyGraphicsView<int>("","", state, width, height);
+    ui->graphicsView->setScene(view->get_scene());
+    delete state;
+}
 void DrawWindow::on_almostsorted_pushButton_clicked()
 {
     stop_draw();
     ui->values_listWidget->clear();
-    for(int i = 0; i < ui->count_spinBox->text().toInt(); i++)
+    int size = ui->count_spinBox->text().toInt();
+    for(int i = 0; i < size; i++)
     {
         ui->values_listWidget->addItem(QString::number(i));
     }
-    for(int j = 0; j < ui->count_spinBox->text().toInt(); j++)
+    int index = (8*size)/10;//80% of item will be inorder
+    for(int j = index; j < size; j++)
     {
         auto move_item = ui->values_listWidget->takeItem(j);
-        ui->values_listWidget->insertItem(QRandomGenerator::global()->generate()%ui->count_spinBox->text().toInt(), move_item);
+        ui->values_listWidget->insertItem(QRandomGenerator::global()->generate()%(size - index) + index, move_item);
     }
+    create_static_diagram(get_array());
 }
 
 void DrawWindow::on_almostsorted_rev_pushButton_clicked()
 {
     stop_draw();
     ui->values_listWidget->clear();
-    for(int i = ui->count_spinBox->text().toInt(); i >= 0; i--)
+    int size = ui->count_spinBox->text().toInt();
+    for(int i = size - 1; i >= 0; i--)
     {
         ui->values_listWidget->addItem(QString::number(i));
     }
-    for(int j = 0; j < ui->count_spinBox->text().toInt(); j++)
+    int index = (8*size)/10;//80% of item will be preorder
+    for(int j = index; j < size; j++)
     {
         auto move_item = ui->values_listWidget->takeItem(j);
-        ui->values_listWidget->insertItem(QRandomGenerator::global()->generate()%ui->count_spinBox->text().toInt(), move_item);
+        ui->values_listWidget->insertItem(QRandomGenerator::global()->generate()%(size - index) + index, move_item);
     }
+    create_static_diagram(get_array());
 }
 void DrawWindow::on_start_pushButton_clicked()
 {
@@ -248,6 +267,7 @@ void DrawWindow::on_sorts_listWidget_currentRowChanged(int currentRow)
     current_sort = currentRow;
     select_sort_in_list(currentRow);
     stop_draw();
+    create_static_diagram(get_array());
 }
 
 void DrawWindow::on_pushButton_prev_clicked()
