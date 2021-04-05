@@ -7,23 +7,20 @@ namespace sorts
     template<typename T>
     void merge_sort(std::vector<T>& arr);
     template<typename T>
-    void copy_to_array(std::vector<T>& arr, std::vector<T>& copy_arr, std::size_t begin, std::size_t size);
-    template<typename T>
     void merge(std::vector<T>& arr, std::size_t begin, std::size_t middle, std::size_t end);
     template<typename T>
     void merge_sorting(std::vector<T>& arr, std::size_t begin, std::size_t end);
 }
 namespace sorts
 {
-    template<typename T>
-    void copy_to_array(std::vector<T>& arr, std::vector<T>& copy_arr, std::size_t begin, std::size_t size)
-    {
-        copy_arr.clear();
-        for (std::size_t i = 0; i < size; i++)
-        {
-            copy_arr.push_back(arr[begin + i]);
-        }
-    }
+    /*!
+    *   \brief Merges two arrays to one
+    *
+    *   \param arr - array of numbers
+    *   \param begin - begin index of firts array
+    *   \param middle - end index of firts and begin index of second arrays
+    *   \param end - end index of second array
+    */
     template<typename T>
     void merge(std::vector<T>& arr, std::size_t begin, std::size_t middle, std::size_t end)
     {
@@ -49,6 +46,13 @@ namespace sorts
         for (; i < left_size; i++, k++) arr[k] = left_arr[i];
         for (; j < right_size; j++, k++) arr[k] = right_arr[j];
     }
+    /*!
+    *   \brief Sorts part of array
+    *
+    *   \param arr - array of numbers
+    *   \param begin - index of begin item
+    *   \param end - index of end item
+    */
     template<typename T>
     void merge_sorting(std::vector<T>& arr, std::size_t begin, std::size_t end)
     {
@@ -58,6 +62,12 @@ namespace sorts
         merge_sorting(arr, middle, end);
         merge(arr, begin, middle, end);
     }
+    /*!
+    *   \brief Sorts array
+    *
+    *   Top-down implementation.
+    *   See [Merge sort.](https://en.wikipedia.org/wiki/Merge_sort "Information about this algorithm in Wikipedia")
+    */
     template<typename T>
     void merge_sort(std::vector<T>& arr)
     {

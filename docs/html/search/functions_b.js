@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['to_5fbegin',['to_begin',['../classms_1_1_originator_sorting.html#a050b1c20461c0a7ca6bf32f4df1d70e1',1,'ms::OriginatorSorting']]],
-  ['to_5fend',['to_end',['../classms_1_1_originator_sorting.html#a5dae547885ee80f78bd5fab425393fa0',1,'ms::OriginatorSorting']]]
+  ['quick_5fsort',['quick_sort',['../namespacesorts.html#a7dde5488791e053902c2c7dddf55d1eb',1,'sorts']]],
+  ['quick_5fsorting',['quick_sorting',['../namespacesorts.html#a5c1574da24e1422956f16a5b25eeea8c',1,'sorts']]]
 ];

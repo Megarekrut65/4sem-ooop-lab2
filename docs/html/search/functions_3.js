@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['get_5fcurrent_5findex',['get_current_index',['../classms_1_1_originator_sorting.html#a958e333e98d016479ca69f9c5bca5e50',1,'ms::OriginatorSorting']]],
-  ['get_5fscene',['get_scene',['../classsd_1_1_diagram_builder.html#ad5ba72caada4d08f756b5bb5793c7047',1,'sd::DiagramBuilder::get_scene()'],['../classsd_1_1_my_graphics_view.html#afcc3c7dfea478b508695e2df6f52a2c7',1,'sd::MyGraphicsView::get_scene()']]],
-  ['get_5fview',['get_view',['../classsd_1_1_my_graphics_view.html#af7b613f36baa94b138d0e7cf5c0b8948',1,'sd::MyGraphicsView']]]
+  ['diagrambuilder',['DiagramBuilder',['../classsd_1_1_diagram_builder.html#a8a7f66891366a584adc5c1eac392a2a0',1,'sd::DiagramBuilder']]],
+  ['display',['display',['../classsc_1_1_sort_class.html#a2e2913f9ac43509b0a4fdd2ba337b435',1,'sc::SortClass::display(const std::vector&lt; T &gt; &amp;arr)'],['../classsc_1_1_sort_class.html#a0ff9ecce0d3cb527517d091d6caabbac',1,'sc::SortClass::display(const std::vector&lt; T &gt; &amp;arr, std::size_t mark_begin, std::size_t mark_end)'],['../classsc_1_1_sort_class.html#ac6d97a622a2c1319323a1787a1becc19',1,'sc::SortClass::display(const std::vector&lt; T &gt; &amp;arr, std::size_t mark)']]]
 ];

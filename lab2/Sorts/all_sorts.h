@@ -4,4 +4,7 @@
 #include "Sorts/merge_sort.h"
 #include "Sorts/bubble_sort.h"
 #include "Sorts/quick_sort.h"
+/*!
+*   There are all headers with sort algorithm
+*/
 #endif // ALL_SORTS_H

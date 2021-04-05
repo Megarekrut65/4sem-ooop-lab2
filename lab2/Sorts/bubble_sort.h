@@ -4,6 +4,11 @@
 
 namespace sorts
 {
+    /*!
+    *   \brief Sorts array
+    *
+    *   See [Bubble sort.](https://en.wikipedia.org/wiki/Bubble_sort "Information about this algorithm in Wikipedia")
+    */
     template<typename T>
     void bubble_sort(std::vector<T>& arr);
 }
