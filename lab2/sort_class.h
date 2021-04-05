@@ -34,7 +34,7 @@ namespace sc
         /*!
         *   \brief Adds array(state of sorting) to queue and marks some items
         *
-        *   \param array - state of sorting
+        *   \param arr - state of sorting
         *   \param mark_begin - index of begin item to mark
         *   \param mark_end - index of end item to mark
         */
@@ -42,7 +42,7 @@ namespace sc
         /*!
         *   \brief Adds array(state of sorting) to queue and mark the item
         *
-        *   \param array - state of sorting
+        *   \param arr - state of sorting
         *   \param mark - index of item to mark
         */
         void display(const std::vector<T>& arr, std::size_t mark);
