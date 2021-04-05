@@ -39,19 +39,19 @@ void AboutAlgorithm::on_comboBox_activated(int index)
 }
 QString AboutAlgorithm::about_merge()
 {
-    return "There is merge";
+    return "Merge sort works as follows: Divide the unsorted array into n sub-arrays, each containing one element (an array of one element is considered sorted). Repeatedly merge sub-arrays to produce new sorted sub-array until there is only one subarray remaining.";
 }
 QString AboutAlgorithm::about_bubble()
 {
-    return "There is bubble";
+    return "Bubble sort is a simple sorting algorithm that repeatedly steps through the array, compares adjacent elements and swaps them if they are in the wrong order. The pass through the array is repeated until the array is sorted.";
 }
 QString AboutAlgorithm::about_quick()
 {
-    return "There is quick";
+    return "Quicksort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively.";
 }
 QString AboutAlgorithm::about_selection()
 {
-    return "There is selection";
+    return "Selection sort is a simple sorting algorithm. The smallest element is selected from the unsorted array and swapped with the leftmost element, and that element becomes a part of the sorted array. This process continues moving unsorted array boundary by one element to the right.";
 }
 void AboutAlgorithm::set_names_of_sorts()
 {

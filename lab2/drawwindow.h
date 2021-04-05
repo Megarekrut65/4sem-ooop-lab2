@@ -13,7 +13,9 @@
 namespace Ui {
 class DrawWindow;
 }
-
+/*!
+*   \brief Window class to present diagram created by sorting states
+*/
 class DrawWindow : public QDialog
 {
     Q_OBJECT
@@ -46,7 +48,6 @@ private slots:
     void on_pushButton_next_clicked();
 
     void on_pushButton_begin_clicked();
-
 
     void on_back_pushButton_clicked();
 
