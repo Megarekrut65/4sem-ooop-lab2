@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['sortclass',['SortClass',['../classsc_1_1_sort_class.html',1,'sc']]],
-  ['sortclass_3c_20int_20_3e',['SortClass&lt; int &gt;',['../classsc_1_1_sort_class.html',1,'sc']]]
+  ['mainwindow',['MainWindow',['../class_main_window.html',1,'']]],
+  ['mementosorting',['MementoSorting',['../structms_1_1_memento_sorting.html',1,'ms']]],
+  ['mygraphicsview',['MyGraphicsView',['../classsd_1_1_my_graphics_view.html',1,'sd']]],
+  ['mygraphicsview_3c_20int_20_3e',['MyGraphicsView&lt; int &gt;',['../classsd_1_1_my_graphics_view.html',1,'sd']]]
 ];

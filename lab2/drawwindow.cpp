@@ -13,6 +13,7 @@ DrawWindow::DrawWindow(QWidget *parent) :
     this->setWindowIcon(icon);
     set_timer();
     set_visible_of_buttons(false);
+    check_log_file();
 }
 void DrawWindow::set_sorts()
 {
@@ -70,6 +71,7 @@ void DrawWindow::sort_array()
     case 9:
     break;
     }
+    append_to_file();
 }
 QString DrawWindow::create_precent(std::size_t index)
 {
@@ -303,5 +305,28 @@ void DrawWindow::on_back_pushButton_clicked()
     emit mainWindow();
     this->close();
 }
-
+void DrawWindow::append_to_file()
+{
+    QFile file(FilePath::sorting_diagram_log_file.c_str());
+    if (file.open(QIODevice::WriteOnly | QIODevice::Append))
+    {
+        QDateTime now = QDateTime::currentDateTime();
+        file.write((now.toString("-[yyyy-MM-dd, HH:mm:ss]")+ " ").toStdString().c_str());
+        std::vector<int> arr = sort.queue.current_state()->array;
+        std::vector<int>& sorted_arr = sort.queue.last_state()->array;
+        file.write((sort.name.toStdString() + ", array(" + std::to_string(arr.size())+"): {").c_str());
+        file.write((array_to_string(arr)+ "}, ").c_str());
+        file.write(("sorted array(" + std::to_string(sorted_arr.size())+"): {").c_str());
+        file.write((array_to_string(sorted_arr)+ "};\r\n").c_str());
+    }
+    file.close();
+}
+void DrawWindow::check_log_file()
+{
+    std::size_t sizef = FilePath::count_size(FilePath::sorting_diagram_log_file);
+    if(sizef > 1024*1024)
+    {
+        FilePath::clear_file(FilePath::sorting_diagram_log_file);
+    }
+}
 

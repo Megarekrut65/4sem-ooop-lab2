@@ -6,6 +6,10 @@
 #include <QTextEdit>
 #include <QRandomGenerator>
 #include "sort_class.h"
+#include <QDateTime>
+#include <QFile>
+#include "filepath.h"
+
 namespace Ui {
 class DrawWindow;
 }
@@ -117,6 +121,14 @@ private:
     *   \brief Returns array from ui list
     */
     std::vector<int> get_array();
+    /*!
+    *   \brief Adds to log file array and sorted one
+    */
+    void append_to_file();
+    /*!
+    *   \brief If size of log file will be most 1 mb then clear file
+    */
+    void check_log_file();
 signals:
     void mainWindow();
 };
