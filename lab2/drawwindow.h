@@ -62,6 +62,8 @@ private:
     sd::MyGraphicsView<int>* view;/*!< Class to create diagram by array */
     bool is_pause;/*!< True if drawing is paused */
     bool is_stop;/*!< True if drawing is stoped */
+    qreal width;/*!< Width of diagram */
+    qreal height;/*!< Height of diagram */
     std::size_t current_sort;/*!< Index of current sort algorithm */
     /*!
     *   \brief Sets all parameters for timer
@@ -71,6 +73,10 @@ private:
     *   \brief Sets all parameters for view
     */
     void set_view();
+    /*!
+    *   \brief Sets all parameters for graphics view
+    */
+    void set_graphics_view();
     /*!
     *   \brief Draws current state of sorting
     */
@@ -129,6 +135,10 @@ private:
     *   \brief If size of log file will be most 1 mb then clear file
     */
     void check_log_file();
+    /*!
+    *   \brief Creates diagram by arr
+    */
+    void create_static_diagram(const std::vector<int>& arr);
 signals:
     void mainWindow();
 };
