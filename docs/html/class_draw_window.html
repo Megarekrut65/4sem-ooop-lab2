@@ -20,10 +20,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="main-icon.ico"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Lab2
    &#160;<span id="projectnumber">1.0</span>
    </div>
+   <div id="projectbrief">Implemented visualization of sorting algorithms and measuring their running time</div>
   </td>
  </tr>
  </tbody>
@@ -73,6 +75,11 @@ $(function() {
 <div class="title">DrawWindow Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Window class to present diagram created by sorting states.  
+ <a href="class_draw_window.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="drawwindow_8h_source.html">drawwindow.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for DrawWindow:</div>
 <div class="dyncontent">
@@ -152,6 +159,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_window.html#a205da1fa2639de8b39bec9e37b978903">set_view</a> ()</td></tr>
 <tr class="memdesc:a205da1fa2639de8b39bec9e37b978903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all parameters for view. <br /></td></tr>
 <tr class="separator:a205da1fa2639de8b39bec9e37b978903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d0e39427805554a1619fed03ae328dd"><td class="memItemLeft" align="right" valign="top"><a id="a9d0e39427805554a1619fed03ae328dd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_window.html#a9d0e39427805554a1619fed03ae328dd">set_graphics_view</a> ()</td></tr>
+<tr class="memdesc:a9d0e39427805554a1619fed03ae328dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all parameters for graphics view. <br /></td></tr>
+<tr class="separator:a9d0e39427805554a1619fed03ae328dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5472e262e363714adde1769f56d6d6c"><td class="memItemLeft" align="right" valign="top"><a id="aa5472e262e363714adde1769f56d6d6c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_window.html#aa5472e262e363714adde1769f56d6d6c">draw</a> ()</td></tr>
 <tr class="memdesc:aa5472e262e363714adde1769f56d6d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws current state of sorting. <br /></td></tr>
@@ -207,6 +218,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_window.html#af24b0b4e54b9cc4330dc444463037f2b">check_log_file</a> ()</td></tr>
 <tr class="memdesc:af24b0b4e54b9cc4330dc444463037f2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">If size of log file will be most 1 mb then clear file. <br /></td></tr>
 <tr class="separator:af24b0b4e54b9cc4330dc444463037f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3527a7461e8ae3babb4b5d4bc113114"><td class="memItemLeft" align="right" valign="top"><a id="aa3527a7461e8ae3babb4b5d4bc113114"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_window.html#aa3527a7461e8ae3babb4b5d4bc113114">create_static_diagram</a> (const std::vector&lt; int &gt; &amp;arr)</td></tr>
+<tr class="memdesc:aa3527a7461e8ae3babb4b5d4bc113114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates diagram by arr. <br /></td></tr>
+<tr class="separator:aa3527a7461e8ae3babb4b5d4bc113114"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -224,10 +239,16 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ada7560dbc64dcfa28489ed82afc63e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad812485f73efc78fe1ca00ac7c9c869"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_window.html#aad812485f73efc78fe1ca00ac7c9c869">is_stop</a></td></tr>
 <tr class="separator:aad812485f73efc78fe1ca00ac7c9c869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38383d235af4c03b14a020a40e4315ef"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_window.html#a38383d235af4c03b14a020a40e4315ef">width</a></td></tr>
+<tr class="separator:a38383d235af4c03b14a020a40e4315ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7cab04bf9154cfe2d0919f918f2347d"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_window.html#ab7cab04bf9154cfe2d0919f918f2347d">height</a></td></tr>
+<tr class="separator:ab7cab04bf9154cfe2d0919f918f2347d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee8cffdf3633c96fac46aa3f707b90f4"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_draw_window.html#aee8cffdf3633c96fac46aa3f707b90f4">current_sort</a></td></tr>
 <tr class="separator:aee8cffdf3633c96fac46aa3f707b90f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Window class to present diagram created by sorting states. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac2b3f966e92630637bd263ea10751db5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac2b3f966e92630637bd263ea10751db5">&#9670;&nbsp;</a></span>set_visible_of_buttons()</h2>
 
@@ -283,6 +304,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Index of current sort algorithm </p>
+
+</div>
+</div>
+<a id="ab7cab04bf9154cfe2d0919f918f2347d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7cab04bf9154cfe2d0919f918f2347d">&#9670;&nbsp;</a></span>height</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal DrawWindow::height</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Height of diagram </p>
 
 </div>
 </div>
@@ -444,6 +488,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Class to create diagram by array </p>
+
+</div>
+</div>
+<a id="a38383d235af4c03b14a020a40e4315ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38383d235af4c03b14a020a40e4315ef">&#9670;&nbsp;</a></span>width</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal DrawWindow::width</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Width of diagram </p>
 
 </div>
 </div>

@@ -27,7 +27,7 @@ private slots:
     void on_actionAbout_sort_algorithms_triggered();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *ui;/*!< Pointer to ui */
     DrawWindow* dw;
     AboutAlgorithm* about;
     algorithms_efficiency_window* algEff_window;
