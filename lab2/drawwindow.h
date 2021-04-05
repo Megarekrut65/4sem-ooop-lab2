@@ -6,6 +6,10 @@
 #include <QTextEdit>
 #include <QRandomGenerator>
 #include "sort_class.h"
+#include <QDateTime>
+#include <QFile>
+#include "filepath.h"
+
 namespace Ui {
 class DrawWindow;
 }
@@ -117,6 +121,8 @@ private:
     *   \brief Returns array from ui list
     */
     std::vector<int> get_array();
+    void append_to_file();
+    void check_log_file();
 signals:
     void mainWindow();
 };

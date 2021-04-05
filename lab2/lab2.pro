@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     algorithms_efficiency_window.cpp \
     drawwindow.cpp \
+    filepath.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -25,6 +26,7 @@ HEADERS += \
     algorithms_efficiency_window.h \
     diagram_builder.h \
     drawwindow.h \
+    filepath.h \
     mainwindow.h \
     memento_sorting.h \
     my_graphics_view.h \
@@ -46,4 +48,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     Images/diagram-icon.ico \
-    Images/main-icon.ico
+    Images/main-icon.ico \
+    Logs/sorting_diagram_log.txt
