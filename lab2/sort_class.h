@@ -12,7 +12,7 @@ using namespace ms;
 /*!
 * \brief Sort Class
 *
-* Namespace for class SortClass
+* Namespace for class SortClass.
 */
 namespace sc
 {
@@ -47,19 +47,19 @@ namespace sc
         */
         void display(const std::vector<T>& arr, std::size_t mark);
         /*!
-        *
+        *   See sorts::merge().
         */
         void merge(std::vector<T>& arr, std::size_t begin, std::size_t middle, std::size_t end);
         /*!
-        *
+        *   See sorts::merge_sorting().
         */
         void merge_sorting(std::vector<T>& arr, std::size_t begin, std::size_t end);
         /*!
-        *
+        *   See sorts::partition().
         */
         std::size_t partition(std::vector<T>& arr, long low, long high);
         /*!
-        *
+        *   See sorts::quick_sorting().
         */
         void quick_sorting(std::vector<T>& arr, long low, long high);
     public:
@@ -70,19 +70,27 @@ namespace sc
         */
         SortClass();
         /*!
+        *   \brief Sorts array
         *
+        *   See sorts::merge_sort().
         */
         void merge_sort(std::vector<T>& arr);
         /*!
+        *   \brief Sorts array
         *
+        *   See sorts::quick_sort().
         */
         void quick_sort(std::vector<T>& arr);
         /*!
+        *   \brief Sorts array
         *
+        *   See sorts::selection_sort().
         */
         void selection_sort(std::vector<T>& arr);
         /*!
+        *   \brief Sorts array
         *
+        *   See sorts::bubble_sort.
         */
         void bubble_sort(std::vector<T>& arr);
         /*!
