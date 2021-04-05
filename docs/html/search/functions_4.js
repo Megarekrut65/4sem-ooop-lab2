@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['set_5fcolor',['set_color',['../classsd_1_1_diagram_builder.html#a9a18860392305d9ad74c5320a9884b71',1,'sd::DiagramBuilder']]],
-  ['set_5fdescription',['set_description',['../classsd_1_1_diagram_builder.html#ad350b7b354b521eb6b77625c9bc82105',1,'sd::DiagramBuilder']]]
+  ['get_5fcurrent_5findex',['get_current_index',['../classms_1_1_originator_sorting.html#a958e333e98d016479ca69f9c5bca5e50',1,'ms::OriginatorSorting']]],
+  ['get_5fmax',['get_max',['../namespacesorts.html#ace5b1b78a0c4a22fb88253c154b76c03',1,'sorts']]],
+  ['get_5fmin',['get_min',['../namespacesorts.html#af8eb67664a840a59d3c45bd3d5a24e98',1,'sorts']]],
+  ['get_5fscene',['get_scene',['../classsd_1_1_diagram_builder.html#ad5ba72caada4d08f756b5bb5793c7047',1,'sd::DiagramBuilder::get_scene()'],['../classsd_1_1_my_graphics_view.html#afcc3c7dfea478b508695e2df6f52a2c7',1,'sd::MyGraphicsView::get_scene()']]],
+  ['get_5fview',['get_view',['../classsd_1_1_my_graphics_view.html#af7b613f36baa94b138d0e7cf5c0b8948',1,'sd::MyGraphicsView']]]
 ];

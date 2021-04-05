@@ -5,35 +5,97 @@
 #include "originator_sorting.h"
 #include <QTimer>
 #include <QMainWindow>
-/*!
-* SortClass
-*/
+
 using namespace sorts;
 using namespace ms;
+
+/*!
+* \brief Sort Class
+*
+* Namespace for class SortClass.
+*/
 namespace sc
 {
+    /*!
+    *   \brief Template class to save all states of sorting
+    *
+    *   State will be added to queue when space of the item will be changed.
+    *   If algorithm uses addition container(array, list, heap) to sort then this algorithm can not be added to this class
+    *   (count sort, heap sort...).
+    */
     template<typename T>
     class SortClass
     {
     private:
+        /*!
+        *   \brief Adds array(state of sorting) to queue
+        */
         void display(const std::vector<T>& arr);
+        /*!
+        *   \brief Adds array(state of sorting) to queue and marks some items
+        *
+        *   \param array - state of sorting
+        *   \param mark_begin - index of begin item to mark
+        *   \param mark_end - index of end item to mark
+        */
         void display(const std::vector<T>& arr, std::size_t mark_begin, std::size_t mark_end);
+        /*!
+        *   \brief Adds array(state of sorting) to queue and mark the item
+        *
+        *   \param array - state of sorting
+        *   \param mark - index of item to mark
+        */
         void display(const std::vector<T>& arr, std::size_t mark);
-        void copy_to_array(std::vector<T>& arr, std::vector<T>& copy_arr, std::size_t begin, std::size_t size);
-
+        /*!
+        *   See sorts::merge().
+        */
         void merge(std::vector<T>& arr, std::size_t begin, std::size_t middle, std::size_t end);
+        /*!
+        *   See sorts::merge_sorting().
+        */
         void merge_sorting(std::vector<T>& arr, std::size_t begin, std::size_t end);
-
+        /*!
+        *   See sorts::partition().
+        */
         std::size_t partition(std::vector<T>& arr, long low, long high);
+        /*!
+        *   See sorts::quick_sorting().
+        */
         void quick_sorting(std::vector<T>& arr, long low, long high);
     public:
-        QString name;
-        OriginatorSorting<T> queue;
+        QString name;/*!< Name of sort */
+        OriginatorSorting<T> queue;/*!< Queue for all states of sorting */
+        /*!
+        *   \brief Creates object with empty queue
+        */
         SortClass();
+        /*!
+        *   \brief Sorts array
+        *
+        *   See sorts::merge_sort().
+        */
         void merge_sort(std::vector<T>& arr);
+        /*!
+        *   \brief Sorts array
+        *
+        *   See sorts::quick_sort().
+        */
         void quick_sort(std::vector<T>& arr);
+        /*!
+        *   \brief Sorts array
+        *
+        *   See sorts::selection_sort().
+        */
         void selection_sort(std::vector<T>& arr);
+        /*!
+        *   \brief Sorts array
+        *
+        *   See sorts::bubble_sort.
+        */
         void bubble_sort(std::vector<T>& arr);
+        /*!
+        *   \brief Clears states
+        */
         void clear();
     };
 }
@@ -135,15 +197,6 @@ namespace sc
     void SortClass<T>::display(const std::vector<T>& arr)
     {
         queue.append_state(MementoSorting(arr));
-    }
-    template<typename T>
-    void SortClass<T>::copy_to_array(std::vector<T>& arr, std::vector<T>& copy_arr, std::size_t begin, std::size_t size)
-    {
-        copy_arr.clear();
-        for (std::size_t i = 0; i < size; i++)
-        {
-            copy_arr.push_back(arr[begin + i]);
-        }
     }
     template<typename T>
     void SortClass<T>::merge(std::vector<T>& arr, std::size_t begin, std::size_t middle, std::size_t end)

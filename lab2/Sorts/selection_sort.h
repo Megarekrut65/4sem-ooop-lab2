@@ -4,10 +4,14 @@
 
 namespace sorts
 {
+    /*!
+    *   \brief Sorts array
+    *
+    *   See [Selection sort.](https://en.wikipedia.org/wiki/Selection_sort "Information about this algorithm in Wikipedia")
+    */
     template<typename T>
     void selection_sort(std::vector<T>& arr);
 }
-
 namespace sorts
 {
     template<typename T>

@@ -6,14 +6,14 @@
 /*!
 * \brief Sort diagram
 *
-* Namespace for the classes needed to create a chart from an array
+* Namespace for the classes needed to create a chart from an array.
 */
 namespace sd
 {
     /*!
     * \brief Template class to build a diagram
     *
-    * Used a pattern - builder. See [Builder](https://en.wikipedia.org/wiki/Builder_pattern "Information about this pattern in Wikipedia")
+    * Used a pattern - builder. See [Builder.](https://en.wikipedia.org/wiki/Builder_pattern "Information about this pattern in Wikipedia")
     *
     * Adds to diagram some columns and sone textes. You can edit the color of columns.
     * Need to set maximum number of columns and maximun value of items to make correct diagram.
@@ -24,15 +24,15 @@ namespace sd
     class DiagramBuilder
     {
     private:
-        QGraphicsScene* scene;/*!< Scene for diagram */
-        const qreal height;/*!< Height of diagram */
-        const qreal width;/*!< Width of diagram */
-        qreal last_x;/*!< X coordinate of last column */
-        size_t size;/*!< Max number of columns */
         T max_item;/*!< Maximum value of all values in diagram */
+        const qreal width;/*!< Width of diagram */
+        const qreal height;/*!< Height of diagram */
+        size_t size;/*!< Max number of columns */
+        qreal last_x;/*!< X coordinate of last column */
+        QGraphicsScene* scene;/*!< Scene for diagram */
         QColor column_color;/*!< Color of column */
-        QString description;/*!< Text to add in diagram */
         const size_t text_size;/*!< Maximum size of description. If size will be big then can not add more text */
+        QString description;/*!< Text to add in diagram */
         /*!
         * \brief Creates column by value
         *
@@ -57,7 +57,7 @@ namespace sd
         /*!
         * \brief Adds empty column to diagram
         *
-        * For symmetry
+        * For symmetry.
         */
         void add_empty_column();
     public:
@@ -81,7 +81,7 @@ namespace sd
         /*!
         *   \brief Adds text to description
         *
-        *   In the end the description will be added to diagram
+        *   In the end the description will be added to diagram.
         */
         void add_description(const QString& text);
         /*!

@@ -4,11 +4,31 @@
 
 namespace sorts
 {
-    //Lomuto partition scheme, rightmost pivot
+    /*!
+    *   \brief Distributes elements in the array relative to the selected partition
+    *
+    *   As partition will be selected high item.
+    *   \param arr - array of numbers
+    *   \param low - index of begin item
+    *   \param high - index of end item
+    */
     template<typename T>
     std::size_t partition(std::vector<T>& arr, long low, long high);
+    /*!
+    *   \brief Sorts part of array
+    *
+    *   \param arr - array of numbers
+    *   \param low - index of begin item
+    *   \param high - index of end item
+    */
     template<typename T>
     void quick_sorting(std::vector<T>& arr, long low, long high);
+    /*!
+    *   \brief Sorts array
+    *
+    *   Lomuto partition scheme, rightmost pivot.
+    *   See [Quick sort.](https://en.wikipedia.org/wiki/Quick_sort "Information about this algorithm in Wikipedia")
+    */
     template<typename T>
     void quick_sort(std::vector<T>& arr);
 }

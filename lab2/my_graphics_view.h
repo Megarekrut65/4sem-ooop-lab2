@@ -3,34 +3,83 @@
 #include "diagram_builder.h"
 #include "Sorts/all_sorts.h"
 #include "memento_sorting.h"
+
 using namespace ms;
+
 namespace sd
 {
+    /*!
+    *   \brief Template class to create window with diagram by number array. See ms::MementoSorting - use as number array
+    *
+    *   You can open window as new window or get scene and add diagram to opened window.
+    *
+    *   You can use object of class a lot of times. Just call function clear.
+    */
     template<typename T>
     class MyGraphicsView
     {
     private:
-        DiagramBuilder<T>* builder;
-        const size_t width;
-        const size_t height;
-        QString title;
-        QString note;
-        QColor color;
-        const QColor basic_color;
-        const QColor end_color;
-        const QColor pause_color;
-        const QColor mark_color;
-    public:
+        QString title;/*!< Name of window */
+        QString note;/*!< Text in bottom of window */
+        QGraphicsView* view;/*!< The window */
+        DiagramBuilder<T>* builder;/*!< Builder to create diagram */
+        const size_t width;/*!< Width of window */
+        const size_t height;/*!< Height of window */
+        QColor color;/*!< Current color of columns of diagram */
+        const QColor basic_color;/*!< Standart color of diagram */
+        const QColor end_color;/*!< Color to show that it is in the end */
+        const QColor pause_color;/*!< Color to show that it is paused */
+        const QColor mark_color; /*!< Color to mark some columns to show it */
+    public:  
+        /*!
+        * \brief Sets all parameters to create diagram
+        *
+        * Also creates first diagram by state.
+        *
+        * If you open diagram in new window that there will be title else title is unused.
+        */
         MyGraphicsView(const QString& title,const QString& note, MementoSorting<T>* state, size_t width = 800,size_t height = 600);
-        QGraphicsView* view;
+        /*!
+        *   \brief Opens diagram in new window
+        */
         void show();
+        /*!
+        *   \brief Closes the opened diagram
+        */
         void close();
+        /*!
+        *   \brief Creates new diagram by state
+        *
+        *   Clears old scene(diagram) and add new state to it. Also adds other notes to the end of note.
+        *
+        *   \param state - object with number array and mark array. There is mark array to mark some items
+        *   \param add_to_end - text to add to the end of notes
+        *   \param the_end - if true then color will be end_color
+        */
         void create_new_scene(MementoSorting<T>* state,const QString& add_to_end = "", bool the_end = false);
+        /*!
+        *   \returns view - window with diagram
+        */
         QGraphicsView* get_view();
+        /*!
+        *   \returns scene - diagram
+        */
         QGraphicsScene* get_scene();
+        /*!
+        *   \brief Sets pause color
+        */
         void set_pause_color();
+        /*!
+        *   \brief Sets basic color
+        */
         void set_start_color();
+        /*!
+        *   \brief Clears all data of window
+        */
         void clear();
+        /*!
+        *   \brief Deletes all pointers
+        */
         ~MyGraphicsView();
     };
 }

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['originatorsorting',['OriginatorSorting',['../classms_1_1_originator_sorting.html',1,'ms']]],
-  ['originatorsorting_3c_20int_20_3e',['OriginatorSorting&lt; int &gt;',['../classms_1_1_originator_sorting.html',1,'ms']]]
+  ['is_5fend',['is_end',['../classms_1_1_originator_sorting.html#a48fd62e881ddb72d6ca02bee673356be',1,'ms::OriginatorSorting']]]
 ];

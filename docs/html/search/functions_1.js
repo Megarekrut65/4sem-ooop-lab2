@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['clear',['clear',['../classsd_1_1_diagram_builder.html#ab0d4daf79bd9412c41a0b40d1f7692b0',1,'sd::DiagramBuilder']]],
-  ['create_5fcolumn',['create_column',['../classsd_1_1_diagram_builder.html#a9f1c0a60e67af428c3834c0d31c5815c',1,'sd::DiagramBuilder']]],
-  ['create_5ftext',['create_text',['../classsd_1_1_diagram_builder.html#aafc0ce0cc3e671d791a1ece98332c09f',1,'sd::DiagramBuilder']]]
+  ['bubble_5fsort',['bubble_sort',['../classsc_1_1_sort_class.html#a90c20197d86dd41a1cc0ea3ab72aacbf',1,'sc::SortClass::bubble_sort()'],['../namespacesorts.html#ac1d16710665d768d755ee629c241ee62',1,'sorts::bubble_sort()']]]
 ];

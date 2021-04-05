@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7ediagrambuilder',['~DiagramBuilder',['../classsd_1_1_diagram_builder.html#a44c270626ea753ff23773fdcb6938305',1,'sd::DiagramBuilder']]]
+  ['is_5fend',['is_end',['../classms_1_1_originator_sorting.html#a48fd62e881ddb72d6ca02bee673356be',1,'ms::OriginatorSorting']]]
 ];
