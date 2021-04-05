@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    algorithms_efficiency_window.cpp \
     drawwindow.cpp \
     main.cpp \
     mainwindow.cpp
@@ -21,6 +22,7 @@ HEADERS += \
     Sorts/quick_sort.h \
     Sorts/selection_sort.h \
     Sorts/sort_diagram.h \
+    algorithms_efficiency_window.h \
     diagram_builder.h \
     drawwindow.h \
     mainwindow.h \
@@ -30,6 +32,7 @@ HEADERS += \
     sort_class.h
 
 FORMS += \
+    algorithms_efficiency_window.ui \
     drawwindow.ui \
     mainwindow.ui
 
