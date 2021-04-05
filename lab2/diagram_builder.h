@@ -24,15 +24,15 @@ namespace sd
     class DiagramBuilder
     {
     private:
-        QGraphicsScene* scene;/*!< Scene for diagram */
-        const qreal height;/*!< Height of diagram */
-        const qreal width;/*!< Width of diagram */
-        qreal last_x;/*!< X coordinate of last column */
-        size_t size;/*!< Max number of columns */
         T max_item;/*!< Maximum value of all values in diagram */
+        const qreal width;/*!< Width of diagram */
+        const qreal height;/*!< Height of diagram */
+        size_t size;/*!< Max number of columns */
+        qreal last_x;/*!< X coordinate of last column */
+        QGraphicsScene* scene;/*!< Scene for diagram */
         QColor column_color;/*!< Color of column */
-        QString description;/*!< Text to add in diagram */
         const size_t text_size;/*!< Maximum size of description. If size will be big then can not add more text */
+        QString description;/*!< Text to add in diagram */
         /*!
         * \brief Creates column by value
         *
