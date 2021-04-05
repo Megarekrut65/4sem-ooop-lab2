@@ -4,14 +4,14 @@
 /*!
 *   \brief Memento of sorting
 *
-*   Namespace to save states of sorting
+*   Namespace to save states of sorting.
 */
 namespace ms
 {
     /*!
     * \brief Template struct to union numbers and their marks
     *
-    * Used a pattern - memento. See [Memento](https://en.wikipedia.org/wiki/Memento_pattern "Information about this pattern in Wikipedia")
+    * Used a pattern - memento. See [Memento.](https://en.wikipedia.org/wiki/Memento_pattern "Information about this pattern in Wikipedia")
     */
     template<typename T>
     struct MementoSorting
@@ -25,7 +25,7 @@ namespace ms
         /*!
         *   \brief Changes marks to true from begin to end
         *
-        *   If these indexes is incorrect then do nothing
+        *   If these indexes is incorrect then do nothing.
         *   \param begin - index of begin item
         *   \param end - index of end item
         */

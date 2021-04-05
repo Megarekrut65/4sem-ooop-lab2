@@ -6,14 +6,14 @@
 /*!
 * \brief Sort diagram
 *
-* Namespace for the classes needed to create a chart from an array
+* Namespace for the classes needed to create a chart from an array.
 */
 namespace sd
 {
     /*!
     * \brief Template class to build a diagram
     *
-    * Used a pattern - builder. See [Builder](https://en.wikipedia.org/wiki/Builder_pattern "Information about this pattern in Wikipedia")
+    * Used a pattern - builder. See [Builder.](https://en.wikipedia.org/wiki/Builder_pattern "Information about this pattern in Wikipedia")
     *
     * Adds to diagram some columns and sone textes. You can edit the color of columns.
     * Need to set maximum number of columns and maximun value of items to make correct diagram.
@@ -57,7 +57,7 @@ namespace sd
         /*!
         * \brief Adds empty column to diagram
         *
-        * For symmetry
+        * For symmetry.
         */
         void add_empty_column();
     public:
@@ -81,7 +81,7 @@ namespace sd
         /*!
         *   \brief Adds text to description
         *
-        *   In the end the description will be added to diagram
+        *   In the end the description will be added to diagram.
         */
         void add_description(const QString& text);
         /*!

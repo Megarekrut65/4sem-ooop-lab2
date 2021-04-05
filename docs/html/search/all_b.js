@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pause_5fcolor',['pause_color',['../classsd_1_1_my_graphics_view.html#a33b02877e99dfab3217c1894e9ef9375',1,'sd::MyGraphicsView']]]
+  ['originatorsorting',['OriginatorSorting',['../classms_1_1_originator_sorting.html',1,'ms::OriginatorSorting&lt; T &gt;'],['../classms_1_1_originator_sorting.html#a1ddc7525a136710a8f44a1c1928ae452',1,'ms::OriginatorSorting::OriginatorSorting()']]],
+  ['originatorsorting_3c_20int_20_3e',['OriginatorSorting&lt; int &gt;',['../classms_1_1_originator_sorting.html',1,'ms']]]
 ];

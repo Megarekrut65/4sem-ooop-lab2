@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['last_5fx',['last_x',['../classsd_1_1_diagram_builder.html#a2c35d935742f590a6c36e69deee119e3',1,'sd::DiagramBuilder']]]
+  ['is_5fend',['is_end',['../classms_1_1_originator_sorting.html#a48fd62e881ddb72d6ca02bee673356be',1,'ms::OriginatorSorting']]]
 ];
