@@ -52,7 +52,13 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QCheckBox" name="checkBox">
+         <widget class="QCheckBox" name="bubble_checkBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>Bubble</string>
           </property>
@@ -99,9 +105,15 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_9">
         <item>
-         <widget class="QCheckBox" name="checkBox_10">
+         <widget class="QCheckBox" name="selection_checkBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>Bubble</string>
+           <string>Selection</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -146,9 +158,15 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
-         <widget class="QCheckBox" name="checkBox_5">
+         <widget class="QCheckBox" name="merge_checkBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>Bubble</string>
+           <string>Merge</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -193,9 +211,15 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_10">
         <item>
-         <widget class="QCheckBox" name="checkBox_11">
+         <widget class="QCheckBox" name="quick_checkBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>Bubble</string>
+           <string>Quick</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -244,9 +268,15 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_16">
         <item>
-         <widget class="QCheckBox" name="checkBox_17">
+         <widget class="QCheckBox" name="gnome_checkBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>Bubble</string>
+           <string>Gnome</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -291,9 +321,18 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_17">
         <item>
-         <widget class="QCheckBox" name="checkBox_18">
+         <widget class="QCheckBox" name="cocktail_shaker_checkBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="inputMethodHints">
+           <set>Qt::ImhNone</set>
+          </property>
           <property name="text">
-           <string>Bubble</string>
+           <string>Cocktail shaker</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -338,9 +377,15 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_18">
         <item>
-         <widget class="QCheckBox" name="checkBox_19">
+         <widget class="QCheckBox" name="odd_even_checkBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>Bubble</string>
+           <string>Odd-even</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -385,9 +430,15 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_19">
         <item>
-         <widget class="QCheckBox" name="checkBox_20">
+         <widget class="QCheckBox" name="comb_checkBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>Bubble</string>
+           <string>Comb</string>
           </property>
           <property name="checked">
            <bool>true</bool>
