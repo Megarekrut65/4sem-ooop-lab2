@@ -56,6 +56,9 @@
           <property name="text">
            <string>Bubble</string>
           </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
@@ -99,6 +102,9 @@
          <widget class="QCheckBox" name="checkBox_10">
           <property name="text">
            <string>Bubble</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -144,6 +150,9 @@
           <property name="text">
            <string>Bubble</string>
           </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
@@ -187,6 +196,9 @@
          <widget class="QCheckBox" name="checkBox_11">
           <property name="text">
            <string>Bubble</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -236,6 +248,9 @@
           <property name="text">
            <string>Bubble</string>
           </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
@@ -279,6 +294,9 @@
          <widget class="QCheckBox" name="checkBox_18">
           <property name="text">
            <string>Bubble</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -324,6 +342,9 @@
           <property name="text">
            <string>Bubble</string>
           </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
@@ -367,6 +388,9 @@
          <widget class="QCheckBox" name="checkBox_20">
           <property name="text">
            <string>Bubble</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -436,32 +460,41 @@
      </spacer>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBox_4">
+     <widget class="QCheckBox" name="random_checkBox">
       <property name="styleSheet">
        <string notr="true">background-color:#d9a29e;</string>
       </property>
       <property name="text">
        <string>Random values</string>
       </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBox_2">
+     <widget class="QCheckBox" name="atleast_sorted_inorder_checkBox">
       <property name="styleSheet">
        <string notr="true">background-color:#8dc3f2;</string>
       </property>
       <property name="text">
        <string>Atleast sorted in order</string>
       </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBox_3">
+     <widget class="QCheckBox" name="atleast_sorted_rev_checkBox">
       <property name="styleSheet">
        <string notr="true">background-color: #bd69db;</string>
       </property>
       <property name="text">
        <string>Atleast sorted in reverse order</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -486,7 +519,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QSpinBox" name="spinBox">
+     <widget class="QSpinBox" name="count_spinBox">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -500,6 +533,33 @@
     </item>
     <item>
      <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QPushButton" name="stop_pushButton">
+      <property name="text">
+       <string>Stop</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="start_pushButton">
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_4">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
