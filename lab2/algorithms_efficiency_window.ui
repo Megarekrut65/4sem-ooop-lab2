@@ -60,16 +60,80 @@
         </item>
         <item>
          <widget class="QLineEdit" name="first_result_lineEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color:#d9a29e;</string>
+          </property>
           <property name="text">
            <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit"/>
+         <widget class="QLineEdit" name="second_result_lineEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color:#8dc3f2;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit"/>
+         <widget class="QLineEdit" name="third_result_lineEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color: #bd69db;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <item>
+         <widget class="QCheckBox" name="checkBox_10">
+          <property name="text">
+           <string>Bubble</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="first_result_lineEdit_7">
+          <property name="styleSheet">
+           <string notr="true">background-color:#d9a29e;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="second_result_lineEdit_7">
+          <property name="styleSheet">
+           <string notr="true">background-color:#8dc3f2;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="third_result_lineEdit_7">
+          <property name="styleSheet">
+           <string notr="true">background-color: #bd69db;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -84,16 +148,36 @@
         </item>
         <item>
          <widget class="QLineEdit" name="first_result_lineEdit_2">
+          <property name="styleSheet">
+           <string notr="true">background-color:#d9a29e;</string>
+          </property>
           <property name="text">
            <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_2"/>
+         <widget class="QLineEdit" name="second_result_lineEdit_2">
+          <property name="styleSheet">
+           <string notr="true">background-color:#8dc3f2;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_2"/>
+         <widget class="QLineEdit" name="third_result_lineEdit_2">
+          <property name="styleSheet">
+           <string notr="true">background-color: #bd69db;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -108,148 +192,227 @@
         </item>
         <item>
          <widget class="QLineEdit" name="first_result_lineEdit_8">
+          <property name="styleSheet">
+           <string notr="true">background-color:#d9a29e;</string>
+          </property>
           <property name="text">
            <string/>
           </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_8"/>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_8"/>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_11">
-        <item>
-         <widget class="QCheckBox" name="checkBox_12">
-          <property name="text">
-           <string>Bubble</string>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="first_result_lineEdit_9">
-          <property name="text">
-           <string/>
+         <widget class="QLineEdit" name="second_result_lineEdit_8">
+          <property name="styleSheet">
+           <string notr="true">background-color:#8dc3f2;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_9"/>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_9"/>
+         <widget class="QLineEdit" name="third_result_lineEdit_8">
+          <property name="styleSheet">
+           <string notr="true">background-color: #bd69db;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
      </layout>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
+     <layout class="QVBoxLayout" name="verticalLayout_6">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <layout class="QHBoxLayout" name="horizontalLayout_16">
         <item>
-         <widget class="QCheckBox" name="checkBox_7">
+         <widget class="QCheckBox" name="checkBox_17">
           <property name="text">
            <string>Bubble</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="first_result_lineEdit_4">
+         <widget class="QLineEdit" name="first_result_lineEdit_14">
+          <property name="styleSheet">
+           <string notr="true">background-color:#d9a29e;</string>
+          </property>
           <property name="text">
            <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_4"/>
+         <widget class="QLineEdit" name="second_result_lineEdit_14">
+          <property name="styleSheet">
+           <string notr="true">background-color:#8dc3f2;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_4"/>
+         <widget class="QLineEdit" name="third_result_lineEdit_14">
+          <property name="styleSheet">
+           <string notr="true">background-color: #bd69db;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <layout class="QHBoxLayout" name="horizontalLayout_17">
         <item>
-         <widget class="QCheckBox" name="checkBox_6">
+         <widget class="QCheckBox" name="checkBox_18">
           <property name="text">
            <string>Bubble</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="first_result_lineEdit_3">
+         <widget class="QLineEdit" name="first_result_lineEdit_15">
+          <property name="styleSheet">
+           <string notr="true">background-color:#d9a29e;</string>
+          </property>
           <property name="text">
            <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_3"/>
+         <widget class="QLineEdit" name="second_result_lineEdit_15">
+          <property name="styleSheet">
+           <string notr="true">background-color:#8dc3f2;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_3"/>
+         <widget class="QLineEdit" name="third_result_lineEdit_15">
+          <property name="styleSheet">
+           <string notr="true">background-color: #bd69db;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <layout class="QHBoxLayout" name="horizontalLayout_18">
         <item>
-         <widget class="QCheckBox" name="checkBox_8">
+         <widget class="QCheckBox" name="checkBox_19">
           <property name="text">
            <string>Bubble</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="first_result_lineEdit_5">
+         <widget class="QLineEdit" name="first_result_lineEdit_16">
+          <property name="styleSheet">
+           <string notr="true">background-color:#d9a29e;</string>
+          </property>
           <property name="text">
            <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_5"/>
+         <widget class="QLineEdit" name="second_result_lineEdit_16">
+          <property name="styleSheet">
+           <string notr="true">background-color:#8dc3f2;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_5"/>
+         <widget class="QLineEdit" name="third_result_lineEdit_16">
+          <property name="styleSheet">
+           <string notr="true">background-color: #bd69db;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_8">
+       <layout class="QHBoxLayout" name="horizontalLayout_19">
         <item>
-         <widget class="QCheckBox" name="checkBox_9">
+         <widget class="QCheckBox" name="checkBox_20">
           <property name="text">
            <string>Bubble</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="first_result_lineEdit_6">
+         <widget class="QLineEdit" name="first_result_lineEdit_17">
+          <property name="styleSheet">
+           <string notr="true">background-color:#d9a29e;</string>
+          </property>
           <property name="text">
            <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_6"/>
+         <widget class="QLineEdit" name="second_result_lineEdit_17">
+          <property name="styleSheet">
+           <string notr="true">background-color:#8dc3f2;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_6"/>
+         <widget class="QLineEdit" name="third_result_lineEdit_17">
+          <property name="styleSheet">
+           <string notr="true">background-color: #bd69db;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
      </layout>
     </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_3"/>
+    </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -260,7 +423,23 @@
    </property>
    <layout class="QHBoxLayout" name="_2">
     <item>
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
      <widget class="QCheckBox" name="checkBox_4">
+      <property name="styleSheet">
+       <string notr="true">background-color:#d9a29e;</string>
+      </property>
       <property name="text">
        <string>Random values</string>
       </property>
@@ -268,6 +447,9 @@
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_2">
+      <property name="styleSheet">
+       <string notr="true">background-color:#8dc3f2;</string>
+      </property>
       <property name="text">
        <string>Atleast sorted in order</string>
       </property>
@@ -275,6 +457,9 @@
     </item>
     <item>
      <widget class="QCheckBox" name="checkBox_3">
+      <property name="styleSheet">
+       <string notr="true">background-color: #bd69db;</string>
+      </property>
       <property name="text">
        <string>Atleast sorted in reverse order</string>
       </property>
@@ -287,7 +472,7 @@
       </property>
       <property name="sizeHint" stdset="0">
        <size>
-        <width>30</width>
+        <width>40</width>
         <height>20</height>
        </size>
       </property>
@@ -312,6 +497,19 @@
        <number>100000</number>
       </property>
      </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
     </item>
    </layout>
   </widget>
