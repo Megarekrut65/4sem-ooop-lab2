@@ -1,7 +1,7 @@
 #ifndef COCKTAILSHAKER_SORT_H
 #define COCKTAILSHAKER_SORT_H
 
-#include "Sorts/libraries_and_namespaces.h"
+#include "libraries_and_namespaces.h"
 
 namespace sorts
 {
