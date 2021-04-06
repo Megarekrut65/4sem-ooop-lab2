@@ -57,3 +57,6 @@ DISTFILES += \
     Images/diagram-icon.ico \
     Images/main-icon.ico \
     Logs/sorting_diagram_log.txt
+
+RESOURCES += \
+    icons.qrc

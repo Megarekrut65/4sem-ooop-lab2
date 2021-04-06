@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setFixedSize(800,600);
     setWindowTitle("Sorting");
-    QIcon icon("Images/main-icon.ico");
+    QIcon icon(":/icons/Images/main-icon.ico");
     this->setWindowIcon(icon);
     dw = new DrawWindow();
     about = new AboutAlgorithm();
