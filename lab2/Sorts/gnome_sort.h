@@ -15,7 +15,7 @@ namespace sorts
 namespace sorts
 {
     template<typename T>
-    void GnomeSort(std::vector<T>& arr)
+    void gnome_sort(std::vector<T>& arr)
     {
         for (size_t i = 1; i < arr.size(); )
         {
@@ -25,7 +25,7 @@ namespace sorts
             }
             else
             {
-                arr.swap(i, i-1);
+                swap(arr[i], arr[i-1]);
                 if (i > 1) --i;
             }
         }

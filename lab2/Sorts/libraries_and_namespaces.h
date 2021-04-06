@@ -47,12 +47,29 @@ namespace sorts
     */
     template<typename T>
     T get_min(std::vector<T>& arr);
+    /*!
+    *   \brief Creates array with random items
+    *   \param size - size of array
+    */
     template<typename T>
     std::vector<T> create_random_array(std::size_t size);
+    /*!
+    *   \brief Creates array with almost ordered items
+    *   \param size - size of array
+    *   \param random_start - index of firts not ordered item
+    */
     template<typename T>
     std::vector<T> create_ordered_array(std::size_t size, std::size_t random_start);
+    /*!
+    *   \brief Creates array with almost inordered items
+    *   \param size - size of array
+    *   \param random_start - index of firts not inordered item
+    */
     template<typename T>
     std::vector<T> create_inordered_array(std::size_t size, std::size_t random_start);
+    /*!
+    *   \brief Compares two arrays by values
+    */
     template<typename T>
     bool operator ==(const std::vector<T>& arr1, const std::vector<T>& arr2);
 }

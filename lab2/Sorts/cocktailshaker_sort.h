@@ -11,12 +11,12 @@ namespace sorts
     *   See [Cocktailshaker sort.](https://en.wikipedia.org/wiki/Cocktail_shaker_sort "Information about this algorithm in Wikipedia")
     */
     template<typename T>
-    void cocktailshaker_sort(std::vector<T>& arr);
+    void cocktail_shaker_sort(std::vector<T>& arr);
 }
 namespace sorts
 {
     template<typename T>
-    void cocktailshaker_sort(std::vector<T>& arr)
+    void cocktail_shaker_sort(std::vector<T>& arr)
     {
         size_t lo = 0, hi = arr.size() - 1, mov = lo;
             while (lo < hi)
