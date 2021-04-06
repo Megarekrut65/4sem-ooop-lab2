@@ -9,7 +9,7 @@ AboutAlgorithm::AboutAlgorithm(QWidget *parent) :
     set_names_of_sorts();
     on_comboBox_activated(0);
     setWindowTitle("About algorithms");
-    QIcon icon("Images/about-icon.ico");
+    QIcon icon(":/icons/Images/about-icon.ico");
     this->setWindowIcon(icon);
 }
 

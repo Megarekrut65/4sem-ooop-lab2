@@ -8,8 +8,8 @@ DrawWindow::DrawWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     set_sorts();
-    setWindowTitle("Sorting diagram");
-    QIcon icon("Images/diagram-icon.ico");
+    setWindowTitle("Sorting visualization");
+    QIcon icon(":/icons/Images/diagram-icon.ico");
     this->setWindowIcon(icon);
     set_graphics_view();
     set_timer();

@@ -68,7 +68,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="first_result_lineEdit">
+         <widget class="QLineEdit" name="bubble_first_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#d9a29e;</string>
           </property>
@@ -78,25 +78,34 @@
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit">
+         <widget class="QLineEdit" name="bubble_second_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#8dc3f2;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit">
+         <widget class="QLineEdit" name="bubble_third_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color: #bd69db;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -121,7 +130,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="first_result_lineEdit_7">
+         <widget class="QLineEdit" name="selection_first_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#d9a29e;</string>
           </property>
@@ -131,25 +140,34 @@
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_7">
+         <widget class="QLineEdit" name="selection_second_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#8dc3f2;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_7">
+         <widget class="QLineEdit" name="selection_third_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color: #bd69db;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -174,7 +192,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="first_result_lineEdit_2">
+         <widget class="QLineEdit" name="merge_first_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#d9a29e;</string>
           </property>
@@ -184,25 +202,34 @@
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_2">
+         <widget class="QLineEdit" name="merge_second_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#8dc3f2;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_2">
+         <widget class="QLineEdit" name="merge_third_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color: #bd69db;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -227,7 +254,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="first_result_lineEdit_8">
+         <widget class="QLineEdit" name="quick_first_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#d9a29e;</string>
           </property>
@@ -237,25 +264,34 @@
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_8">
+         <widget class="QLineEdit" name="quick_second_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#8dc3f2;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_8">
+         <widget class="QLineEdit" name="quick_third_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color: #bd69db;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -284,7 +320,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="first_result_lineEdit_14">
+         <widget class="QLineEdit" name="gnome_first_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#d9a29e;</string>
           </property>
@@ -294,25 +330,34 @@
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_14">
+         <widget class="QLineEdit" name="gnome_second_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#8dc3f2;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_14">
+         <widget class="QLineEdit" name="gnome_third_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color: #bd69db;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -340,7 +385,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="first_result_lineEdit_15">
+         <widget class="QLineEdit" name="cocktail_shaker_first_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#d9a29e;</string>
           </property>
@@ -350,25 +395,34 @@
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_15">
+         <widget class="QLineEdit" name="cocktail_shaker_second_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#8dc3f2;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_15">
+         <widget class="QLineEdit" name="cocktail_shaker_third_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color: #bd69db;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -393,7 +447,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="first_result_lineEdit_16">
+         <widget class="QLineEdit" name="odd_even_first_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#d9a29e;</string>
           </property>
@@ -403,25 +457,34 @@
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_16">
+         <widget class="QLineEdit" name="odd_even_second_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#8dc3f2;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_16">
+         <widget class="QLineEdit" name="odd_even_third_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color: #bd69db;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -446,7 +509,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="first_result_lineEdit_17">
+         <widget class="QLineEdit" name="comb_first_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#d9a29e;</string>
           </property>
@@ -456,25 +519,34 @@
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="second_result_lineEdit_17">
+         <widget class="QLineEdit" name="comb_second_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color:#8dc3f2;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="third_result_lineEdit_17">
+         <widget class="QLineEdit" name="comb_third_result_lineEdit">
           <property name="styleSheet">
            <string notr="true">background-color: #bd69db;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
