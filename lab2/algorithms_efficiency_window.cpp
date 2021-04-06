@@ -261,7 +261,7 @@ void algorithms_efficiency_window::sorting()
               {
                 temp_random_vector = random_test_vector;
                 timer->start();
-                sorts::cocktailshaker_sort(temp_random_vector);
+                sorts::cocktail_shaker_sort(temp_random_vector);
                 ui->cocktail_shaker_first_result_lineEdit->setText(
                     QString::number(timer->elapsed()) + "ms");
               }
@@ -273,7 +273,7 @@ void algorithms_efficiency_window::sorting()
               {
                 temp_in_order_vector = in_order_test_vector;
                 timer->start();
-                sorts::cocktailshaker_sort(temp_in_order_vector);
+                sorts::cocktail_shaker_sort(temp_in_order_vector);
                 ui->cocktail_shaker_second_result_lineEdit->setText(
                     QString::number(timer->elapsed()) + "ms");
               }
@@ -285,7 +285,7 @@ void algorithms_efficiency_window::sorting()
               {
                 temp_in_reverse_order_vector = in_reverse_order_test_vector;
                 timer->start();
-                sorts::cocktailshaker_sort(temp_in_reverse_order_vector);
+                sorts::cocktail_shaker_sort(temp_in_reverse_order_vector);
                 ui->cocktail_shaker_third_result_lineEdit->setText(
                     QString::number(timer->elapsed()) + "ms");
               }
