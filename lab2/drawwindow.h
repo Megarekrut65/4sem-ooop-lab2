@@ -26,44 +26,85 @@ public:
     ~DrawWindow();
 
 private slots:
+    /*!
+    *   \brief Slot of 'Add' button
+    */
     void on_add_pushButton_clicked();
-
+    /*!
+    *   \brief Slot of 'Remove' button
+    */
     void on_remove_pushButton_clicked();
-
+    /*!
+    *   \brief Slot of 'Random' button
+    */
     void on_random_pushButton_clicked();
-
+    /*!
+    *   \brief Slot of 'In order mixed' button
+    */
     void on_inorder_pushButton_clicked();
-
+    /*!
+    *   \brief Slot of 'Start' button
+    */
     void on_start_pushButton_clicked();
-
+    /*!
+    *   \brief Slot of 'Pause' button
+    */
     void on_pause_Button_clicked();
-
+    /*!
+    *   \brief Slot of 'Stop' button
+    */
     void on_stop_pushButton_clicked();
-
+    /*!
+    *   \brief Slot of selecting element in algorithm list
+    */
     void on_sorts_listWidget_currentRowChanged(int currentRow);
-
+    /*!
+    *   \brief Slot of 'Prev' button
+    */
     void on_pushButton_prev_clicked();
-
+    /*!
+    *   \brief Slot of 'End' button
+    */
     void on_pushButton_end_clicked();
-
+    /*!
+    *   \brief Slot of 'Next' button
+    */
     void on_pushButton_next_clicked();
-
+    /*!
+    *   \brief Slot of 'Begin' button
+    */
     void on_pushButton_begin_clicked();
-
+    /*!
+    *   \brief Slot of 'Back' button
+    */
     void on_back_pushButton_clicked();
-
+    /*!
+    *   \brief Slot of 'Almost sorted(in order)' button
+    */
     void on_almostsorted_pushButton_clicked();
-
+    /*!
+    *   \brief Slot of 'Almost sorted(in reverse order)' button
+    */
     void on_almostsorted_rev_pushButton_clicked();
-
+    /*!
+    *   \brief Slot of 'F5' shortcut
+    */
     void slotShortcutF5();
-
+    /*!
+    *   \brief Slot of 'Shift + F5' shortcut
+    */
     void slotShortcutShiftF5();
-
+    /*!
+    *   \brief Slot of 'Ctrl + P' shortcut
+    */
     void slotShortcutCtrlP();
-
+    /*!
+    *   \brief Slot of 'Left' shortcut
+    */
     void slotShortcutPrev();
-
+    /*!
+    *   \brief Slot of 'Right' shortcut
+    */
     void slotShortcutNext();
 
 private:
