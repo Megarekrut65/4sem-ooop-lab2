@@ -28,9 +28,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;/*!< Pointer to ui */
-    DrawWindow* dw;
-    AboutAlgorithm* about;
-    algorithms_efficiency_window* algEff_window;
+    DrawWindow* dw;/*!< Pointer to sort visualization window > */
+    AboutAlgorithm* about;/*!< Pointer to about algorithms window > */
+    algorithms_efficiency_window* algEff_window;/*!< Pointer to sort efficiency window > */
 
 };
 #endif // MAINWINDOW_H

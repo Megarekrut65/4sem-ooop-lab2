@@ -18,13 +18,13 @@ public:
     ~algorithms_efficiency_window();
 
 private:
-    Ui::algorithms_efficiency_window *ui;
-    QVector<int> random();
-    QVector<int> atleast_sorted_in_order();
-    QVector<int> atleast_sorted_in_reverse_order();
+    Ui::algorithms_efficiency_window *ui;/*!< Pointer to ui */
+    QVector<int> random();/*!< Generate vector of random int values for test */
+    QVector<int> atleast_sorted_in_order();/*!< Generate vector of alteast sorted in order int values for test */
+    QVector<int> atleast_sorted_in_reverse_order();/*!< Generate vector of alteast sorted in reverse order int values for test */
 
 signals:
-    void mainWindow();
+    void mainWindow();/*!< Signal to main window */
 private slots:
     void on_start_pushButton_clicked();
 };
