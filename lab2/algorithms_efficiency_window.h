@@ -36,7 +36,7 @@ private slots:
     */
     void on_start_pushButton_clicked();
     /*!
-    *   \brief Slot of 'Ctrl + S' shortcut
+    *   \brief Slot of "Ctrl + S" shortcut
     */
     void slotShortcutCtrlS();
     /*!
