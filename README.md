@@ -1,6 +1,6 @@
 # 4sem-ooop-lab2
 * Documentation https://megarekrut65.github.io/4sem-ooop-lab2/docs/html/index.html
-* Implemented unit tests to verify the correctness of sorting algorithms lab2/Tests/testing_sorts.h
+* Implemented unit tests to verify the correctness of sorting algorithms https://github.com/Megarekrut65/4sem-ooop-lab2/blob/main/lab2/Tests/testing_sorts.h
 * Topic: sorting algorithms. 
 * Implemented components: 
 
