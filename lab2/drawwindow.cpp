@@ -122,7 +122,6 @@ void DrawWindow::draw()
     if(is_pause || is_stop) return;
     view->set_start_color();
     QString text = create_precent(sort.queue.get_current_index() + 2);
-    qDebug(text.toStdString().c_str());
     auto state = sort.queue.next_state(); 
     if(state) create_diagram(state, text);
     else
