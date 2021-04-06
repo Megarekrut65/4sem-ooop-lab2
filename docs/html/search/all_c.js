@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['originatorsorting',['OriginatorSorting',['../classms_1_1_originator_sorting.html',1,'ms::OriginatorSorting&lt; T &gt;'],['../classms_1_1_originator_sorting.html#a1ddc7525a136710a8f44a1c1928ae452',1,'ms::OriginatorSorting::OriginatorSorting()']]],
-  ['originatorsorting_3c_20int_20_3e',['OriginatorSorting&lt; int &gt;',['../classms_1_1_originator_sorting.html',1,'ms']]]
+  ['name',['name',['../classsc_1_1_sort_class.html#a2e28a25bee14caf8a352d02a72bbb665',1,'sc::SortClass']]],
+  ['next_5fstate',['next_state',['../classms_1_1_originator_sorting.html#a0da2b74d2a2e193ca2c8997a48201524',1,'ms::OriginatorSorting']]],
+  ['note',['note',['../classsd_1_1_my_graphics_view.html#aba618d29b370948c8beb0795cd3c8a4a',1,'sd::MyGraphicsView']]]
 ];

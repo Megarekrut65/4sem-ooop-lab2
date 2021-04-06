@@ -1,4 +1,25 @@
 var searchData=
 [
+  ['odd_5feven_5fsort',['odd_even_sort',['../classsc_1_1_sort_class.html#a1b6473dedc8e6fc2f45e6d85b821f136',1,'sc::SortClass::odd_even_sort()'],['../namespacesorts.html#a1883987291ba1b19592ba12b667888e8',1,'sorts::odd_even_sort()']]],
+  ['on_5factionabout_5fsort_5falgorithms_5ftriggered',['on_actionAbout_sort_algorithms_triggered',['../class_main_window.html#a28b337a226a9fdee64607276a3e6e365',1,'MainWindow']]],
+  ['on_5fadd_5fpushbutton_5fclicked',['on_add_pushButton_clicked',['../class_draw_window.html#ae70c4ca2c8630798f53675f2cee97e56',1,'DrawWindow']]],
+  ['on_5falmostsorted_5fpushbutton_5fclicked',['on_almostsorted_pushButton_clicked',['../class_draw_window.html#aa7fd1c350cc5dc94bf1d811a916222fc',1,'DrawWindow']]],
+  ['on_5falmostsorted_5frev_5fpushbutton_5fclicked',['on_almostsorted_rev_pushButton_clicked',['../class_draw_window.html#a66ebc75f666e8756a815ecacfdacff5a',1,'DrawWindow']]],
+  ['on_5fback_5fpushbutton_5fclicked',['on_back_pushButton_clicked',['../class_draw_window.html#a429047d4a9634c588e1f13a2f8cfaf9b',1,'DrawWindow']]],
+  ['on_5fdurationbutton_5fclicked',['on_durationButton_clicked',['../class_main_window.html#a388c628c5ec9c48b063d22f5a9a0a754',1,'MainWindow']]],
+  ['on_5finorder_5fpushbutton_5fclicked',['on_inorder_pushButton_clicked',['../class_draw_window.html#aab0f9962d913eff1ef130b08b8cca18b',1,'DrawWindow']]],
+  ['on_5fpause_5fbutton_5fclicked',['on_pause_Button_clicked',['../class_draw_window.html#af5a2af97c69039d0b6ef94fe43d7b9ab',1,'DrawWindow']]],
+  ['on_5fpushbutton_5fbegin_5fclicked',['on_pushButton_begin_clicked',['../class_draw_window.html#aaab3932d6c6d663f8c06e35a33f56061',1,'DrawWindow']]],
+  ['on_5fpushbutton_5fclicked',['on_pushButton_clicked',['../classalgorithms__efficiency__window.html#ac48de1f856900e23b30e8124a0ddcb4e',1,'algorithms_efficiency_window']]],
+  ['on_5fpushbutton_5fend_5fclicked',['on_pushButton_end_clicked',['../class_draw_window.html#ae6b9a67876b8496e112231c09319c85e',1,'DrawWindow']]],
+  ['on_5fpushbutton_5fnext_5fclicked',['on_pushButton_next_clicked',['../class_draw_window.html#a7a5232358225f5ec301b65429c855977',1,'DrawWindow']]],
+  ['on_5fpushbutton_5fprev_5fclicked',['on_pushButton_prev_clicked',['../class_draw_window.html#ace74d8f2db483a0463a9f37a68d26fdd',1,'DrawWindow']]],
+  ['on_5frandom_5fpushbutton_5fclicked',['on_random_pushButton_clicked',['../class_draw_window.html#ae24c63c84214de47e046a4d11ea6397d',1,'DrawWindow']]],
+  ['on_5fremove_5fpushbutton_5fclicked',['on_remove_pushButton_clicked',['../class_draw_window.html#a571cb6a047c82ce9b258639988ea5ced',1,'DrawWindow']]],
+  ['on_5fsorts_5flistwidget_5fcurrentrowchanged',['on_sorts_listWidget_currentRowChanged',['../class_draw_window.html#a3012db76e1e16d7cc5575d193f343861',1,'DrawWindow']]],
+  ['on_5fstart_5fpushbutton_5fclicked',['on_start_pushButton_clicked',['../classalgorithms__efficiency__window.html#a80a4205307185e02e7e883dc08e581c2',1,'algorithms_efficiency_window::on_start_pushButton_clicked()'],['../class_draw_window.html#a078c5aafd70a611ab44f3840806367d3',1,'DrawWindow::on_start_pushButton_clicked()']]],
+  ['on_5fstop_5fpushbutton_5fclicked',['on_stop_pushButton_clicked',['../class_draw_window.html#a7e5a860dab81f388bdf1b4b1ecd27e84',1,'DrawWindow']]],
+  ['on_5fvisualizationbutton_5fclicked',['on_visualizationButton_clicked',['../class_main_window.html#ad5c28c425aa368636c770e40c60b5598',1,'MainWindow']]],
+  ['operator_3d_3d',['operator==',['../namespacesorts.html#a2608f268c147dbc9e90f57c9ddfee385',1,'sorts']]],
   ['originatorsorting',['OriginatorSorting',['../classms_1_1_originator_sorting.html#a1ddc7525a136710a8f44a1c1928ae452',1,'ms::OriginatorSorting']]]
 ];
