@@ -2,8 +2,11 @@
 #define ALGORITHMS_EFFICIENCY_WINDOW_H
 
 #include <QWidget>
-#include <QVector>
+#include <vector>
 #include <QRandomGenerator>
+#include <QElapsedTimer>
+#include "Sorts/libraries_and_namespaces.h"
+#include "Sorts/all_sorts.h"
 
 namespace Ui {
 class algorithms_efficiency_window;
@@ -19,9 +22,7 @@ public:
 
 private:
     Ui::algorithms_efficiency_window *ui;/*!< Pointer to ui */
-    QVector<int> random();/*!< Generate vector of random int values for test */
-    QVector<int> atleast_sorted_in_order();/*!< Generate vector of alteast sorted in order int values for test */
-    QVector<int> atleast_sorted_in_reverse_order();/*!< Generate vector of alteast sorted in reverse order int values for test */
+    QElapsedTimer *timer;
 
 signals:
     void mainWindow();/*!< Signal to main window */
