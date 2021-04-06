@@ -790,7 +790,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = C:\Users\User81\source\repos\Megarekrut65\4sem-ooop-lab2.git\lab2 \
+INPUT                  = ../lab2 \
                          C:\Users\User81\source\repos\Megarekrut65\4sem-ooop-lab2.git\lab2\Sorts
 
 # This tag can be used to specify the character encoding of the source files
