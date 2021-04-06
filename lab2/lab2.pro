@@ -53,9 +53,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    Images/about-icon.ico \
-    Images/diagram-icon.ico \
-    Images/main-icon.ico \
     Logs/sorting_diagram_log.txt
 
 RESOURCES += \
