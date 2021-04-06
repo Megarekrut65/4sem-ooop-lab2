@@ -6,6 +6,8 @@ algorithms_efficiency_window::algorithms_efficiency_window(QWidget *parent) :
     ui(new Ui::algorithms_efficiency_window)
 {
     ui->setupUi(this);
+    QIcon icon(":/icons/Images/duration-icon.ico");
+    this->setWindowIcon(icon);
 }
 
 algorithms_efficiency_window::~algorithms_efficiency_window()
