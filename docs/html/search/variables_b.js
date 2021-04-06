@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queue',['queue',['../classsc_1_1_sort_class.html#aa49cfb44e32da05ca9fe1c8acd86aa18',1,'sc::SortClass']]]
+  ['pause_5fcolor',['pause_color',['../classsd_1_1_my_graphics_view.html#a33b02877e99dfab3217c1894e9ef9375',1,'sd::MyGraphicsView']]]
 ];

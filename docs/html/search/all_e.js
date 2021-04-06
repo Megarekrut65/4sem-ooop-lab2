@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['queue',['queue',['../classsc_1_1_sort_class.html#aa49cfb44e32da05ca9fe1c8acd86aa18',1,'sc::SortClass']]],
-  ['quick_5fsort',['quick_sort',['../classsc_1_1_sort_class.html#aeef68b3bbfa3fa7e5cb556084361b11e',1,'sc::SortClass::quick_sort()'],['../namespacesorts.html#a7dde5488791e053902c2c7dddf55d1eb',1,'sorts::quick_sort()']]],
-  ['quick_5fsorting',['quick_sorting',['../classsc_1_1_sort_class.html#a79ba2200c6a52a85dcc94387077898ab',1,'sc::SortClass::quick_sorting()'],['../namespacesorts.html#a5c1574da24e1422956f16a5b25eeea8c',1,'sorts::quick_sorting()']]]
+  ['partition',['partition',['../classsc_1_1_sort_class.html#a698eb8a0c354d39b7ee6b1afa4869af3',1,'sc::SortClass::partition()'],['../namespacesorts.html#ad5baa97f2a453365c2fd7c40b29196db',1,'sorts::partition()']]],
+  ['pause_5fcolor',['pause_color',['../classsd_1_1_my_graphics_view.html#a33b02877e99dfab3217c1894e9ef9375',1,'sd::MyGraphicsView']]],
+  ['pause_5fdraw',['pause_draw',['../class_draw_window.html#aa08fb08f9679948c1419dc0a2c2db2f8',1,'DrawWindow']]],
+  ['pause_5ffor_5fbuttons',['pause_for_buttons',['../class_draw_window.html#af7963b1fc1012244543ea028b469fe33',1,'DrawWindow']]],
+  ['prev_5fstate',['prev_state',['../classms_1_1_originator_sorting.html#aa17b137b35a1e80842337532f79089bf',1,'ms::OriginatorSorting']]]
 ];
