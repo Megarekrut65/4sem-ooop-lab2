@@ -1,6 +1,6 @@
 #ifndef ODD_EVEN_SORT_H
 #define ODD_EVEN_SORT_H
-#include "Sorts/libraries_and_namespaces.h"
+#include "libraries_and_namespaces.h"
 
 namespace sorts
 {

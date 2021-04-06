@@ -10,6 +10,7 @@
 #include <QShortcut>
 #include "filepath.h"
 #include "sort_class.h"
+#include "my_graphics_view.h"
 
 namespace Ui {
 class DrawWindow;

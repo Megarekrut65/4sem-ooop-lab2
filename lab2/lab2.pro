@@ -28,6 +28,8 @@ HEADERS += \
     Sorts/odd_even_sort.h \
     Sorts/quick_sort.h \
     Sorts/selection_sort.h \
+    Tests/doctest.h \
+    Tests/testing_sorts.h \
     aboutalgorithm.h \
     algorithms_efficiency_window.h \
     diagram_builder.h \
