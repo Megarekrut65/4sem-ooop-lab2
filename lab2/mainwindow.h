@@ -20,10 +20,17 @@ public:
     ~MainWindow();
 
 private slots:
+    /*!
+    *   \brief Slot of 'Sort Visualization' button
+    */
     void on_visualizationButton_clicked();
-
+    /*!
+    *   \brief Slot of 'Sort duration' button
+    */
     void on_durationButton_clicked();
-
+    /*!
+    *   \brief Slot of 'About sort algorithm' menu item
+    */
     void on_actionAbout_sort_algorithms_triggered();
 
 private:

@@ -31,11 +31,17 @@ private:
 signals:
     void mainWindow();/*!< Signal to main window */
 private slots:
-    void on_start_pushButton_clicked();/*!< Signal for 'Start' button */
+    /*!
+    *   \brief Slot of 'Start' button
+    */
+    void on_start_pushButton_clicked();
     /*!
     *   \brief Slot of 'Ctrl + S' shortcut
     */
     void slotShortcutCtrlS();
+    /*!
+    *   \brief Slot of 'Back' button
+    */
     void on_pushButton_clicked();
 };
 
