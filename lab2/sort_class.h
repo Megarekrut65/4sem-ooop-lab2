@@ -276,6 +276,7 @@ namespace sc
     template<typename T>
     void SortClass<T>::gnome_sort(std::vector<T>& arr)
     {
+        display(arr);
         name = "Gnome sort";
         display(arr);
         for (size_t i = 1; i < arr.size(); )
@@ -287,17 +288,21 @@ namespace sc
             else
             {
                 swap(arr[i], arr[i-1]);
-                display(arr, i, i - 1);
-               // arr.swap(i, i-1);
+                display(arr, i - 1, i);
                 if (i > 1) --i;
             }
         }
+        display(arr);
     }
 
     template<typename T>
     void SortClass<T>::cocktail_shaker_sort(std::vector<T> &arr)
     {
-        size_t lo = 0, hi = arr.size() - 1, mov = lo;
+        display(arr);
+        name = "Cocktail shaker sort";
+        if(arr.size() > 0)
+        {
+            size_t lo = 0, hi = arr.size() - 1, mov = lo;
             while (lo < hi)
             {
                 for (size_t i = hi; i > lo; --i)
@@ -321,12 +326,17 @@ namespace sc
                 }
                 hi = mov;
             }
+        }
+        display(arr);
     }
-
     template<typename T>
     void SortClass<T>::odd_even_sort(std::vector<T> &arr)
     {
-        bool sorted = false;
+        name = "Odd-even sort";
+        display(arr);
+        if(arr.size() > 0)
+        {
+            bool sorted = false;
             while (!sorted)
             {
                 sorted = true;
@@ -351,16 +361,18 @@ namespace sc
                     }
                 }
             }
+        }
+        display(arr);
     }
 
     template<typename T>
     void SortClass<T>::comb_sort(std::vector<T> &arr)
     {
+        name = "Comb sort";
+        display(arr);
         const double shrink = 1.3;
-
         bool swapped = false;
         size_t gap = arr.size();
-
         while ((gap > 1) || swapped)
         {
             if (gap > 1) {
@@ -379,6 +391,7 @@ namespace sc
                 }
             }
         }
+        display(arr);
     }
 }
 #endif // SORT_CLASS_H
