@@ -14,7 +14,8 @@ SOURCES += \
     drawwindow.cpp \
     filepath.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    sort_thread.cpp
 
 HEADERS += \
     Sorts/all_sorts.h \
@@ -36,7 +37,8 @@ HEADERS += \
     memento_sorting.h \
     my_graphics_view.h \
     originator_sorting.h \
-    sort_class.h
+    sort_class.h \
+    sort_thread.h
 
 FORMS += \
     aboutalgorithm.ui \
