@@ -187,9 +187,10 @@ void DrawWindow::on_random_pushButton_clicked()
 {
     stop_draw();
     ui->values_listWidget->clear();
+    auto arr = create_random_array<int>(ui->count_spinBox->text().toInt());
     for(int i = 0; i < ui->count_spinBox->text().toInt(); i++)
     {
-         ui->values_listWidget->addItem(QString::number(QRandomGenerator::global()->generate()%32000));
+         ui->values_listWidget->addItem(QString::number(arr[i]));
     }
     create_static_diagram(get_array());
 }
@@ -226,15 +227,11 @@ void DrawWindow::on_almostsorted_pushButton_clicked()
     stop_draw();
     ui->values_listWidget->clear();
     int size = ui->count_spinBox->text().toInt();
-    for(int i = 0; i < size; i++)
-    {
-        ui->values_listWidget->addItem(QString::number(i));
-    }
     int index = (8*size)/10;//80% of item will be inorder
-    for(int j = index; j < size; j++)
+    auto arr = create_ordered_array<int>(size, index);
+    for(int i = 0; i < ui->count_spinBox->text().toInt(); i++)
     {
-        auto move_item = ui->values_listWidget->takeItem(j);
-        ui->values_listWidget->insertItem(QRandomGenerator::global()->generate()%(size - index) + index, move_item);
+         ui->values_listWidget->addItem(QString::number(arr[i]));
     }
     create_static_diagram(get_array());
 }
@@ -244,15 +241,11 @@ void DrawWindow::on_almostsorted_rev_pushButton_clicked()
     stop_draw();
     ui->values_listWidget->clear();
     int size = ui->count_spinBox->text().toInt();
-    for(int i = size - 1; i >= 0; i--)
+    int index = (8*size)/10;//80% of item will be inorder
+    auto arr = create_inordered_array<int>(size, index);
+    for(int i = 0; i < ui->count_spinBox->text().toInt(); i++)
     {
-        ui->values_listWidget->addItem(QString::number(i));
-    }
-    int index = (8*size)/10;//80% of item will be preorder
-    for(int j = index; j < size; j++)
-    {
-        auto move_item = ui->values_listWidget->takeItem(j);
-        ui->values_listWidget->insertItem(QRandomGenerator::global()->generate()%(size - index) + index, move_item);
+         ui->values_listWidget->addItem(QString::number(arr[i]));
     }
     create_static_diagram(get_array());
 }

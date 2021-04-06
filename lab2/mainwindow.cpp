@@ -15,7 +15,6 @@ MainWindow::MainWindow(QWidget *parent)
     QObject::connect(dw, &DrawWindow::mainWindow, this, &MainWindow::show);
     algEff_window = new algorithms_efficiency_window();
     QObject::connect(algEff_window, &algorithms_efficiency_window::mainWindow, this, &MainWindow::show);
-
 }
 
 MainWindow::~MainWindow()
