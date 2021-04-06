@@ -38,7 +38,7 @@ void algorithms_efficiency_window::sorting()
         timer->start();
         sorts::bubble_sort(temp_random_vector);
         ui->bubble_first_result_lineEdit->setText(
-            QString::number(timer->elapsed()) + "ms");
+            QString::number(timer->nsecsElapsed()) + "ns");
       }
       else
       {
@@ -50,7 +50,7 @@ void algorithms_efficiency_window::sorting()
         timer->start();
         sorts::bubble_sort(temp_in_order_vector);
         ui->bubble_second_result_lineEdit->setText(
-            QString::number(timer->elapsed()) + "ms");
+            QString::number(timer->nsecsElapsed()) + "ns");
       }
       else
       {
@@ -62,7 +62,7 @@ void algorithms_efficiency_window::sorting()
         timer->start();
         sorts::bubble_sort(temp_in_reverse_order_vector);
         ui->bubble_third_result_lineEdit->setText(
-            QString::number(timer->elapsed()) + "ms");
+            QString::number(timer->nsecsElapsed()) + "ns");
       }
       else
       {
@@ -83,7 +83,7 @@ void algorithms_efficiency_window::sorting()
         timer->start();
         sorts::selection_sort(temp_random_vector);
         ui->selection_first_result_lineEdit->setText(
-            QString::number(timer->elapsed()) + "ms");
+            QString::number(timer->nsecsElapsed()) + "ns");
       }
       else
       {
@@ -95,7 +95,7 @@ void algorithms_efficiency_window::sorting()
         timer->start();
         sorts::selection_sort(temp_in_order_vector);
         ui->selection_second_result_lineEdit->setText(
-            QString::number(timer->elapsed()) + "ms");
+            QString::number(timer->nsecsElapsed()) + "ns");
       }
       else
       {
@@ -107,7 +107,7 @@ void algorithms_efficiency_window::sorting()
         timer->start();
         sorts::selection_sort(temp_in_reverse_order_vector);
         ui->selection_third_result_lineEdit->setText(
-            QString::number(timer->elapsed()) + "ms");
+            QString::number(timer->nsecsElapsed()) + "ns");
       }
       else
       {
@@ -128,7 +128,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::merge_sort(temp_random_vector);
                 ui->merge_first_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -140,7 +140,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::merge_sort(temp_in_order_vector);
                 ui->merge_second_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -152,7 +152,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::merge_sort(temp_in_reverse_order_vector);
                 ui->merge_third_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -173,7 +173,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::quick_sort(temp_random_vector);
                 ui->quick_first_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -185,7 +185,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::quick_sort(temp_in_order_vector);
                 ui->quick_second_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -197,7 +197,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::quick_sort(temp_in_reverse_order_vector);
                 ui->quick_third_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -218,7 +218,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::gnome_sort(temp_random_vector);
                 ui->gnome_first_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -230,7 +230,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::gnome_sort(temp_in_order_vector);
                 ui->gnome_second_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -242,7 +242,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::gnome_sort(temp_in_reverse_order_vector);
                 ui->gnome_third_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -261,9 +261,9 @@ void algorithms_efficiency_window::sorting()
               {
                 temp_random_vector = random_test_vector;
                 timer->start();
-                sorts::cocktailshaker_sort(temp_random_vector);
+                sorts::cocktail_shaker_sort(temp_random_vector);
                 ui->cocktail_shaker_first_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -273,9 +273,9 @@ void algorithms_efficiency_window::sorting()
               {
                 temp_in_order_vector = in_order_test_vector;
                 timer->start();
-                sorts::cocktailshaker_sort(temp_in_order_vector);
+                sorts::cocktail_shaker_sort(temp_in_order_vector);
                 ui->cocktail_shaker_second_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -285,9 +285,9 @@ void algorithms_efficiency_window::sorting()
               {
                 temp_in_reverse_order_vector = in_reverse_order_test_vector;
                 timer->start();
-                sorts::cocktailshaker_sort(temp_in_reverse_order_vector);
+                sorts::cocktail_shaker_sort(temp_in_reverse_order_vector);
                 ui->cocktail_shaker_third_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -308,7 +308,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::odd_even_sort(temp_random_vector);
                 ui->odd_even_first_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -320,7 +320,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::odd_even_sort(temp_in_order_vector);
                 ui->odd_even_second_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -332,7 +332,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::odd_even_sort(temp_in_reverse_order_vector);
                 ui->odd_even_third_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -353,7 +353,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::comb_sort(temp_random_vector);
                 ui->comb_first_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -365,7 +365,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::comb_sort(temp_in_order_vector);
                 ui->comb_second_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {
@@ -377,7 +377,7 @@ void algorithms_efficiency_window::sorting()
                 timer->start();
                 sorts::comb_sort(temp_in_reverse_order_vector);
                 ui->comb_third_result_lineEdit->setText(
-                    QString::number(timer->elapsed()) + "ms");
+                    QString::number(timer->nsecsElapsed()) + "ns");
               }
               else
               {

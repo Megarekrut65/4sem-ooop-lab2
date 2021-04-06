@@ -23,7 +23,7 @@ public:
 
 private:
     Ui::algorithms_efficiency_window *ui;/*!< Pointer to ui */
-    QElapsedTimer *timer;
+    QElapsedTimer *timer;/*!< Timer for sorts durations */
     /*!
     * \brief Calculate sorting duration for selected algorithm
     */
