@@ -1,6 +1,6 @@
 #ifndef GNOME_SORT_H
 #define GNOME_SORT_H
-#include "Sorts/libraries_and_namespaces.h"
+#include "libraries_and_namespaces.h"
 
 namespace sorts
 {
@@ -26,7 +26,6 @@ namespace sorts
             else
             {
                 swap(arr[i], arr[i-1]);
-                //arr.swap(i, i-1);
                 if (i > 1) --i;
             }
         }

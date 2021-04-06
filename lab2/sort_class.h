@@ -1,11 +1,8 @@
 #ifndef SORT_CLASS_H
 #define SORT_CLASS_H
 #include <vector>
-#include "my_graphics_view.h"
 #include "originator_sorting.h"
-#include <QTimer>
-#include <QMainWindow>
-
+#include <QString>
 using namespace sorts;
 using namespace ms;
 
