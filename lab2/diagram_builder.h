@@ -152,7 +152,7 @@ namespace sd
     template<typename T>
     void DiagramBuilder<T>::add_description(const QString& text)
     {
-        if(description.size()*text_size > width) return;
+        if(description.size() > width) return;
         description += text + "    ";
     }
     template<typename T>
@@ -182,7 +182,7 @@ namespace sd
     void DiagramBuilder<T>::set_description()
     {
         if(description.size() == 0) return;
-        qreal text_x = width/4 - description.size();
+        qreal text_x = width/5;
         scene->addItem(create_text(description, text_x, height - 80));
     }
     template<typename T>
