@@ -23,21 +23,9 @@ private slots:
 private:
     Ui::AboutAlgorithm *ui;/*!< Pointer to ui */
     /*!
-    * \brief Returns information about merge sort
+    * \brief Returns information about sort
     */
-    QString about_merge();
-    /*!
-    * \brief Returns information about bubble sort
-    */
-    QString about_bubble();
-    /*!
-    * \brief Returns information about quick sort
-    */
-    QString about_quick();
-    /*!
-    * \brief Returns information about selection sort
-    */
-    QString about_selection();
+    QString get_about(std::size_t index);
     /*!
     * \brief Adds names of sorts to combo box
     */
