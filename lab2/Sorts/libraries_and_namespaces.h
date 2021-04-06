@@ -47,9 +47,56 @@ namespace sorts
     */
     template<typename T>
     T get_min(std::vector<T>& arr);
+    template<typename T>
+    std::vector<T> create_random_array(std::size_t size);
+    template<typename T>
+    std::vector<T> create_ordered_array(std::size_t size, std::size_t random_start);
+    template<typename T>
+    std::vector<T> create_inordered_array(std::size_t size, std::size_t random_start);
 }
 namespace sorts
 {
+    template<typename T>
+    std::vector<T> create_random_array(std::size_t size)
+    {
+        std::vector<T> arr;
+        for(std::size_t i = 0; i < size; i++)
+            arr.push_back(rand()%30000);
+        return arr;
+
+    }
+    template<typename T>
+    std::vector<T> create_ordered_array(std::size_t size, std::size_t random_start)
+    {
+        if(size == 0) return {};
+        if(size < random_start) swap(size, random_start);
+        std::vector<T> arr;
+        for(std::size_t i = 0; i < size; i++)
+            arr.push_back(i);
+        for(std::size_t i = random_start; i < size;i++)
+        {
+            auto item = arr[i];
+            arr.erase(arr.begin() + i);
+            arr.insert(arr.begin() + rand()%(size - random_start - 1) + random_start,item);
+        }
+        return arr;
+    }
+    template<typename T>
+    std::vector<T> create_inordered_array(std::size_t size, std::size_t random_start)
+    {
+        if(size == 0) return {};
+        if(size < random_start) swap(size, random_start);
+        std::vector<T> arr;
+        for(std::size_t i = 0; i < size; i++)
+            arr.push_back(size - i - 1);
+        for(std::size_t i = random_start; i < size;i++)
+        {
+            auto item = arr[i];
+            arr.erase(arr.begin() + i);
+            arr.insert(arr.begin() + rand()%(size - random_start - 1) + random_start,item);
+        }
+        return arr;
+    }
     template<typename T>
     void copy_to_array(std::vector<T>& arr, std::vector<T>& copy_arr, std::size_t begin, std::size_t size)
     {
