@@ -415,3 +415,9 @@ void algorithms_efficiency_window::on_start_pushButton_clicked()
   // this->random();
   // this->atleast_sorted_in_reverse_order();
 }
+
+void algorithms_efficiency_window::on_pushButton_clicked()
+{
+    emit mainWindow();
+    this->close();
+}
