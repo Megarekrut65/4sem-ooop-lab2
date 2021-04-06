@@ -9,6 +9,9 @@ algorithms_efficiency_window::algorithms_efficiency_window(QWidget *parent)
   QIcon icon(":/icons/Images/duration-icon.ico");
   this->setWindowIcon(icon);
   this->setWindowTitle("Sort duration");
+  keyCtrlS = new QShortcut(this);
+  keyCtrlS->setKey(QKeySequence::fromString("Ctrl+S"));
+  connect(keyCtrlS, SIGNAL(activated()), this, SLOT(slotShortcutCtrlS()));
 }
 
 algorithms_efficiency_window::~algorithms_efficiency_window()
@@ -23,10 +26,6 @@ void algorithms_efficiency_window::sorting()
         sorts::create_random_array<int>(ui->count_spinBox->value());
     std::vector<int> in_order_test_vector = sorts::create_ordered_array<int>(ui->count_spinBox->value(), (8 * ui->count_spinBox->value()) / 10);
     std::vector<int> in_reverse_order_test_vector = sorts::create_inordered_array<int>(ui->count_spinBox->value(), (8 * ui->count_spinBox->value()) / 10);
-    /*for(size_t i = 0; i < random_test_vector.size(); i++)
-        qDebug() << QString::number(random_test_vector[i]);
-    for(size_t i = 0; i < in_order_test_vector.size(); i++)
-        qDebug() << QString::number(in_order_test_vector[i]);*/
     std::vector<int> temp_random_vector;
     std::vector<int> temp_in_order_vector;
     std::vector<int> temp_in_reverse_order_vector;
@@ -395,7 +394,7 @@ void algorithms_efficiency_window::sorting()
 
 void algorithms_efficiency_window::on_start_pushButton_clicked()
 {
-    sorting();
+    this->sorting();
     /*QVector<bool> modes;
     modes.push_back(ui->random_checkBox->isChecked());
     modes.push_back(ui->atleast_sorted_inorder_checkBox);
@@ -413,7 +412,12 @@ void algorithms_efficiency_window::on_start_pushButton_clicked()
     //moveToThread(&sort_thread);
 
   // this->random();
-  // this->atleast_sorted_in_reverse_order();
+    // this->atleast_sorted_in_reverse_order();
+}
+
+void algorithms_efficiency_window::slotShortcutCtrlS()
+{
+    this->sorting();
 }
 
 void algorithms_efficiency_window::on_pushButton_clicked()
