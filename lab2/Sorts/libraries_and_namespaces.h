@@ -169,4 +169,30 @@ namespace sorts
         return res;
     }
 }
+
+enum class Sort
+{
+    BUBBLE,
+    COCKTAIL_SHAKER,
+    COMB,
+    GNOME,
+    MERGE,
+    ODD_EVEN,
+    QUICK,
+    SELECTION
+};
+
+enum class Array_type
+{
+    full_random,
+    almost_sorted,
+    almost_sorted_reverse
+};
+
+enum class Time_units
+{
+    ns,
+    ms
+};
+
 #endif // LIBRARIES_AND_NAMESPACES_H

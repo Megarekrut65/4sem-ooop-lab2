@@ -1,9 +1,11 @@
 #include "algorithms_efficiency_window.h"
 #include "ui_algorithms_efficiency_window.h"
 
+
 algorithms_efficiency_window::algorithms_efficiency_window(QWidget *parent)
     : QWidget(parent), ui(new Ui::algorithms_efficiency_window),
-      timer(new QElapsedTimer)
+      timer(new QElapsedTimer),
+      sort_thread_running(true)
 {
   ui->setupUi(this);
   QIcon icon(":/icons/Images/duration-icon.ico");
@@ -12,10 +14,15 @@ algorithms_efficiency_window::algorithms_efficiency_window(QWidget *parent)
   keyCtrlS = new QShortcut(this);
   keyCtrlS->setKey(QKeySequence::fromString("Ctrl+S"));
   connect(keyCtrlS, SIGNAL(activated()), this, SLOT(slotShortcutCtrlS()));
+
+  sThread = new sort_thread(this);
+  QObject::connect(sThread, SIGNAL(SentResult(QString)), this, SLOT(onGetResult(QString)));
+  //QObject::connect(sThread, SIGNAL(SentStop()), this, SLOT(onGetStop()));
 }
 
 algorithms_efficiency_window::~algorithms_efficiency_window()
 {
+    delete sThread;
     delete timer;
     delete ui;
 }
@@ -33,11 +40,20 @@ void algorithms_efficiency_window::sorting()
     {
       if (ui->random_checkBox->isChecked())
       {
-        temp_random_vector = random_test_vector;
-        timer->start();
-        sorts::bubble_sort(temp_random_vector);
-        ui->bubble_first_result_lineEdit->setText(
-            QString::number(timer->nsecsElapsed()) + "ns");
+          temp_random_vector = random_test_vector;
+          this->current_sort = Sort::BUBBLE;
+          this->current_array_type = Array_type::full_random;
+          sThread->set_array(temp_random_vector);
+          sThread->set_sort(Sort::BUBBLE);
+          sThread->start();
+
+           sThread->quit();
+          /*while(true)
+          {
+              if(!sThread->isRunning())
+                  break;
+          }*/
+
       }
       else
       {
@@ -45,11 +61,18 @@ void algorithms_efficiency_window::sorting()
       }
       if (ui->atleast_sorted_inorder_checkBox->isChecked())
       {
-        temp_in_order_vector = in_order_test_vector;
-        timer->start();
-        sorts::bubble_sort(temp_in_order_vector);
-        ui->bubble_second_result_lineEdit->setText(
-            QString::number(timer->nsecsElapsed()) + "ns");
+          temp_in_order_vector = in_order_test_vector;
+          this->current_sort = Sort::BUBBLE;
+          this->current_array_type = Array_type::almost_sorted;
+          sThread->set_array(temp_random_vector);
+          sThread->set_sort(Sort::BUBBLE);
+          sThread->start();
+          sThread->quit();
+          /*while(true)
+          {
+              if(!sort_thread_running)
+                  break;
+          }*/
       }
       else
       {
@@ -424,4 +447,177 @@ void algorithms_efficiency_window::on_pushButton_clicked()
 {
     emit mainWindow();
     this->close();
+}
+
+void algorithms_efficiency_window::onGetResult(QString res)
+{
+    sort_thread_running = false;
+    switch (current_sort) {
+    case Sort::BUBBLE :
+    {
+        switch (current_array_type) {
+        case Array_type::full_random :
+        {
+            ui->bubble_first_result_lineEdit->setText(res);
+            break;
+        }
+        case Array_type::almost_sorted :
+        {
+            ui->bubble_second_result_lineEdit->setText(res);
+            break;
+        }
+        case Array_type::almost_sorted_reverse :
+        {
+            ui->bubble_third_result_lineEdit->setText(res);
+            break;
+        }
+        }
+        break;
+    }
+    case Sort::COCKTAIL_SHAKER :
+    {
+        switch (current_array_type) {
+        case Array_type::full_random :
+        {
+            ui->bubble_first_result_lineEdit->setText(res);
+            break;
+        }
+        case Array_type::almost_sorted :
+        {
+            ui->bubble_second_result_lineEdit->setText(res);
+            break;
+        }
+        case Array_type::almost_sorted_reverse :
+        {
+            ui->bubble_third_result_lineEdit->setText(res);
+            break;
+        }
+        }
+        break;
+    }
+    case Sort::COMB :
+    {
+        switch (current_array_type) {
+        case Array_type::full_random :
+        {
+            ui->bubble_first_result_lineEdit->setText(res);
+            break;
+        }
+        case Array_type::almost_sorted :
+        {
+            ui->bubble_second_result_lineEdit->setText(res);
+            break;
+        }
+        case Array_type::almost_sorted_reverse :
+        {
+            ui->bubble_third_result_lineEdit->setText(res);
+            break;
+        }
+        }
+        break;
+    }
+    case Sort::GNOME:
+    {
+        switch (current_array_type) {
+        case Array_type::full_random :
+        {
+            ui->bubble_first_result_lineEdit->setText(res);
+            break;
+        }
+        case Array_type::almost_sorted :
+        {
+            ui->bubble_second_result_lineEdit->setText(res);
+        }
+        case Array_type::almost_sorted_reverse :
+        {
+            ui->bubble_third_result_lineEdit->setText(res);
+            break;
+        }
+        }
+        break;
+    }
+    case Sort::MERGE:
+    {
+        switch (current_array_type) {
+        case Array_type::full_random :
+        {
+            ui->bubble_first_result_lineEdit->setText(res);
+            break;
+        }
+        case Array_type::almost_sorted :
+        {
+            ui->bubble_second_result_lineEdit->setText(res);
+            break;
+        }
+        case Array_type::almost_sorted_reverse :
+        {
+            ui->bubble_third_result_lineEdit->setText(res);
+            break;
+        }
+        }
+        break;
+    }
+    case Sort::ODD_EVEN:
+    {
+        switch (current_array_type) {
+        case Array_type::full_random :
+        {
+
+            break;
+        }
+        case Array_type::almost_sorted :
+        {
+
+            break;
+        }
+        case Array_type::almost_sorted_reverse :
+        {
+
+            break;
+        }
+        }
+        break;
+    }
+    case Sort::QUICK:
+    {
+        switch (current_array_type) {
+        case Array_type::full_random :
+        {
+
+            break;
+        }
+        case Array_type::almost_sorted :
+        {
+
+            break;
+        }
+        case Array_type::almost_sorted_reverse :
+        {
+
+            break;
+        }
+        }
+    }
+    case Sort::SELECTION:
+    {
+        switch (current_array_type) {
+        case Array_type::full_random :
+        {
+
+            break;
+        }
+        case Array_type::almost_sorted :
+        {
+
+            break;
+        }
+        case Array_type::almost_sorted_reverse :
+        {
+
+            break;
+        }
+        }
+    }
+        break;
+    }
 }
