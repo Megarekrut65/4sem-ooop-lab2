@@ -4,10 +4,11 @@
 * Topic: sorting algorithms. 
 * Implemented components: 
 
-> the actual implementation of algorithms;
+	> the actual implementation of algorithms;
 
-> the mechanism for measuring the performance of algorithms (time);
+	> the mechanism for measuring the performance of algorithms (time);
 
-> visualization of the behavior of algorithms;
+	> visualization of the behavior of algorithms;
 
-> documentation on algorithms.
+	> documentation on algorithms.
+* Patterns: Memento, Builder.

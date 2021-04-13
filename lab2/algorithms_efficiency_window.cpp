@@ -25,7 +25,7 @@ void algorithms_efficiency_window::sorting()
     std::vector<int> random_test_vector =
         sorts::create_random_array<int>(ui->count_spinBox->value());
     std::vector<int> in_order_test_vector = sorts::create_ordered_array<int>(ui->count_spinBox->value(), (8 * ui->count_spinBox->value()) / 10);
-    std::vector<int> in_reverse_order_test_vector = sorts::create_inordered_array<int>(ui->count_spinBox->value(), (8 * ui->count_spinBox->value()) / 10);
+    std::vector<int> in_reverse_order_test_vector = sorts::create_reverse_ordered_array<int>(ui->count_spinBox->value(), (8 * ui->count_spinBox->value()) / 10);
     std::vector<int> temp_random_vector;
     std::vector<int> temp_in_order_vector;
     std::vector<int> temp_in_reverse_order_vector;
@@ -43,7 +43,7 @@ void algorithms_efficiency_window::sorting()
       {
         ui->bubble_first_result_lineEdit->setText("-");
       }
-      if (ui->atleast_sorted_inorder_checkBox)
+      if (ui->atleast_sorted_inorder_checkBox->isChecked())
       {
         temp_in_order_vector = in_order_test_vector;
         timer->start();
@@ -88,7 +88,7 @@ void algorithms_efficiency_window::sorting()
       {
         ui->selection_first_result_lineEdit->setText("-");
       }
-      if (ui->atleast_sorted_inorder_checkBox)
+      if (ui->atleast_sorted_inorder_checkBox->isChecked())
       {
         temp_in_order_vector = in_order_test_vector;
         timer->start();
@@ -133,7 +133,7 @@ void algorithms_efficiency_window::sorting()
               {
                 ui->merge_first_result_lineEdit->setText("-");
               }
-              if (ui->atleast_sorted_inorder_checkBox)
+              if (ui->atleast_sorted_inorder_checkBox->isChecked())
               {
                 temp_in_order_vector = in_order_test_vector;
                 timer->start();
@@ -178,7 +178,7 @@ void algorithms_efficiency_window::sorting()
               {
                 ui->quick_first_result_lineEdit->setText("-");
               }
-              if (ui->atleast_sorted_inorder_checkBox)
+              if (ui->atleast_sorted_inorder_checkBox->isChecked())
               {
                 temp_in_order_vector = in_order_test_vector;
                 timer->start();
@@ -223,7 +223,7 @@ void algorithms_efficiency_window::sorting()
               {
                 ui->gnome_first_result_lineEdit->setText("-");
               }
-              if (ui->atleast_sorted_inorder_checkBox)
+              if (ui->atleast_sorted_inorder_checkBox->isChecked())
               {
                 temp_in_order_vector = in_order_test_vector;
                 timer->start();
@@ -268,7 +268,7 @@ void algorithms_efficiency_window::sorting()
               {
                 ui->cocktail_shaker_first_result_lineEdit->setText("-");
               }
-              if (ui->atleast_sorted_inorder_checkBox)
+              if (ui->atleast_sorted_inorder_checkBox->isChecked())
               {
                 temp_in_order_vector = in_order_test_vector;
                 timer->start();
@@ -313,7 +313,7 @@ void algorithms_efficiency_window::sorting()
               {
                 ui->odd_even_first_result_lineEdit->setText("-");
               }
-              if (ui->atleast_sorted_inorder_checkBox)
+              if (ui->atleast_sorted_inorder_checkBox->isChecked())
               {
                 temp_in_order_vector = in_order_test_vector;
                 timer->start();
@@ -358,7 +358,7 @@ void algorithms_efficiency_window::sorting()
               {
                 ui->comb_first_result_lineEdit->setText("-");
               }
-              if (ui->atleast_sorted_inorder_checkBox)
+              if (ui->atleast_sorted_inorder_checkBox->isChecked())
               {
                 temp_in_order_vector = in_order_test_vector;
                 timer->start();
