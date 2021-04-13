@@ -242,7 +242,7 @@ void DrawWindow::on_almostsorted_rev_pushButton_clicked()
     ui->values_listWidget->clear();
     int size = ui->count_spinBox->text().toInt();
     int index = (8*size)/10;//80% of item will be inorder
-    auto arr = create_inordered_array<int>(size, index);
+    auto arr = create_reverse_ordered_array<int>(size, index);
     for(int i = 0; i < ui->count_spinBox->text().toInt(); i++)
     {
          ui->values_listWidget->addItem(QString::number(arr[i]));

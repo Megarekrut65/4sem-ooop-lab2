@@ -61,12 +61,12 @@ namespace sorts
     template<typename T>
     std::vector<T> create_ordered_array(std::size_t size, std::size_t random_start);
     /*!
-    *   \brief Creates array with almost inordered items
+    *   \brief Creates array with almost reverse ordered items
     *   \param size - size of array
     *   \param random_start - index of firts not inordered item
     */
     template<typename T>
-    std::vector<T> create_inordered_array(std::size_t size, std::size_t random_start);
+    std::vector<T> create_reverse_ordered_array(std::size_t size, std::size_t random_start);
     /*!
     *   \brief Compares two arrays by values
     */
@@ -110,7 +110,7 @@ namespace sorts
         return arr;
     }
     template<typename T>
-    std::vector<T> create_inordered_array(std::size_t size, std::size_t random_start)
+    std::vector<T> create_reverse_ordered_array(std::size_t size, std::size_t random_start)
     {
         if(size == 0) return {};
         if(size < random_start) swap(size, random_start);
