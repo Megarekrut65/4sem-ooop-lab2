@@ -36,8 +36,8 @@ void algorithms_efficiency_window::start(QFuture<QString>& future,std::vector<in
     field->setText(future.result());
 }
 void algorithms_efficiency_window::start_measuring(QFuture<QString>& future1,QFuture<QString>& future2,QFuture<QString>& future3,
-                                                   QCheckBox* sort_box,std::vector<int> random_test_vector,
-                                                   std::vector<int> in_order_test_vector,std::vector<int> in_reverse_order_test_vector,
+                                                   QCheckBox* sort_box,std::vector<int>& random_test_vector,
+                                                   std::vector<int>& in_order_test_vector,std::vector<int>& in_reverse_order_test_vector,
                                                  QLineEdit* first, QLineEdit* second, QLineEdit* third,
                                                    void(*sort_function)(std::vector<int>&))
 {
