@@ -7,6 +7,8 @@
 #include <QShortcut>
 #include <QFuture>
 #include <QtConcurrent>
+#include <QLineEdit>
+#include <QCheckBox>
 #include "Sorts/libraries_and_namespaces.h"
 #include "Sorts/all_sorts.h"
 
@@ -33,6 +35,11 @@ private:
     * \brief Clear filed with previous result
     */
     void clear_results();
+    void start_measuring(QFuture<QString>& future1,QFuture<QString>& future2,QFuture<QString>& future3,
+                         QCheckBox* sort_box,std::vector<int> random_test_vector,
+                         std::vector<int> in_order_test_vector,std::vector<int> in_reverse_order_test_vector,
+                         QLineEdit* first, QLineEdit* second, QLineEdit* third, void(*sort_function)(std::vector<int>&));
+    void start(QFuture<QString>& future,std::vector<int>& vector, QLineEdit* field, void(*sort_function)(std::vector<int>&));
 signals:
     void mainWindow();/*!< Signal to main window */
 private slots:
