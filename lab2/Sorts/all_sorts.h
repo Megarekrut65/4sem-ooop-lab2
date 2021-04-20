@@ -11,6 +11,4 @@
 /*!
 *   There are all headers with sort algorithm
 */
-
-
 #endif // ALL_SORTS_H
