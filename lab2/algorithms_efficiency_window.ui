@@ -657,7 +657,7 @@
     <item>
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>Count (50000 MAX)</string>
+       <string>Count (25000 MAX)</string>
       </property>
      </widget>
     </item>
@@ -670,7 +670,7 @@
        </sizepolicy>
       </property>
       <property name="maximum">
-       <number>50000</number>
+       <number>25000</number>
       </property>
      </widget>
     </item>
