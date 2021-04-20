@@ -25,6 +25,7 @@ void algorithms_efficiency_window::sorting()
     std::vector<int> random_test_vector = sorts::create_random_array<int>(ui->count_spinBox->value());
     std::vector<int> in_order_test_vector = sorts::create_ordered_array<int>(ui->count_spinBox->value(), (8 * ui->count_spinBox->value()) / 10);
     std::vector<int> in_reverse_order_test_vector = sorts::create_reverse_ordered_array<int>(ui->count_spinBox->value(), (8 * ui->count_spinBox->value()) / 10);
+
     QFuture<QString> bubble1, bubble2, bubble3,
         selection1, selection2, selection3,
         merge1, merge2, merge3,
@@ -33,13 +34,16 @@ void algorithms_efficiency_window::sorting()
         cocktail_shaker1, cocktail_shaker2, cocktail_shaker3,
         odd_even1, odd_even2, odd_even3,
         comb1, comb2, comb3;
+
     if (ui->bubble_checkBox->isChecked()) {
         if (ui->random_checkBox->isChecked()) {
-            bubble1 = QtConcurrent::run([&random_test_vector] {
-                std::vector<int> vector = random_test_vector;
+                bubble1 = QtConcurrent::run([&random_test_vector] {
+                std::vector<int> vector;
+                std::copy(random_test_vector.begin(), random_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::bubble_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!bubble1.isFinished()) {
@@ -52,10 +56,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_inorder_checkBox->isChecked()) {
             bubble2 = QtConcurrent::run([&in_order_test_vector] {
-                std::vector<int> vector = in_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_order_test_vector.begin(), in_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::bubble_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!bubble2.isFinished()) {
@@ -68,10 +74,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_rev_checkBox->isChecked()) {
             bubble3 = QtConcurrent::run([&in_reverse_order_test_vector] {
-                std::vector<int> vector = in_reverse_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_reverse_order_test_vector.begin(), in_reverse_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::bubble_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!bubble3.isFinished()) {
@@ -91,10 +99,12 @@ void algorithms_efficiency_window::sorting()
     if (ui->selection_checkBox->isChecked()) {
         if (ui->random_checkBox->isChecked()) {
             selection1 = QtConcurrent::run([&random_test_vector] {
-                std::vector<int> vector = random_test_vector;
+                std::vector<int> vector;
+                std::copy(random_test_vector.begin(), random_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::bubble_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!selection1.isFinished()) {
@@ -107,10 +117,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_inorder_checkBox->isChecked()) {
             selection2 = QtConcurrent::run([&in_order_test_vector] {
-                std::vector<int> vector = in_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_order_test_vector.begin(), in_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::bubble_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!selection2.isFinished()) {
@@ -123,10 +135,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_rev_checkBox->isChecked()) {
             selection3 = QtConcurrent::run([&in_reverse_order_test_vector] {
-                std::vector<int> vector = in_reverse_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_reverse_order_test_vector.begin(), in_reverse_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::bubble_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!selection3.isFinished()) {
@@ -146,10 +160,12 @@ void algorithms_efficiency_window::sorting()
     if (ui->merge_checkBox->isChecked()) {
         if (ui->random_checkBox->isChecked()) {
             merge1 = QtConcurrent::run([&random_test_vector] {
-                std::vector<int> vector = random_test_vector;
+                std::vector<int> vector;
+                std::copy(random_test_vector.begin(), random_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::merge_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!merge1.isFinished()) {
@@ -162,10 +178,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_inorder_checkBox->isChecked()) {
             merge2 = QtConcurrent::run([&in_order_test_vector] {
-                std::vector<int> vector = in_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_order_test_vector.begin(), in_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::merge_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!merge2.isFinished()) {
@@ -178,10 +196,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_rev_checkBox->isChecked()) {
             merge3 = QtConcurrent::run([&in_reverse_order_test_vector] {
-                std::vector<int> vector = in_reverse_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_reverse_order_test_vector.begin(), in_reverse_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::merge_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!merge3.isFinished()) {
@@ -201,10 +221,12 @@ void algorithms_efficiency_window::sorting()
     if (ui->quick_checkBox->isChecked()) {
         if (ui->random_checkBox->isChecked()) {
             quick1 = QtConcurrent::run([&random_test_vector] {
-                std::vector<int> vector = random_test_vector;
+                std::vector<int> vector;
+                std::copy(random_test_vector.begin(), random_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::quick_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!quick1.isFinished()) {
@@ -217,10 +239,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_inorder_checkBox->isChecked()) {
             quick2 = QtConcurrent::run([&in_order_test_vector] {
-                std::vector<int> vector = in_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_order_test_vector.begin(), in_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::quick_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!quick2.isFinished()) {
@@ -233,10 +257,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_rev_checkBox->isChecked()) {
             quick3 = QtConcurrent::run([&in_reverse_order_test_vector] {
-                std::vector<int> vector = in_reverse_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_reverse_order_test_vector.begin(), in_reverse_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::quick_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!quick3.isFinished()) {
@@ -256,10 +282,12 @@ void algorithms_efficiency_window::sorting()
     if (ui->gnome_checkBox->isChecked()) {
         if (ui->random_checkBox->isChecked()) {
             gnome1 = QtConcurrent::run([&random_test_vector] {
-                std::vector<int> vector = random_test_vector;
+                std::vector<int> vector;
+                std::copy(random_test_vector.begin(), random_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::gnome_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!gnome1.isFinished()) {
@@ -272,10 +300,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_inorder_checkBox->isChecked()) {
             gnome2 = QtConcurrent::run([&in_order_test_vector] {
-                std::vector<int> vector = in_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_order_test_vector.begin(), in_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::gnome_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!gnome2.isFinished()) {
@@ -288,10 +318,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_rev_checkBox->isChecked()) {
             gnome3 = QtConcurrent::run([&in_reverse_order_test_vector] {
-                std::vector<int> vector = in_reverse_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_reverse_order_test_vector.begin(), in_reverse_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::gnome_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!gnome3.isFinished()) {
@@ -311,10 +343,12 @@ void algorithms_efficiency_window::sorting()
     if (ui->cocktail_shaker_checkBox->isChecked()) {
         if (ui->random_checkBox->isChecked()) {
             cocktail_shaker1 = QtConcurrent::run([&random_test_vector] {
-                std::vector<int> vector = random_test_vector;
+                std::vector<int> vector;
+                std::copy(random_test_vector.begin(), random_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::cocktail_shaker_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!cocktail_shaker1.isFinished()) {
@@ -327,10 +361,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_inorder_checkBox->isChecked()) {
             cocktail_shaker2 = QtConcurrent::run([&in_order_test_vector] {
-                std::vector<int> vector = in_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_order_test_vector.begin(), in_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::cocktail_shaker_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!cocktail_shaker2.isFinished()) {
@@ -343,10 +379,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_rev_checkBox->isChecked()) {
             cocktail_shaker3 = QtConcurrent::run([&in_reverse_order_test_vector] {
-                std::vector<int> vector = in_reverse_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_reverse_order_test_vector.begin(), in_reverse_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::cocktail_shaker_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!cocktail_shaker3.isFinished()) {
@@ -366,10 +404,12 @@ void algorithms_efficiency_window::sorting()
     if (ui->odd_even_checkBox->isChecked()) {
         if (ui->random_checkBox->isChecked()) {
             odd_even1 = QtConcurrent::run([&random_test_vector] {
-                std::vector<int> vector = random_test_vector;
+                std::vector<int> vector;
+                std::copy(random_test_vector.begin(), random_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::odd_even_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!odd_even1.isFinished()) {
@@ -382,10 +422,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_inorder_checkBox->isChecked()) {
             odd_even2 = QtConcurrent::run([&in_order_test_vector] {
-                std::vector<int> vector = in_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_order_test_vector.begin(), in_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::odd_even_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!odd_even2.isFinished()) {
@@ -398,10 +440,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_rev_checkBox->isChecked()) {
             odd_even3 = QtConcurrent::run([&in_reverse_order_test_vector] {
-                std::vector<int> vector = in_reverse_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_reverse_order_test_vector.begin(), in_reverse_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::odd_even_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!odd_even3.isFinished()) {
@@ -421,10 +465,12 @@ void algorithms_efficiency_window::sorting()
     if (ui->comb_checkBox->isChecked()) {
         if (ui->random_checkBox->isChecked()) {
             comb1 = QtConcurrent::run([&random_test_vector] {
-                std::vector<int> vector = random_test_vector;
+                std::vector<int> vector;
+                std::copy(random_test_vector.begin(), random_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::comb_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!comb1.isFinished()) {
@@ -437,10 +483,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_inorder_checkBox->isChecked()) {
             comb2 = QtConcurrent::run([&in_order_test_vector] {
-                std::vector<int> vector = in_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_order_test_vector.begin(), in_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::comb_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!comb2.isFinished()) {
@@ -453,10 +501,12 @@ void algorithms_efficiency_window::sorting()
         }
         if (ui->atleast_sorted_rev_checkBox->isChecked()) {
             comb3 = QtConcurrent::run([&in_reverse_order_test_vector] {
-                std::vector<int> vector = in_reverse_order_test_vector;
+                std::vector<int> vector;
+                std::copy(in_reverse_order_test_vector.begin(), in_reverse_order_test_vector.end(), std::back_inserter(vector));
                 QElapsedTimer sort_timer;
                 sort_timer.start();
                 sorts::comb_sort(vector);
+                vector.clear();
                 return QString::number(sort_timer.elapsed()) + "ms";
             });
             while (!comb3.isFinished()) {
@@ -473,6 +523,7 @@ void algorithms_efficiency_window::sorting()
         ui->comb_second_result_lineEdit->setText("-");
         ui->comb_third_result_lineEdit->setText("-");
     }
+
 }
 
 void algorithms_efficiency_window::clear_results()

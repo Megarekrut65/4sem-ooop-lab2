@@ -1,8 +1,11 @@
 QT       += core gui concurrent
 
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
+CONFIG += c++20
+
+CONFIG -= app_bundle
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -14,8 +17,7 @@ SOURCES += \
     drawwindow.cpp \
     filepath.cpp \
     main.cpp \
-    mainwindow.cpp \
-    test_result.cpp
+    mainwindow.cpp
 
 HEADERS += \
     Sorts/all_sorts.h \
@@ -39,8 +41,7 @@ HEADERS += \
     memento_sorting.h \
     my_graphics_view.h \
     originator_sorting.h \
-    sort_class.h \
-    test_result.h
+    sort_class.h
 
 FORMS += \
     aboutalgorithm.ui \
