@@ -5,6 +5,8 @@
 #include <vector>
 #include <QElapsedTimer>
 #include <QShortcut>
+#include <QFuture>
+#include <QtConcurrent>
 #include "Sorts/libraries_and_namespaces.h"
 #include "Sorts/all_sorts.h"
 
@@ -22,7 +24,6 @@ public:
 
 private:
     Ui::algorithms_efficiency_window *ui;/*!< Pointer to ui */
-    QElapsedTimer *timer;/*!< Timer for sorts durations */
     QShortcut * keyCtrlS;/*!< Object shortcut keys Ctrl + S (Start) */
     /*!
     * \brief Calculate sorting duration for selected algorithm

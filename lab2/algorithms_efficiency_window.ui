@@ -621,7 +621,7 @@
        <string notr="true">background-color:#8dc3f2;</string>
       </property>
       <property name="text">
-       <string>Atleast sorted in order</string>
+       <string>Almost sorted in order</string>
       </property>
       <property name="checked">
        <bool>true</bool>
@@ -634,7 +634,7 @@
        <string notr="true">background-color: #bd69db;</string>
       </property>
       <property name="text">
-       <string>Atleast sorted in reverse order</string>
+       <string>Almost sorted in reverse order</string>
       </property>
       <property name="checked">
        <bool>true</bool>
@@ -657,7 +657,7 @@
     <item>
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>Count</string>
+       <string>Count (50000 MAX)</string>
       </property>
      </widget>
     </item>
@@ -670,7 +670,7 @@
        </sizepolicy>
       </property>
       <property name="maximum">
-       <number>100000</number>
+       <number>50000</number>
       </property>
      </widget>
     </item>

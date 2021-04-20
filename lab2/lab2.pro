@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui concurrent
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,7 +14,8 @@ SOURCES += \
     drawwindow.cpp \
     filepath.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    test_result.cpp
 
 HEADERS += \
     Sorts/all_sorts.h \
@@ -38,7 +39,8 @@ HEADERS += \
     memento_sorting.h \
     my_graphics_view.h \
     originator_sorting.h \
-    sort_class.h
+    sort_class.h \
+    test_result.h
 
 FORMS += \
     aboutalgorithm.ui \
